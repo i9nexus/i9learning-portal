@@ -4,31 +4,28 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 const metrics = [
   {
     value: 40,
+    prefix: "+",
     suffix: "%",
-    label: "Redução de Custos",
-    description: "Otimização de processos que reduz significativamente os custos operacionais.",
+    label: "Retenção de Conhecimento",
+    description: "Aumento significativo na retenção através de metodologias interativas e gamificação.",
   },
   {
-    value: 65,
+    value: 60,
+    prefix: "-",
     suffix: "%",
-    label: "Mais Produtividade",
-    description: "Aumento de produtividade através de automação e ferramentas inteligentes.",
+    label: "Custos Operacionais",
+    description: "Redução drástica nos custos de formação em comparação com o modelo presencial.",
   },
   {
-    value: 80,
+    value: 100,
+    prefix: "",
     suffix: "%",
-    label: "Processos Automatizados",
-    description: "Tarefas manuais eliminadas com fluxos de trabalho automáticos e eficientes.",
-  },
-  {
-    value: 2,
-    suffix: " sem",
-    label: "Tempo de Implementação",
-    description: "Resultados rápidos sem comprometer a qualidade da entrega.",
+    label: "Escalabilidade",
+    description: "Acesso total para equipas globais, em qualquer dispositivo, 24 horas por dia.",
   },
 ];
 
-const AnimatedNumber = ({ value, suffix, triggerAnimation }: { value: number; suffix: string; triggerAnimation: boolean }) => {
+const AnimatedNumber = ({ value, prefix, suffix, triggerAnimation }: { value: number; prefix: string; suffix: string; triggerAnimation: boolean }) => {
   const [count, setCount] = useState(0);
   const hasAnimated = useRef(false);
 
@@ -55,7 +52,7 @@ const AnimatedNumber = ({ value, suffix, triggerAnimation }: { value: number; su
 
   return (
     <div className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-gradient">
-      {count}
+      {prefix}{count}
       {suffix}
     </div>
   );
@@ -73,18 +70,18 @@ const ImpactMetrics = () => {
             <span className="text-gradient">a diferença</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Resultados concretos que demonstram o valor das nossas soluções tecnológicas.
+            Métricas concretas que demonstram o impacto das nossas soluções de eLearning.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           {metrics.map((metric, index) => (
             <div
               key={metric.label}
               className={`glass-card rounded-xl p-7 text-center transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
               style={{ transitionDelay: isVisible ? `${150 * (index + 1)}ms` : "0ms" }}
             >
-              <AnimatedNumber value={metric.value} suffix={metric.suffix} triggerAnimation={isVisible} />
+              <AnimatedNumber value={metric.value} prefix={metric.prefix} suffix={metric.suffix} triggerAnimation={isVisible} />
               <h3 className="font-display text-sm font-semibold mt-3 mb-1">{metric.label}</h3>
               <p className="text-muted-foreground text-xs leading-relaxed">{metric.description}</p>
             </div>

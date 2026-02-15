@@ -1,24 +1,24 @@
-import { Globe, Zap, TrendingUp } from "lucide-react";
+import { BookOpen, Zap, TrendingUp } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const pillars = [
   {
-    icon: Globe,
-    title: "Presença Digital",
+    icon: BookOpen,
+    title: "Plataformas de Formação",
     description:
-      "Criamos websites e plataformas que posicionam o seu negócio no digital com design profissional e performance otimizada.",
+      "Implementamos e personalizamos ecossistemas LMS completos que centralizam toda a experiência formativa da sua organização.",
   },
   {
     icon: Zap,
-    title: "Automação Inteligente",
+    title: "Conteúdos Interativos",
     description:
-      "Automatizamos processos repetitivos para que a sua equipa se foque no que realmente importa: fazer crescer o negócio.",
+      "Produzimos conteúdos multimédia envolventes — vídeo, gamificação e storytelling — que maximizam a retenção de conhecimento.",
   },
   {
     icon: TrendingUp,
-    title: "Estratégia de Crescimento",
+    title: "Estratégia Pedagógica",
     description:
-      "Desenvolvemos estratégias digitais baseadas em dados para atrair clientes e aumentar a rentabilidade.",
+      "Desenhamos percursos de aprendizagem baseados em dados e IA, alinhados com os objetivos de crescimento da sua organização.",
   },
 ];
 
@@ -31,10 +31,10 @@ const WhatWeDo = () => {
         <div className={`text-center mb-16 transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             Três pilares para o seu{" "}
-            <span className="text-gradient">sucesso digital</span>
+            <span className="text-gradient">sucesso formativo</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Combinamos tecnologia, design e estratégia para entregar resultados concretos ao seu negócio.
+            Combinamos tecnologia, pedagogia e estratégia para entregar experiências de aprendizagem transformadoras.
           </p>
         </div>
 

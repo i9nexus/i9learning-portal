@@ -12,7 +12,7 @@ const Footer = () => {
             <div className="w-7 h-7 rounded-md bg-gradient-to-br from-[hsl(190,95%,50%)] to-[hsl(210,90%,55%)] flex items-center justify-center">
               <span className="font-display text-sm font-bold tracking-tight text-background leading-none">i9</span>
             </div>
-            <span className="font-display text-sm font-bold text-foreground">Nexus</span>
+            <span className="font-display text-sm font-bold text-foreground">Learning</span>
           </div>
           <span className="text-muted-foreground text-xs sm:text-sm text-center">
             © {currentYear} Todos os direitos reservados.
@@ -41,11 +41,11 @@ const Footer = () => {
 
           <div className="flex items-center gap-3">
             <a
-              href="https://www.linkedin.com/company/i9nexus"
+              href="https://www.linkedin.com/company/i9learning"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
-              aria-label="LinkedIn da i9 Nexus"
+              aria-label="LinkedIn da i9 Learning"
             >
               <Linkedin size={18} />
             </a>
@@ -54,7 +54,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
-              aria-label="Contactar i9 Nexus via WhatsApp"
+              aria-label="Contactar i9 Learning via WhatsApp"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

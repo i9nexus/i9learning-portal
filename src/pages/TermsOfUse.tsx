@@ -15,17 +15,17 @@ const TermsOfUse = () => {
           <section className="space-y-6 text-muted-foreground leading-relaxed">
             <div>
               <h2 className="font-display text-xl font-semibold text-foreground mb-3">1. Identificação</h2>
-              <p>O presente website é operado pela i9 Nexus, um portal de soluções tecnológicas com base em Coimbra, Portugal. Ao aceder e utilizar este website, aceita os presentes Termos de Utilização.</p>
+              <p>O presente website é operado pela i9 Learning, um portal de soluções de formação online (eLearning) com base em Coimbra, Portugal. Ao aceder e utilizar este website, aceita os presentes Termos de Utilização.</p>
             </div>
 
             <div>
               <h2 className="font-display text-xl font-semibold text-foreground mb-3">2. Serviços</h2>
-              <p>A i9 Nexus presta serviços de desenvolvimento de software, criação de websites, automação de processos, soluções com inteligência artificial, integrações entre sistemas e consultoria tecnológica. Os detalhes específicos de cada serviço são acordados individualmente com cada cliente.</p>
+              <p>A i9 Learning presta serviços de implementação de plataformas eLearning, desenvolvimento e produção de conteúdos formativos, consultoria pedagógica, suporte e manutenção, soluções de inteligência artificial e integração de recursos avançados. Os detalhes específicos de cada serviço são acordados individualmente com cada cliente.</p>
             </div>
 
             <div>
               <h2 className="font-display text-xl font-semibold text-foreground mb-3">3. Propriedade Intelectual</h2>
-              <p>Todo o conteúdo presente neste website, incluindo textos, imagens, logótipos, design e código-fonte, é da autoria da i9 Nexus e está protegido pela legislação portuguesa e europeia de propriedade intelectual. É proibida a reprodução, distribuição ou modificação sem autorização prévia e escrita.</p>
+              <p>Todo o conteúdo presente neste website, incluindo textos, imagens, logótipos, design e código-fonte, é da autoria da i9 Learning e está protegido pela legislação portuguesa e europeia de propriedade intelectual. É proibida a reprodução, distribuição ou modificação sem autorização prévia e escrita.</p>
             </div>
 
             <div>
@@ -41,12 +41,12 @@ const TermsOfUse = () => {
 
             <div>
               <h2 className="font-display text-xl font-semibold text-foreground mb-3">5. Limitação de Responsabilidade</h2>
-              <p>A i9 Nexus esforça-se por manter as informações no website atualizadas e corretas, mas não garante a sua exatidão absoluta. Não nos responsabilizamos por danos diretos ou indiretos resultantes da utilização deste website.</p>
+              <p>A i9 Learning esforça-se por manter as informações no website atualizadas e corretas, mas não garante a sua exatidão absoluta. Não nos responsabilizamos por danos diretos ou indiretos resultantes da utilização deste website.</p>
             </div>
 
             <div>
               <h2 className="font-display text-xl font-semibold text-foreground mb-3">6. Links Externos</h2>
-              <p>Este website pode conter links para websites de terceiros. A i9 Nexus não controla nem se responsabiliza pelo conteúdo, políticas de privacidade ou práticas desses websites.</p>
+              <p>Este website pode conter links para websites de terceiros. A i9 Learning não controla nem se responsabiliza pelo conteúdo, políticas de privacidade ou práticas desses websites.</p>
             </div>
 
             <div>
@@ -61,12 +61,12 @@ const TermsOfUse = () => {
 
             <div>
               <h2 className="font-display text-xl font-semibold text-foreground mb-3">9. Alterações</h2>
-              <p>A i9 Nexus reserva-se o direito de alterar estes Termos de Utilização a qualquer momento. As alterações entram em vigor após a sua publicação nesta página.</p>
+              <p>A i9 Learning reserva-se o direito de alterar estes Termos de Utilização a qualquer momento. As alterações entram em vigor após a sua publicação nesta página.</p>
             </div>
 
             <div>
               <h2 className="font-display text-xl font-semibold text-foreground mb-3">10. Contacto</h2>
-              <p>Para quaisquer questões relacionadas com estes termos, contacte-nos através de geral.i9nexus@gmail.com ou pelo telemóvel +351 910 213 246.</p>
+              <p>Para quaisquer questões relacionadas com estes termos, contacte-nos através de geral.i9learning@gmail.com ou pelo telemóvel +351 910 213 246.</p>
             </div>
           </section>
         </article>

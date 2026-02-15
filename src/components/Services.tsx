@@ -1,42 +1,42 @@
-import { Monitor, Code, Bot, Brain, Puzzle, Lightbulb } from "lucide-react";
+import { Monitor, Film, Users, Wrench, Brain, Puzzle } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const services = [
   {
     icon: Monitor,
-    title: "Criação e Melhoria de Websites",
+    title: "Implementação de Plataformas eLearning",
     description:
-      "Websites rápidos, modernos e otimizados para conversão. Design responsivo e SEO integrado desde o primeiro dia.",
+      "Criação de ecossistemas LMS (Moodle e outros) modernos, seguros e altamente escaláveis, adaptados à realidade da sua organização.",
   },
   {
-    icon: Code,
-    title: "Desenvolvimento de Software",
+    icon: Film,
+    title: "Desenvolvimento e Produção",
     description:
-      "Aplicações web e mobile à medida, desenvolvidas com as tecnologias mais atuais para escalar com o seu negócio.",
+      "Criação de cursos do zero ou a partir dos seus materiais. Produção de conteúdos multimédia interativos e gamificação de elite.",
   },
   {
-    icon: Bot,
-    title: "Automação de Processos",
+    icon: Users,
+    title: "Consultoria e Formação",
     description:
-      "Integração de ferramentas e fluxos automáticos que eliminam tarefas manuais e reduzem erros operacionais.",
+      "Apoio estratégico no desenho de planos formativos e capacitação especializada para equipas e formadores.",
+  },
+  {
+    icon: Wrench,
+    title: "Suporte e Manutenção",
+    description:
+      "Gestão técnica proativa, monitorização constante e otimização de performance para garantir continuidade total.",
   },
   {
     icon: Brain,
-    title: "Soluções com IA",
+    title: "Soluções de Inteligência Artificial",
     description:
-      "Inteligência artificial aplicada ao seu negócio: chatbots, análise preditiva, processamento de linguagem natural e muito mais.",
+      "Integração de IA para percursos de aprendizagem personalizados, tutoria inteligente e automação de gestão.",
   },
   {
     icon: Puzzle,
-    title: "Integrações entre Sistemas",
+    title: "Integração de Recursos Avançados",
     description:
-      "Conectamos as suas ferramentas e plataformas para criar um ecossistema digital integrado e eficiente.",
-  },
-  {
-    icon: Lightbulb,
-    title: "Consultoria Tecnológica",
-    description:
-      "Diagnóstico digital completo e roadmap personalizado para transformar a tecnologia num motor de crescimento.",
+      "Implementação de SSO (Single Sign-On), eCommerce para venda de cursos, sistemas multilingue e ferramentas externas.",
   },
 ];
 
@@ -52,7 +52,7 @@ const Services = () => {
             <span className="text-gradient">serviços</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Soluções completas para cada etapa da transformação digital do seu negócio.
+            Soluções completas para cada etapa da transformação digital da sua formação.
           </p>
         </div>
 

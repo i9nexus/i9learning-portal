@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://i9nexus.pt/sitemap.xml
+Sitemap: https://i9learning.pt/sitemap.xml

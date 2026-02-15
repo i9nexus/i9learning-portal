@@ -40,13 +40,12 @@ const Contact = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
-          subject: "🚀 NOVO CONTACTO: i9 Nexus Portal",
-          from_name: "i9 Nexus",
-          to: "geral.i9nexus@gmail.com",
+          subject: "🚀 NOVO CONTACTO: i9 Learning Portal",
+          from_name: "i9 Learning",
+          to: "geral.i9learning@gmail.com",
           name: formData.nome,
           email: formData.email,
           message: formData.mensagem,
-          
         }),
       });
 
@@ -72,7 +71,7 @@ const Contact = () => {
         <div className={`text-center mb-16 transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             Pronto para transformar{" "}
-            <span className="text-gradient">o seu negócio?</span>
+            <span className="text-gradient">a sua formação?</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
             Preencha o formulário e entraremos em contacto nas próximas 24 horas.
@@ -83,7 +82,7 @@ const Contact = () => {
           {/* Contact Info */}
           <div className="lg:col-span-2 flex flex-col">
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Estamos aqui para ajudar a elevar o seu negócio. Partilhe o seu desafio connosco e a nossa equipa entrará em contacto para agendar um diagnóstico gratuito e propor a melhor solução tecnológica.
+              Estamos aqui para ajudar a elevar a formação da sua organização. Partilhe o seu desafio connosco e a nossa equipa entrará em contacto para agendar uma demonstração gratuita.
             </p>
             <div className="space-y-6">
             <div className="glass-card rounded-xl p-6">
@@ -94,10 +93,10 @@ const Contact = () => {
                 <div>
                   <h3 className="font-display font-semibold mb-1">Email</h3>
                   <a
-                    href="mailto:geral.i9nexus@gmail.com"
+                    href="mailto:geral.i9learning@gmail.com"
                     className="text-muted-foreground text-sm hover:text-primary transition-colors"
                   >
-                    geral.i9nexus@gmail.com
+                    geral.i9learning@gmail.com
                   </a>
                 </div>
               </div>

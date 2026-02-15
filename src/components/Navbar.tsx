@@ -11,7 +11,7 @@ const navLinks = [
   { label: "Sobre", href: "#o-que-fazemos" },
   { label: "Serviços", href: "#servicos" },
   { label: "Metodologia", href: "#como-trabalhamos" },
-  { label: "Soluções", href: "#solucoes" },
+  { label: "Mercados", href: "#solucoes" },
   { label: "Impacto", href: "#impacto" },
   { label: "Benefícios", href: "#beneficios" },
   { label: "Contactos", href: "#contacto" },
@@ -33,7 +33,7 @@ const Navbar = () => {
       setTimeout(() => {
         const el = document.querySelector(href);
         el?.scrollIntoView({ behavior: "smooth" });
-      }, 300); // wait for sheet close animation
+      }, 300);
     }
   };
 
@@ -46,17 +46,17 @@ const Navbar = () => {
       }`}
     >
       <div className="container-narrow mx-auto flex items-center justify-between py-4 px-4 md:px-8">
-        {/* Logo - scales with navbar */}
+        {/* Logo */}
         <a href="/" className="flex items-center gap-3 flex-shrink-0">
           <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[hsl(190,95%,50%)] to-[hsl(210,90%,55%)] flex items-center justify-center shadow-lg shadow-primary/20">
             <span className="font-display text-[18px] font-bold tracking-tight text-background leading-none">i9</span>
           </div>
           <span className="font-display text-[22px] font-bold tracking-tight text-foreground">
-            Nexus
+            Learning
           </span>
         </a>
 
-        {/* Desktop nav - centered */}
+        {/* Desktop nav */}
         <div className="hidden md:flex flex-1 items-center justify-center gap-6 lg:gap-8">
           {navLinks.map((link) => (
             <button
@@ -69,7 +69,7 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Spacer to keep logo and nav centered */}
+        {/* Spacer */}
         <div className="hidden md:block w-[100px] flex-shrink-0" />
 
         {/* Mobile drawer */}
@@ -93,7 +93,7 @@ const Navbar = () => {
                   <span className="font-display text-[18px] font-bold tracking-tight text-background leading-none">i9</span>
                 </div>
                 <span className="font-display text-[22px] font-bold tracking-tight text-foreground">
-                  Nexus
+                  Learning
                 </span>
               </div>
 
@@ -114,7 +114,7 @@ const Navbar = () => {
               {/* Footer accent */}
               <div className="mt-auto pt-8 border-t border-white/[0.06]">
                 <p className="text-xs text-muted-foreground/60">
-                  © {new Date().getFullYear()} i9 Nexus
+                  © {new Date().getFullYear()} i9 Learning
                 </p>
               </div>
             </div>
