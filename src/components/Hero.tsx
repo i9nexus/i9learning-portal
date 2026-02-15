@@ -48,15 +48,16 @@ const Hero = () => {
           className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-6 opacity-0 animate-fade-up"
           style={{ animationDelay: "0.2s" }}
         >
-          Transformamos a Formação Online em <br className="hidden sm:block" />
-          <span className="text-gradient">Resultados Reais</span>
+          Lideramos a Próxima Geração <br className="hidden sm:block" />
+          de <span className="text-gradient">Formação Online</span>
         </h1>
 
         <p
           className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 opacity-0 animate-fade-up"
           style={{ animationDelay: "0.35s" }}
         >
-          Desenvolvemos soluções de eLearning inovadoras que elevam o desempenho das pessoas e das organizações.
+          Fundimos tecnologia de vanguarda com pedagogia interativa para criar experiências de aprendizagem que
+          transformam organizações.
         </p>
 
         <div
@@ -67,7 +68,7 @@ const Hero = () => {
             onClick={handleCTA}
             className="w-full sm:w-auto bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] text-primary-foreground px-8 py-3.5 rounded-lg font-semibold text-base hover:opacity-90 transition-opacity flex items-center justify-center gap-2 group"
           >
-            Solicitar Demonstração
+            Falar com Especialista
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </button>
           <button
