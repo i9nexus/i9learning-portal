@@ -49,7 +49,7 @@ const Hero = () => {
           style={{ animationDelay: "0.2s" }}
         >
           Transformamos a Formação Online em <br className="hidden sm:block" />
-          de <span className="text-gradient">Resultados Reais</span>
+          <span className="text-gradient">Resultados Reais</span>
         </h1>
 
         <p
