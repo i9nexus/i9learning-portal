@@ -15,8 +15,8 @@ const PrivacyPolicy = () => {
           <section className="space-y-6 text-muted-foreground leading-relaxed">
             <div>
               <h2 className="font-display text-xl font-semibold text-foreground mb-3">1. Responsável pelo Tratamento</h2>
-              <p>A i9 Nexus é um portal de soluções tecnológicas com base em Coimbra, Portugal, responsável pelo tratamento dos dados pessoais recolhidos através deste website.</p>
-              <p>Email de contacto: geral.i9nexus@gmail.com</p>
+              <p>A i9 Learning é um portal de soluções de formação online (eLearning) com base em Coimbra, Portugal, responsável pelo tratamento dos dados pessoais recolhidos através deste website.</p>
+              <p>Email de contacto: geral.i9learning@gmail.com</p>
             </div>
 
             <div>
@@ -33,7 +33,7 @@ const PrivacyPolicy = () => {
               <h2 className="font-display text-xl font-semibold text-foreground mb-3">3. Finalidade do Tratamento</h2>
               <p>Os dados pessoais são tratados para as seguintes finalidades:</p>
               <ul className="list-disc pl-6 space-y-1 mt-2">
-                <li>Responder a pedidos de contacto e orçamentos</li>
+                <li>Responder a pedidos de contacto e demonstrações</li>
                 <li>Comunicar informações sobre os nossos serviços</li>
                 <li>Cumprir obrigações legais aplicáveis</li>
               </ul>
@@ -41,7 +41,7 @@ const PrivacyPolicy = () => {
 
             <div>
               <h2 className="font-display text-xl font-semibold text-foreground mb-3">4. Base Legal</h2>
-              <p>O tratamento de dados baseia-se no consentimento do titular (artigo 6.º, n.º 1, alínea a) do RGPD) e no interesse legítimo da i9 Nexus em responder aos pedidos recebidos.</p>
+              <p>O tratamento de dados baseia-se no consentimento do titular (artigo 6.º, n.º 1, alínea a) do RGPD) e no interesse legítimo da i9 Learning em responder aos pedidos recebidos.</p>
             </div>
 
             <div>
@@ -64,7 +64,7 @@ const PrivacyPolicy = () => {
                 <li>Opor-se ao tratamento dos seus dados</li>
                 <li>Solicitar a portabilidade dos dados</li>
               </ul>
-              <p className="mt-2">Para exercer estes direitos, contacte-nos através de geral.i9nexus@gmail.com.</p>
+              <p className="mt-2">Para exercer estes direitos, contacte-nos através de geral.i9learning@gmail.com.</p>
             </div>
 
             <div>

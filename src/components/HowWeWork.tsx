@@ -1,4 +1,4 @@
-import { Search, Lightbulb, Rocket, RefreshCw } from "lucide-react";
+import { Search, PenTool, Rocket, HeadphonesIcon } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const steps = [
@@ -6,25 +6,25 @@ const steps = [
     number: "01",
     icon: Search,
     title: "Diagnóstico",
-    description: "Analisamos o seu negócio, objetivos e público-alvo para compreender exatamente o que precisa.",
+    description: "Análise detalhada das necessidades formativas, do público-alvo e dos objetivos estratégicos da organização.",
   },
   {
     number: "02",
-    icon: Lightbulb,
-    title: "Solução",
-    description: "Desenhamos a estratégia e a solução ideal com prazos claros e resultados mensuráveis.",
+    icon: PenTool,
+    title: "Desenho",
+    description: "Definição da estratégia pedagógica e arquitetura da solução, com prazos claros e resultados mensuráveis.",
   },
   {
     number: "03",
     icon: Rocket,
-    title: "Implementação",
-    description: "Desenvolvemos e implementamos a solução com acompanhamento contínuo e transparente.",
+    title: "Produção",
+    description: "Desenvolvimento tecnológico e criação de conteúdos com acompanhamento contínuo e transparente.",
   },
   {
     number: "04",
-    icon: RefreshCw,
-    title: "Otimização",
-    description: "Monitorizamos, otimizamos e evoluímos a solução para garantir resultados a longo prazo.",
+    icon: HeadphonesIcon,
+    title: "Lançamento",
+    description: "Entrega da plataforma, formação de administradores e início do suporte contínuo ao seu projeto.",
   },
 ];
 
@@ -40,7 +40,7 @@ const HowWeWork = () => {
             <span className="text-gradient">trabalhamos</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Do primeiro contacto ao resultado final — acompanhamos cada etapa com total transparência.
+            Do primeiro contacto ao lançamento — acompanhamos cada etapa com total transparência.
           </p>
         </div>
 

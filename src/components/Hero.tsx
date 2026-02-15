@@ -39,15 +39,15 @@ const Hero = () => {
 
       <div className="relative z-10 container-narrow mx-auto px-4 sm:px-6 md:px-8 text-center flex-1 flex flex-col items-center justify-center">
         <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-6 opacity-0 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-          Transforme o seu Negócio{" "}
+          Lideramos a Próxima Geração{" "}
           <br className="hidden sm:block" />
-          com{" "}
-          <span className="text-gradient">Tecnologia e IA</span>
+          de{" "}
+          <span className="text-gradient">Formação Online</span>
         </h1>
 
         <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 opacity-0 animate-fade-up" style={{ animationDelay: "0.35s" }}>
-          Desenvolvemos soluções tecnológicas personalizadas que automatizam processos,
-          reduzem custos e aceleram o crescimento do seu negócio.
+          Fundimos tecnologia de vanguarda com pedagogia interativa para criar
+          experiências de aprendizagem que transformam organizações.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto opacity-0 animate-fade-up" style={{ animationDelay: "0.5s" }}>
@@ -55,7 +55,7 @@ const Hero = () => {
             onClick={handleCTA}
             className="w-full sm:w-auto bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] text-primary-foreground px-8 py-3.5 rounded-lg font-semibold text-base hover:opacity-90 transition-opacity flex items-center justify-center gap-2 group"
           >
-            Falar com Especialista
+            Solicitar Demonstração
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </button>
           <button

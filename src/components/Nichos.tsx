@@ -1,60 +1,30 @@
-import { ShoppingCart, HeartPulse, Building2, GraduationCap, Factory, Briefcase, Sparkles, UtensilsCrossed, Store } from "lucide-react";
+import { Briefcase, GraduationCap, HeartPulse, ShoppingCart } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const nichos = [
   {
-    icon: ShoppingCart,
-    title: "E-commerce e Retalho",
+    icon: Briefcase,
+    title: "Corporate & Business",
     description:
-      "Lojas online otimizadas, integrações com gateways de pagamento e automação de inventário para maximizar vendas.",
-  },
-  {
-    icon: HeartPulse,
-    title: "Saúde e Clínicas",
-    description:
-      "Sistemas de agendamento, gestão de pacientes e portais de saúde com foco em segurança e conformidade.",
-  },
-  {
-    icon: Building2,
-    title: "Imobiliárias",
-    description:
-      "Plataformas de listagem de imóveis, CRM integrado e ferramentas de geração de leads para o setor imobiliário.",
+      "Formação de colaboradores e onboarding digital. Programas de desenvolvimento contínuo que aceleram a produtividade e reforçam a cultura organizacional.",
   },
   {
     icon: GraduationCap,
-    title: "Educação",
+    title: "Educação & Academia",
     description:
-      "Plataformas de e-learning, gestão académica e soluções digitais para instituições de ensino modernas.",
+      "Escolas, universidades e centros de formação. Plataformas pedagógicas que potenciam o ensino híbrido e a gestão académica moderna.",
   },
   {
-    icon: Factory,
-    title: "Indústria",
+    icon: HeartPulse,
+    title: "Saúde & Farma",
     description:
-      "Automação industrial, monitorização de processos e dashboards de produção para otimizar a eficiência operacional.",
+      "Atualização técnica e conformidade regulatória. Soluções de eLearning certificadas que garantem a formação contínua de profissionais de saúde.",
   },
   {
-    icon: Briefcase,
-    title: "Serviços Profissionais",
+    icon: ShoppingCart,
+    title: "Retalho & Serviços",
     description:
-      "Sistemas de gestão, portais de clientes e automação de workflows para escritórios e prestadores de serviços.",
-  },
-  {
-    icon: Sparkles,
-    title: "Bem-estar e Estética",
-    description:
-      "Automação de agendamentos e gestão de clientes para cabeleireiros, spas e centros de estética.",
-  },
-  {
-    icon: UtensilsCrossed,
-    title: "Restauração e Hotelaria",
-    description:
-      "Soluções de pedidos digitais, gestão de reservas e otimização de stocks para o setor do turismo.",
-  },
-  {
-    icon: Store,
-    title: "Serviços e Comércio Local",
-    description:
-      "Digitalização de processos para escritórios (advogados/contabilidade) e automação de vendas para o comércio tradicional.",
+      "Treino de equipas de vendas e atendimento ao cliente. Programas interativos que melhoram a experiência do consumidor e os resultados comerciais.",
   },
 ];
 
@@ -66,15 +36,15 @@ const Nichos = () => {
       <div className="container-narrow mx-auto">
         <div className={`text-center mb-16 transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            Soluções para diferentes{" "}
-            <span className="text-gradient">nichos</span>
+            Mercados onde{" "}
+            <span className="text-gradient">atuamos</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Experiência comprovada em diversos setores, com soluções adaptadas às necessidades específicas de cada indústria.
+            Experiência comprovada em setores-chave, com soluções de formação adaptadas às necessidades específicas de cada indústria.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
           {nichos.map((nicho, index) => (
             <div
               key={nicho.title}
