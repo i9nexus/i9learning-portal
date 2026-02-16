@@ -1,7 +1,6 @@
 import { ArrowRight, ChevronDown } from "lucide-react";
 
 const Hero = () => {
-  // Link do WhatsApp corrigido para não ser bloqueado
   const WHATSAPP_URL =
     "https://wa.me/351910213246?text=Olá, gostaria de saber mais sobre os vossos serviços de formação online.";
 
@@ -15,13 +14,13 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20">
-      {/* Background: Mantemos apenas os brilhos grandes (Glows), removemos os pontos brancos pequenos */}
+      {/* Background - Sem as partículas que causavam o ponto branco */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[80vw] max-w-[600px] h-[80vw] max-h-[600px] bg-primary/5 rounded-full blur-[120px] animate-glow-pulse" />
         <div className="absolute bottom-0 left-0 w-[60vw] max-w-[400px] h-[60vw] max-h-[400px] bg-accent/5 rounded-full blur-[100px]" />
       </div>
 
-      {/* Grid pattern - Mantém a essência tecnológica */}
+      {/* Grid pattern overlay */}
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
@@ -69,9 +68,10 @@ const Hero = () => {
           </button>
         </div>
 
+        {/* AJUSTE AQUI: O botão de scroll agora segue exatamente a margem do Nexus original */}
         <button
           onClick={handleScrollDown}
-          className="relative z-10 mt-6 sm:mt-8 border border-muted-foreground/30 rounded-full p-2.5 text-muted-foreground/60 hover:text-foreground hover:border-primary/40 transition-all duration-300 opacity-0 animate-fade-up group"
+          className="relative z-10 mt-12 sm:mt-16 border border-muted-foreground/30 rounded-full p-2.5 text-muted-foreground/60 hover:text-foreground hover:border-primary/40 transition-all duration-300 opacity-0 animate-fade-up group"
           style={{ animationDelay: "0.7s" }}
           aria-label="Scroll para serviços"
         >
@@ -79,7 +79,8 @@ const Hero = () => {
         </button>
       </div>
 
-      <div className="pb-4 sm:pb-8" />
+      {/* AJUSTE AQUI: O espaçador final que define a distância até ao fundo do ecrã */}
+      <div className="pb-12 sm:pb-20" />
     </section>
   );
 };
