@@ -7,6 +7,7 @@ const Footer = () => {
   return (
     <footer className="border-t border-border/50 py-8 px-4 sm:px-6 md:px-8">
       <div className="container-narrow mx-auto flex flex-col items-center gap-6 md:flex-row md:justify-between md:gap-4">
+        {/* LADO ESQUERDO: LOGO E COPYRIGHT */}
         <div className="flex flex-col items-center gap-2 sm:flex-row sm:gap-3">
           <div className="flex items-center gap-2">
             <div className="w-7 h-7 rounded-md bg-gradient-to-br from-[hsl(190,95%,50%)] to-[hsl(210,90%,55%)] flex items-center justify-center">
@@ -19,6 +20,7 @@ const Footer = () => {
           </span>
         </div>
 
+        {/* LADO DIREITO: LINKS E REDES SOCIAIS */}
         <div className="flex flex-col items-center gap-4 sm:flex-row sm:gap-6">
           <div className="flex items-center gap-4 sm:gap-6">
             <Link
@@ -40,8 +42,9 @@ const Footer = () => {
           </div>
 
           <div className="flex items-center gap-3">
+            {/* LINKEDIN CORRIGIDO */}
             <a
-              href="https://www.linkedin.com/company/i9nexus"
+              href="https://www.linkedin.com/company/i9-learning"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
@@ -49,6 +52,8 @@ const Footer = () => {
             >
               <Linkedin size={18} />
             </a>
+
+            {/* WHATSAPP CORRIGIDO */}
             <a
               href="https://wa.me/351910213246"
               target="_blank"
