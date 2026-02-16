@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const WHATSAPP_URL = "https://api.whatsapp.com/send/?phone=351910213246&text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+os+vossos+servi%C3%A7os.&type=phone_number&app_absent=0";
+const WHATSAPP_URL = "https://wa.me/351910213246";
 
 const WhatsAppButton = () => {
   const [visible, setVisible] = useState(false);
