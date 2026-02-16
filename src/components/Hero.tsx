@@ -48,16 +48,16 @@ const Hero = () => {
           className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-6 opacity-0 animate-fade-up"
           style={{ animationDelay: "0.2s" }}
         >
-          Transforme a sua Formação Online <br className="hidden sm:block" />
-          em <span className="text-gradient">Resultados Reais</span>
+          Inove a Formação Online <br className="hidden sm:block" />
+          com <span className="text-gradient">Resultados Reais</span>
         </h1>
 
         <p
           className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 opacity-0 animate-fade-up"
           style={{ animationDelay: "0.35s" }}
         >
-          Desenvolvemos soluções de formação online personalizadas que transformam conteúdos em experiências
-          digitais eficazes e orientadas para resultados.
+          Desenvolvemos soluções de eLearning que transformam conteúdos em experiências
+          digitais eficazes e orientadas para resultados reais.
         </p>
 
         <div

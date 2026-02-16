@@ -18,13 +18,13 @@ const steps = [
     number: "03",
     icon: Rocket,
     title: "Produção",
-    description: "Desenvolvimento tecnológico e criação de conteúdos com acompanhamento contínuo e transparente.",
+    description: "Desenvolvimento tecnológico e criação de conteúdos interativos, com validação técnica e pedagógica em cada fase.",
   },
   {
     number: "04",
     icon: HeadphonesIcon,
-    title: "Entrega e Acompanhamento",
-    description: "Entrega final do projeto, capacitação de equipas/administradores e início do suporte contínuo para garantir a excelência e evolução da solução.",
+    title: "Entrega e Evolução",
+    description: "Entrega final da solução com início do suporte opcional, garantindo acompanhamento e melhorias futuras conforme necessário.",
   },
 ];
 
