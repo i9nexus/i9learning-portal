@@ -2,7 +2,7 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 
 const Hero = () => {
   const handleCTA = () => {
-    window.open("https://wa.me/351910213246?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20vossos%20servi%C3%A7os.", "_blank", "noopener,noreferrer");
+    window.open("https://wa.me/351910213246?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20vossos%20servi%C3%A7os.", "_blank");
   };
 
   const handleServices = () => {
@@ -14,7 +14,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-24 sm:pt-28">
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
       {/* Animated gradient background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[80vw] max-w-[600px] h-[80vw] max-h-[600px] bg-primary/5 rounded-full blur-[120px] animate-glow-pulse" />
