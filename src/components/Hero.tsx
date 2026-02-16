@@ -14,8 +14,8 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-      {/* Animated gradient background - EXATAMENTE IGUAL AO ORIGINAL */}
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20">
+      .{/* Animated gradient background - EXATAMENTE IGUAL AO ORIGINAL */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[80vw] max-w-[600px] h-[80vw] max-h-[600px] bg-primary/5 rounded-full blur-[120px] animate-glow-pulse" />
         <div className="absolute bottom-0 left-0 w-[60vw] max-w-[400px] h-[60vw] max-h-[400px] bg-accent/5 rounded-full blur-[100px]" />
@@ -32,7 +32,6 @@ const Hero = () => {
           style={{ animationDelay: "2s" }}
         />
       </div>
-
       {/* Grid pattern overlay - EXATAMENTE IGUAL AO ORIGINAL */}
       <div
         className="absolute inset-0 opacity-[0.03]"
@@ -42,7 +41,6 @@ const Hero = () => {
           backgroundSize: "60px 60px",
         }}
       />
-
       <div className="relative z-10 container-narrow mx-auto px-4 sm:px-6 md:px-8 text-center flex-1 flex flex-col items-center justify-center">
         {/* TÍTULO COM SIMETRIA DE CARACTERES */}
         <h1
@@ -94,7 +92,6 @@ const Hero = () => {
           <ChevronDown size={18} className="animate-bounce" />
         </button>
       </div>
-
       {/* Minimal bottom spacer */}
       <div className="pb-4 sm:pb-8" />
     </section>
