@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
-const WHATSAPP_URL = "https://wa.me/351910213246";
+const WHATSAPP_NUMBER = "351910213246";
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Olá, gostaria de saber mais sobre os vossos serviços de formação online.`;
 
 const WhatsAppButton = () => {
   const [visible, setVisible] = useState(false);
@@ -19,14 +20,11 @@ const WhatsAppButton = () => {
       className={`fixed bottom-5 right-5 z-40 group flex items-center gap-0 transition-all duration-700 ease-out
         ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6 pointer-events-none"}`}
     >
-      {/* Tooltip label — desktop only */}
       <span className="hidden sm:block max-w-0 overflow-hidden group-hover:max-w-[160px] transition-all duration-300 ease-out whitespace-nowrap bg-foreground/90 text-background text-sm font-medium py-2 px-0 group-hover:px-3 rounded-l-full">
         Fale connosco
       </span>
 
-      {/* Circle */}
       <span className="relative min-w-[48px] min-h-[48px] w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center bg-[#25D366] text-white shadow-lg shadow-[#25D366]/25 hover:shadow-xl hover:shadow-[#25D366]/40 transition-shadow duration-300">
-        {/* WhatsApp SVG icon */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
