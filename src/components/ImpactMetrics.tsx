@@ -23,6 +23,13 @@ const metrics = [
     label: "Escalabilidade",
     description: "Acesso total para equipas globais, em qualquer dispositivo, 24 horas por dia.",
   },
+  {
+    value: 85,
+    prefix: "+",
+    suffix: "%",
+    label: "Taxa de Conclusão",
+    description: "Aumentamos o sucesso formativo através de metodologias que combatem o abandono e aumentam o compromisso.",
+  },
 ];
 
 const AnimatedNumber = ({ value, prefix, suffix, triggerAnimation }: { value: number; prefix: string; suffix: string; triggerAnimation: boolean }) => {
@@ -74,7 +81,7 @@ const ImpactMetrics = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
           {metrics.map((metric, index) => (
             <div
               key={metric.label}

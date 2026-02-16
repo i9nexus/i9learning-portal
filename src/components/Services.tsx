@@ -1,42 +1,42 @@
-import { Monitor, Film, Users, Wrench, Brain, Puzzle } from "lucide-react";
+import { Monitor, BookOpen, Brain, Wrench, Search, GraduationCap } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const services = [
   {
     icon: Monitor,
-    title: "Implementação de Plataformas eLearning",
+    title: "Plataformas de eLearning",
     description:
-      "Criação de ecossistemas LMS (Moodle e outros) modernos, seguros e altamente escaláveis, adaptados à realidade da sua organização.",
+      "Implementamos plataformas eLearning modernas e flexíveis, com desenvolvimento gráfico personalizado, acessíveis em qualquer dispositivo.",
   },
   {
-    icon: Film,
-    title: "Desenvolvimento e Produção",
+    icon: BookOpen,
+    title: "Criação de Cursos Online",
     description:
-      "Criação de cursos do zero ou a partir dos seus materiais. Produção de conteúdos multimédia interativos e gamificação de elite.",
-  },
-  {
-    icon: Users,
-    title: "Consultoria e Formação",
-    description:
-      "Apoio estratégico no desenho de planos formativos e capacitação especializada para equipas e formadores.",
-  },
-  {
-    icon: Wrench,
-    title: "Suporte e Manutenção",
-    description:
-      "Gestão técnica proativa, monitorização constante e otimização de performance para garantir continuidade total.",
+      "Desenvolvemos cursos desde o zero ou a partir dos materiais do cliente, enriquecidos com conteúdos multimédia, atividades interativas e gamificação.",
   },
   {
     icon: Brain,
-    title: "Soluções de Inteligência Artificial",
+    title: "Soluções de IA para eLearning",
     description:
-      "Integração de IA para percursos de aprendizagem personalizados, tutoria inteligente e automação de gestão.",
+      "Integramos Inteligência Artificial em plataformas e cursos para personalizar a experiência de aprendizagem e otimizar a gestão do seu eLearning.",
   },
   {
-    icon: Puzzle,
-    title: "Integração de Recursos Avançados",
+    icon: Wrench,
+    title: "Suporte & Manutenção",
     description:
-      "Implementação de SSO (Single Sign-On), eCommerce para venda de cursos, sistemas multilingue e ferramentas externas.",
+      "Fornecemos suporte técnico a plataformas e cursos eLearning, abrangendo a sua gestão, manutenção e otimização para garantir o melhor serviço.",
+  },
+  {
+    icon: Search,
+    title: "Consultoria Especializada",
+    description:
+      "Prestamos apoio estratégico e auditorias técnicas para otimizar plataformas e conteúdos, garantindo o máximo desempenho e impacto do seu eLearning.",
+  },
+  {
+    icon: GraduationCap,
+    title: "Formação Personalizada",
+    description:
+      "Desenvolvemos programas de formação adaptados às necessidades da sua equipa, disponíveis em videoconferência ou cursos de microlearning.",
   },
 ];
 

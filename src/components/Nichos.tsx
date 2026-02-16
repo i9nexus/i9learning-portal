@@ -1,4 +1,4 @@
-import { Briefcase, GraduationCap, HeartPulse, ShoppingCart } from "lucide-react";
+import { Briefcase, GraduationCap, HeartPulse, ShoppingCart, Award, Landmark, Factory, UserCog, UtensilsCrossed } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const nichos = [
@@ -6,25 +6,55 @@ const nichos = [
     icon: Briefcase,
     title: "Corporate & Business",
     description:
-      "Formação de colaboradores e onboarding digital. Programas de desenvolvimento contínuo que aceleram a produtividade e reforçam a cultura organizacional.",
+      "Academias internas, onboarding digital e conteúdos personalizados. Integração LMS e acompanhamento técnico.",
   },
   {
     icon: GraduationCap,
     title: "Educação & Academia",
     description:
-      "Escolas, universidades e centros de formação. Plataformas pedagógicas que potenciam o ensino híbrido e a gestão académica moderna.",
+      "Plataformas intuitivas e conteúdos interativos. Digitalização de cursos e suporte a modelos híbridos.",
   },
   {
     icon: HeartPulse,
-    title: "Saúde & Farma",
+    title: "Saúde & Indústria Farmacêutica",
     description:
-      "Atualização técnica e conformidade regulatória. Soluções de eLearning certificadas que garantem a formação contínua de profissionais de saúde.",
+      "Módulos rigorosos e interativos. Estruturação pedagógica em ambientes regulados.",
   },
   {
     icon: ShoppingCart,
     title: "Retalho & Serviços",
     description:
-      "Treino de equipas de vendas e atendimento ao cliente. Programas interativos que melhoram a experiência do consumidor e os resultados comerciais.",
+      "Cursos dinâmicos para equipas operacionais com conteúdos adaptados a contextos práticos.",
+  },
+  {
+    icon: Award,
+    title: "Formação Profissional & Consultoria",
+    description:
+      "Conversão de conteúdos presenciais em percursos digitais certificados (SCORM) e apoio técnico.",
+  },
+  {
+    icon: Landmark,
+    title: "Banca & Seguros",
+    description:
+      "Academias digitais para produtos e compliance com avaliação de conhecimentos integrada.",
+  },
+  {
+    icon: Factory,
+    title: "Indústria & Engenharia",
+    description:
+      "Simulações e conteúdos técnicos interativos. Digitalização de manuais com acompanhamento dedicado.",
+  },
+  {
+    icon: UserCog,
+    title: "Serviços Profissionais",
+    description:
+      "Programas formativos especializados com gestão técnica da plataforma.",
+  },
+  {
+    icon: UtensilsCrossed,
+    title: "Restauração & Hotelaria",
+    description:
+      "Digitalização de normas e formação operacional visual, acessível em qualquer dispositivo.",
   },
 ];
 
@@ -44,7 +74,7 @@ const Nichos = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {nichos.map((nicho, index) => (
             <div
               key={nicho.title}

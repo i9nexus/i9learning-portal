@@ -23,8 +23,8 @@ const steps = [
   {
     number: "04",
     icon: HeadphonesIcon,
-    title: "Lançamento",
-    description: "Entrega da plataforma, formação de administradores e início do suporte contínuo ao seu projeto.",
+    title: "Entrega e Acompanhamento",
+    description: "Entrega final do projeto, capacitação de equipas/administradores e início do suporte contínuo para garantir a excelência e evolução da solução.",
   },
 ];
 
