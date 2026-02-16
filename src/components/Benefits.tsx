@@ -1,4 +1,4 @@
-import { Smartphone, Sparkles, BarChart3, Lightbulb } from "lucide-react";
+import { Smartphone, Sparkles, BarChart3, Lightbulb, Award, Globe } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const benefits = [
@@ -9,7 +9,7 @@ const benefits = [
   },
   {
     icon: Sparkles,
-    title: "Engajamento Superior",
+    title: "Envolvimento de Alto Impacto",
     description: "Conteúdos que cativam através de interatividade, storytelling e gamificação, maximizando a motivação dos formandos.",
   },
   {
@@ -21,6 +21,16 @@ const benefits = [
     icon: Lightbulb,
     title: "Inovação Contínua",
     description: "Acesso permanente às últimas tendências de EdTech e Inteligência Artificial aplicada à aprendizagem.",
+  },
+  {
+    icon: Award,
+    title: "Certificação Automatizada",
+    description: "Emissão simplificada de certificados e conformidade total com normas regulatórias.",
+  },
+  {
+    icon: Globe,
+    title: "Acessibilidade Universal",
+    description: "Soluções inclusivas preparadas para qualquer utilizador, garantindo equidade na aprendizagem.",
   },
 ];
 
@@ -40,7 +50,7 @@ const Benefits = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {benefits.map((benefit, index) => (
             <div
               key={benefit.title}
