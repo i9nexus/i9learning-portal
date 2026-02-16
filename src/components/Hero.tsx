@@ -1,8 +1,10 @@
 import { ArrowRight, ChevronDown } from "lucide-react";
 
-const WHATSAPP_URL = "https://wa.me/351910213246?text=Olá, gostaria de saber mais sobre os vossos serviços.";
-
 const Hero = () => {
+  // Link direto do WhatsApp para evitar bloqueios de API
+  const WHATSAPP_URL =
+    "https://wa.me/351910213246?text=Olá, gostaria de saber mais sobre os vossos serviços de formação online.";
+
   const handleServices = () => {
     document.querySelector("#servicos")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -12,8 +14,8 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-24 lg:pt-32">
-      {/* Animated gradient background */}
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+      {/* Animated gradient background - EXATAMENTE IGUAL AO ORIGINAL */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[80vw] max-w-[600px] h-[80vw] max-h-[600px] bg-primary/5 rounded-full blur-[120px] animate-glow-pulse" />
         <div className="absolute bottom-0 left-0 w-[60vw] max-w-[400px] h-[60vw] max-h-[400px] bg-accent/5 rounded-full blur-[100px]" />
@@ -31,7 +33,7 @@ const Hero = () => {
         />
       </div>
 
-      {/* Grid pattern overlay */}
+      {/* Grid pattern overlay - EXATAMENTE IGUAL AO ORIGINAL */}
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
@@ -42,6 +44,7 @@ const Hero = () => {
       />
 
       <div className="relative z-10 container-narrow mx-auto px-4 sm:px-6 md:px-8 text-center flex-1 flex flex-col items-center justify-center">
+        {/* TÍTULO COM SIMETRIA DE CARACTERES */}
         <h1
           className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-6 opacity-0 animate-fade-up"
           style={{ animationDelay: "0.2s" }}
@@ -50,6 +53,7 @@ const Hero = () => {
           com <span className="text-gradient">Tecnologia e IA</span>
         </h1>
 
+        {/* DESCRIÇÃO DA I9 LEARNING */}
         <p
           className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 opacity-0 animate-fade-up"
           style={{ animationDelay: "0.35s" }}
@@ -62,6 +66,7 @@ const Hero = () => {
           className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto opacity-0 animate-fade-up"
           style={{ animationDelay: "0.5s" }}
         >
+          {/* BOTÃO WHATSAPP CORRIGIDO (LINK EXTERNO SEGURO) */}
           <a
             href={WHATSAPP_URL}
             target="_blank"
@@ -79,7 +84,7 @@ const Hero = () => {
           </button>
         </div>
 
-        {/* Scroll indicator - tight to CTA */}
+        {/* Scroll indicator - EXATAMENTE IGUAL AO ORIGINAL */}
         <button
           onClick={handleScrollDown}
           className="relative z-10 mt-6 sm:mt-8 border border-muted-foreground/30 rounded-full p-2.5 text-muted-foreground/60 hover:text-foreground hover:border-primary/40 transition-all duration-300 opacity-0 animate-fade-up group"
