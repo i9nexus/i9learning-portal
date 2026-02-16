@@ -1,12 +1,8 @@
 import { ArrowRight, ChevronDown } from "lucide-react";
 
 const Hero = () => {
-  // Função para abrir o WhatsApp sem ser bloqueado pelo Lovable
-  const handleWhatsAppClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const url =
-      "https://wa.me/351910213246?text=Olá, gostaria de saber mais sobre os vossos serviços de formação online.";
-    window.open(url, "_blank", "noopener,noreferrer");
+  const handleContactScroll = () => {
+    document.querySelector("#contacto")?.scrollIntoView({ behavior: "smooth" });
   };
 
   const handleServices = () => {
@@ -56,9 +52,8 @@ const Hero = () => {
           className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto opacity-0 animate-fade-up"
           style={{ animationDelay: "0.5s" }}
         >
-          {/* Botão WhatsApp com função de clique para evitar o bloqueio */}
           <button
-            onClick={handleWhatsAppClick}
+            onClick={handleContactScroll}
             className="w-full sm:w-auto bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] text-primary-foreground px-8 py-3.5 rounded-lg font-semibold text-base hover:opacity-90 transition-opacity flex items-center justify-center gap-2 group"
           >
             Falar com Especialista
