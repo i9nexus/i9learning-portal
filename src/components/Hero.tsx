@@ -1,6 +1,6 @@
 import { ArrowRight, ChevronDown } from "lucide-react";
 
-const WHATSAPP_URL = "https://api.whatsapp.com/send/?phone=351910213246&text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+os+vossos+servi%C3%A7os.&type=phone_number&app_absent=0";
+const WHATSAPP_URL = "https://wa.me/351910213246";
 
 const Hero = () => {
   const handleServices = () => {
@@ -12,7 +12,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-32 lg:pt-48">
+    <section className="relative min-h-screen flex flex-col pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
       {/* Animated gradient background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[80vw] max-w-[600px] h-[80vw] max-h-[600px] bg-primary/5 rounded-full blur-[120px] animate-glow-pulse" />
@@ -41,21 +41,19 @@ const Hero = () => {
         }}
       />
 
-      <div className="relative z-10 container-narrow mx-auto px-4 sm:px-6 md:px-8 text-center flex-1 flex flex-col items-center justify-center">
+      <div className="relative z-10 container-narrow mx-auto px-4 text-center flex-1 flex flex-col items-center justify-center">
         <h1
-          className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-6 opacity-0 animate-fade-up"
+          className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-8 max-w-4xl mx-auto opacity-0 animate-fade-up"
           style={{ animationDelay: "0.2s" }}
         >
-          Transforme a sua Formação <br className="hidden sm:block" />
-          com <span className="text-gradient">Tecnologia e IA</span>
+          Transforme a sua Formação com <span className="text-gradient">Tecnologia e IA</span>
         </h1>
 
         <p
-          className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 opacity-0 animate-fade-up"
+          className="text-lg md:text-xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed opacity-0 animate-fade-up"
           style={{ animationDelay: "0.35s" }}
         >
-          Desenvolvemos soluções de formação online personalizadas que transformam
-          conteúdos em experiências digitais eficazes e orientadas para resultados.
+          Desenvolvemos soluções de eLearning que utilizam IA e tecnologia de ponta para criar experiências de formação inovadoras e eficazes.
         </p>
 
         <div
