@@ -50,7 +50,7 @@ const Footer = () => {
               <Linkedin size={18} />
             </a>
             <a
-              href="https://wa.me/351910213246"
+              href="https://api.whatsapp.com/send/?phone=351910213246&text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+os+vossos+servi%C3%A7os.&type=phone_number&app_absent=0"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
