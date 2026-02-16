@@ -1,10 +1,8 @@
 import { ArrowRight, ChevronDown } from "lucide-react";
 
-const Hero = () => {
-  const handleCTA = () => {
-    window.open("https://wa.me/351910213246?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20vossos%20servi%C3%A7os.", "_blank");
-  };
+const WHATSAPP_URL = "https://wa.me/351910213246";
 
+const Hero = () => {
   const handleServices = () => {
     document.querySelector("#servicos")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -14,7 +12,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-32 lg:pt-48">
       {/* Animated gradient background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[80vw] max-w-[600px] h-[80vw] max-h-[600px] bg-primary/5 rounded-full blur-[120px] animate-glow-pulse" />
@@ -56,21 +54,23 @@ const Hero = () => {
           className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 opacity-0 animate-fade-up"
           style={{ animationDelay: "0.35s" }}
         >
-          Desenvolvemos soluções de eLearning que transformam conteúdos em experiências
-          digitais eficazes e orientadas para resultados reais.
+          Desenvolvemos soluções de formação online personalizadas que transformam
+          conteúdos em experiências digitais eficazes e orientadas para resultados.
         </p>
 
         <div
           className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto opacity-0 animate-fade-up"
           style={{ animationDelay: "0.5s" }}
         >
-          <button
-            onClick={handleCTA}
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full sm:w-auto bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] text-primary-foreground px-8 py-3.5 rounded-lg font-semibold text-base hover:opacity-90 transition-opacity flex items-center justify-center gap-2 group"
           >
             Falar com Especialista
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-          </button>
+          </a>
           <button
             onClick={handleServices}
             className="w-full sm:w-auto border border-border/50 text-foreground hover:bg-secondary/50 transition-colors px-8 py-3.5 rounded-lg text-base font-semibold"
