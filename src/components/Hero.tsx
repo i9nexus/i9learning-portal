@@ -5,9 +5,6 @@ const Hero = () => {
     document.querySelector("#servicos")?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const handleScrollToContact = () => {
-    document.querySelector("#contacto")?.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20">
@@ -52,13 +49,15 @@ const Hero = () => {
           style={{ animationDelay: "0.5s" }}
         >
           {/* BOTÃO CONTACTOS */}
-          <button
-            onClick={handleScrollToContact}
+          <a
+            href="https://wa.me/351910213246?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20vossos%20servi%C3%A7os%20de%20forma%C3%A7%C3%A3o%20online."
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full sm:w-auto bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] text-primary-foreground px-8 py-3.5 rounded-lg font-semibold text-base hover:opacity-90 transition-opacity flex items-center justify-center gap-2 group"
           >
             Falar com Especialista
             <ArrowRight size={18} width={18} height={18} className="group-hover:translate-x-1 transition-transform" />
-          </button>
+          </a>
 
           <button
             onClick={handleScrollToServices}
