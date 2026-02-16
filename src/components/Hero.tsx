@@ -1,15 +1,12 @@
 import { ArrowRight, ChevronDown } from "lucide-react";
 
 const Hero = () => {
-  const WHATSAPP_URL =
-    "https://wa.me/351910213246?text=Olá, gostaria de saber mais sobre os vossos serviços de formação online.";
-
-  const handleServices = () => {
-    document.querySelector("#servicos")?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const handleScrollDown = () => {
-    document.querySelector("#servicos")?.scrollIntoView({ behavior: "smooth" });
+  const handleWhatsAppClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    // Este método é mais agressivo para contornar bloqueios de frames
+    const url =
+      "https://wa.me/351910213246?text=Olá, gostaria de saber mais sobre os vossos serviços de formação online.";
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   return (
