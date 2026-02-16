@@ -1,38 +1,98 @@
-import { Button } from "./ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
+
+const WHATSAPP_URL =
+  "https://api.whatsapp.com/send/?phone=351910213246&text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+os+vossos+servi%C3%A7os.&type=phone_number&app_absent=0";
 
 const Hero = () => {
+  const handleServices = () => {
+    document.querySelector("#servicos")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleScrollDown = () => {
+    document.querySelector("#servicos")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <section className="relative min-h-screen flex flex-col pt-24 pb-20 md:pt-36 md:pb-32 overflow-hidden bg-background">
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-32 lg:pt-48">
+      {/* Animated gradient background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[80vw] max-w-[600px] h-[80vw] max-h-[600px] bg-primary/5 rounded-full blur-[120px] animate-glow-pulse" />
+        <div className="absolute bottom-0 left-0 w-[60vw] max-w-[400px] h-[60vw] max-h-[400px] bg-accent/5 rounded-full blur-[100px]" />
+        {/* Floating orbs */}
+        <div className="absolute top-1/3 left-1/4 w-2 h-2 rounded-full bg-primary/20 animate-float-slow" />
+        <div className="absolute top-2/3 right-1/4 w-1.5 h-1.5 rounded-full bg-accent/20 animate-float-medium" />
+        <div className="absolute top-1/2 left-3/4 w-1 h-1 rounded-full bg-primary/15 animate-float-fast" />
+        <div
+          className="absolute bottom-1/3 left-1/3 w-2.5 h-2.5 rounded-full bg-primary/10 animate-float-medium"
+          style={{ animationDelay: "1s" }}
+        />
+        <div
+          className="absolute top-1/4 right-1/3 w-1.5 h-1.5 rounded-full bg-accent/15 animate-float-slow"
+          style={{ animationDelay: "2s" }}
+        />
+      </div>
+
+      {/* Grid pattern overlay */}
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage:
+            "linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
+        }}
+      />
+
       <div className="relative z-10 container-narrow mx-auto px-4 sm:px-6 md:px-8 text-center flex-1 flex flex-col items-center justify-center">
-        <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-6 opacity-0 animate-fade-up max-w-4xl mx-auto"
-            style={{ animationDelay: "0.2s" }}>
-          Transforme a sua Formação com <br className="hidden md:block" />
-          <span className="text-gradient">Tecnologia e IA</span>
+        <h1
+          className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-6 opacity-0 animate-fade-up"
+          style={{ animationDelay: "0.2s" }}
+        >
+          Transforme a sua Negócio <br className="hidden sm:block" />
+          com <span className="text-gradient">Tecnologia e IA</span>
         </h1>
-        
-        <p className="text-lg md:text-xl text-muted-foreground mb-10 opacity-0 animate-fade-up max-w-3xl mx-auto leading-relaxed"
-           style={{ animationDelay: "0.4s" }}>
-          Desenvolvemos soluções de formação online personalizadas que transformam conteúdos em experiências digitais eficazes e orientadas para resultados.
+
+        <p
+          className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 opacity-0 animate-fade-up"
+          style={{ animationDelay: "0.35s" }}
+        >
+          Desenvolvemos soluções de formação online personalizadas que transformam conteúdos em experiências digitais
+          eficazes e orientadas para resultados.
         </p>
-        
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 animate-fade-up"
-             style={{ animationDelay: "0.6s" }}>
-          <Button size="lg" className="rounded-full px-8 text-base group">
-            Solicitar Demonstração
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Button>
-          <Button variant="outline" size="lg" className="rounded-full px-8 text-base">
-            Ver Soluções
-          </Button>
+
+        <div
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto opacity-0 animate-fade-up"
+          style={{ animationDelay: "0.5s" }}
+        >
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] text-primary-foreground px-8 py-3.5 rounded-lg font-semibold text-base hover:opacity-90 transition-opacity flex items-center justify-center gap-2 group"
+          >
+            Falar com Especialista
+            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+          </a>
+          <button
+            onClick={handleServices}
+            className="w-full sm:w-auto border border-border/50 text-foreground hover:bg-secondary/50 transition-colors px-8 py-3.5 rounded-lg text-base font-semibold"
+          >
+            Conheça os Nossos Serviços
+          </button>
         </div>
+
+        {/* Scroll indicator - tight to CTA */}
+        <button
+          onClick={handleScrollDown}
+          className="relative z-10 mt-6 sm:mt-8 border border-muted-foreground/30 rounded-full p-2.5 text-muted-foreground/60 hover:text-foreground hover:border-primary/40 transition-all duration-300 opacity-0 animate-fade-up group"
+          style={{ animationDelay: "0.7s" }}
+          aria-label="Scroll para serviços"
+        >
+          <ChevronDown size={18} className="animate-bounce" />
+        </button>
       </div>
-      
-      {/* Background Decorativo - Mantém a estética original */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] rounded-full bg-primary/5 blur-[120px]" />
-        <div className="absolute -bottom-[10%] -right-[10%] w-[40%] h-[40%] rounded-full bg-primary/10 blur-[120px]" />
-      </div>
+
+      {/* Minimal bottom spacer */}
+      <div className="pb-4 sm:pb-8" />
     </section>
   );
 };
