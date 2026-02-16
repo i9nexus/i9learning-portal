@@ -2,7 +2,7 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 
 const Hero = () => {
   const handleCTA = () => {
-    document.querySelector("#contacto")?.scrollIntoView({ behavior: "smooth" });
+    window.open("https://wa.me/351910213246?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20vossos%20servi%C3%A7os.", "_blank", "noopener,noreferrer");
   };
 
   const handleServices = () => {
@@ -14,7 +14,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-24 sm:pt-28">
       {/* Animated gradient background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[80vw] max-w-[600px] h-[80vw] max-h-[600px] bg-primary/5 rounded-full blur-[120px] animate-glow-pulse" />
@@ -48,8 +48,8 @@ const Hero = () => {
           className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-6 opacity-0 animate-fade-up"
           style={{ animationDelay: "0.2s" }}
         >
-          Inove a Formação Online <br className="hidden sm:block" />
-          com <span className="text-gradient">Resultados Reais</span>
+          Transforme a sua Formação <br className="hidden sm:block" />
+          com <span className="text-gradient">Tecnologia e IA</span>
         </h1>
 
         <p
@@ -68,7 +68,7 @@ const Hero = () => {
             onClick={handleCTA}
             className="w-full sm:w-auto bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] text-primary-foreground px-8 py-3.5 rounded-lg font-semibold text-base hover:opacity-90 transition-opacity flex items-center justify-center gap-2 group"
           >
-            Solicitar Demonstração
+            Falar com Especialista
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </button>
           <button
