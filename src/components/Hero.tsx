@@ -68,7 +68,7 @@ const Hero = () => {
           </button>
         </div>
 
-        {/* VALORES ORIGINAIS DO NEXUS: mt-6 sm:mt-8 */}
+        {/* Botão de Scroll - Posição ajustada */}
         <button
           onClick={handleScrollDown}
           className="relative z-10 mt-8 sm:mt-10 border border-muted-foreground/30 rounded-full p-2.5 text-muted-foreground/60 hover:text-foreground hover:border-primary/40 transition-all duration-300 opacity-0 animate-fade-up group"
@@ -79,8 +79,8 @@ const Hero = () => {
         </button>
       </div>
 
-      {/* VALORES ORIGINAIS DO NEXUS: pb-4 sm:pb-8 */}
-      <div className="pb-6 sm:pb-10" />
+      {/* ESPAÇADOR DE FUNDO FORÇADO - Isto empurra o botão de scroll para cima */}
+      <div className="h-16 sm:h-24 md:h-32 w-full" />
     </section>
   );
 };
