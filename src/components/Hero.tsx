@@ -43,8 +43,8 @@ const Hero = () => {
           className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 opacity-0 animate-fade-up"
           style={{ animationDelay: "0.35s" }}
         >
-          Desenvolvemos soluções de formação online personalizadas que transformam conteúdos em experiências digitais
-          eficazes e orientadas para resultados.
+          Desenvolvemos soluções de formação online que transformam conteúdos em experiências eficazes e orientadas para
+          resultados.
         </p>
 
         <div
