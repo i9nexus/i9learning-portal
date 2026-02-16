@@ -17,18 +17,18 @@ const metrics = [
     description: "Redução drástica nos custos de formação em comparação com o modelo presencial.",
   },
   {
-    value: 100,
-    prefix: "",
-    suffix: "%",
-    label: "Escalabilidade",
-    description: "Acesso total para equipas globais, em qualquer dispositivo, 24 horas por dia.",
-  },
-  {
     value: 85,
     prefix: "+",
     suffix: "%",
     label: "Taxa de Conclusão",
     description: "Aumentamos o sucesso formativo através de metodologias que combatem o abandono e aumentam o compromisso.",
+  },
+  {
+    value: 100,
+    prefix: "",
+    suffix: "%",
+    label: "Escalabilidade",
+    description: "Acesso total para equipas globais, em qualquer dispositivo, 24 horas por dia.",
   },
 ];
 
