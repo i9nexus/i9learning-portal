@@ -1,7 +1,6 @@
 import { ArrowRight, ChevronDown } from "lucide-react";
 
-const WHATSAPP_URL =
-  "https://api.whatsapp.com/send/?phone=351910213246&text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+os+vossos+servi%C3%A7os.&type=phone_number&app_absent=0";
+const WHATSAPP_URL = "https://wa.me/351910213246?text=Olá, gostaria de saber mais sobre os vossos serviços.";
 
 const Hero = () => {
   const handleServices = () => {
@@ -13,7 +12,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-32 lg:pt-48">
+    <section className="relative min-h-screen flex flex-col items-center justify-start overflow-hidden pt-44 lg:pt-64 pb-20">
       {/* Animated gradient background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[80vw] max-w-[600px] h-[80vw] max-h-[600px] bg-primary/5 rounded-full blur-[120px] animate-glow-pulse" />
@@ -47,7 +46,7 @@ const Hero = () => {
           className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-6 opacity-0 animate-fade-up"
           style={{ animationDelay: "0.2s" }}
         >
-          Transforme a sua Negócio <br className="hidden sm:block" />
+          Transforme a sua Formação <br className="hidden sm:block" />
           com <span className="text-gradient">Tecnologia e IA</span>
         </h1>
 
