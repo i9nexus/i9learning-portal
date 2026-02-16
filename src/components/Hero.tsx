@@ -1,12 +1,20 @@
 import { ArrowRight, ChevronDown } from "lucide-react";
 
 const Hero = () => {
+  // Função para abrir o WhatsApp sem ser bloqueado pelo Lovable
   const handleWhatsAppClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    // Este método é mais agressivo para contornar bloqueios de frames
     const url =
       "https://wa.me/351910213246?text=Olá, gostaria de saber mais sobre os vossos serviços de formação online.";
     window.open(url, "_blank", "noopener,noreferrer");
+  };
+
+  const handleServices = () => {
+    document.querySelector("#servicos")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleScrollDown = () => {
+    document.querySelector("#servicos")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -48,15 +56,14 @@ const Hero = () => {
           className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto opacity-0 animate-fade-up"
           style={{ animationDelay: "0.5s" }}
         >
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          {/* Botão WhatsApp com função de clique para evitar o bloqueio */}
+          <button
+            onClick={handleWhatsAppClick}
             className="w-full sm:w-auto bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] text-primary-foreground px-8 py-3.5 rounded-lg font-semibold text-base hover:opacity-90 transition-opacity flex items-center justify-center gap-2 group"
           >
             Falar com Especialista
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-          </a>
+          </button>
           <button
             onClick={handleServices}
             className="w-full sm:w-auto border border-border/50 text-foreground hover:bg-secondary/50 transition-colors px-8 py-3.5 rounded-lg text-base font-semibold"
@@ -65,7 +72,6 @@ const Hero = () => {
           </button>
         </div>
 
-        {/* Botão de Scroll - Posição ajustada */}
         <button
           onClick={handleScrollDown}
           className="relative z-10 mt-8 sm:mt-10 border border-muted-foreground/30 rounded-full p-2.5 text-muted-foreground/60 hover:text-foreground hover:border-primary/40 transition-all duration-300 opacity-0 animate-fade-up group"
@@ -76,7 +82,7 @@ const Hero = () => {
         </button>
       </div>
 
-      {/* ESPAÇADOR DE FUNDO FORÇADO - Isto empurra o botão de scroll para cima */}
+      {/* Espaçador de fundo para equilibrar o layout como no Nexus */}
       <div className="h-16 sm:h-24 md:h-32 w-full" />
     </section>
   );
