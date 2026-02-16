@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex flex-col pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-background">
+    <section className="relative min-h-screen flex flex-col pt-24 pb-20 md:pt-36 md:pb-32 overflow-hidden bg-background">
       <div className="relative z-10 container-narrow mx-auto px-4 sm:px-6 md:px-8 text-center flex-1 flex flex-col items-center justify-center">
         <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-6 opacity-0 animate-fade-up max-w-4xl mx-auto"
             style={{ animationDelay: "0.2s" }}>
