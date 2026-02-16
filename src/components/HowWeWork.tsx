@@ -47,14 +47,16 @@ const HowWeWork = () => {
         <div className="relative">
           {/* Desktop: horizontal dashed line behind cards */}
           <div
-            className={`hidden lg:block absolute top-[140px] left-[12%] right-[12%] h-px border-t border-dashed border-primary/15 z-0 transition-all duration-1000 ease-out ${isVisible ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"}`}
+            className={`hidden lg:block absolute top-[140px] left-[12%] right-[12%] h-px border-t border-dashed border-primary/15 z-0 pointer-events-none transition-all duration-1000 ease-out ${isVisible ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"}`}
             style={{ transitionDelay: isVisible ? "400ms" : "0ms" }}
+            aria-hidden="true"
           />
 
           {/* Mobile/Tablet: vertical dashed line behind cards */}
           <div
-            className={`lg:hidden absolute top-8 bottom-8 left-1/2 -translate-x-px w-px border-l border-dashed border-primary/15 z-0 transition-all duration-1000 ease-out ${isVisible ? "opacity-100 scale-y-100" : "opacity-0 scale-y-0"}`}
+            className={`lg:hidden absolute top-8 bottom-8 left-1/2 -translate-x-px w-px border-l border-dashed border-primary/15 z-0 pointer-events-none transition-all duration-1000 ease-out ${isVisible ? "opacity-100 scale-y-100" : "opacity-0 scale-y-0"}`}
             style={{ transitionDelay: isVisible ? "300ms" : "0ms" }}
+            aria-hidden="true"
           />
 
           <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
