@@ -3,7 +3,7 @@ import { Send, Mail, Phone, MapPin, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
-const WEB3FORMS_KEY = "2e462bc7-82b5-44de-a555-fa1e93239d52";
+const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY;
 
 const Contact = () => {
   const { toast } = useToast();
@@ -68,69 +68,74 @@ const Contact = () => {
   return (
     <section id="contacto" className="section-padding bg-card/30" ref={ref}>
       <div className="container-narrow mx-auto">
-        <div className={`text-center mb-16 transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+        <div
+          className={`text-center mb-16 transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+        >
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            Pronto para transformar{" "}
-            <span className="text-gradient">a sua formação?</span>
+            Pronto para transformar <span className="text-gradient">a sua formação?</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
             Preencha o formulário e entraremos em contacto nas próximas 24 horas.
           </p>
         </div>
 
-        <div className={`grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10 transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`} style={{ transitionDelay: isVisible ? "200ms" : "0ms" }}>
+        <div
+          className={`grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10 transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+          style={{ transitionDelay: isVisible ? "200ms" : "0ms" }}
+        >
           {/* Contact Info */}
           <div className="lg:col-span-2 flex flex-col">
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Estamos aqui para ajudar a elevar a formação da sua organização. Partilhe o seu desafio connosco e a nossa equipa entrará em contacto para agendar uma demonstração gratuita.
+              Estamos aqui para ajudar a elevar a formação da sua organização. Partilhe o seu desafio connosco e a nossa
+              equipa entrará em contacto para agendar uma demonstração gratuita.
             </p>
             <div className="space-y-6">
-            <div className="glass-card rounded-xl p-6">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Mail size={18} className="text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-display font-semibold mb-1">Email</h3>
-                  <a
-                    href="mailto:geral.i9learning@gmail.com"
-                    className="text-muted-foreground text-sm hover:text-primary transition-colors"
-                  >
-                    geral.i9learning@gmail.com
-                  </a>
+              <div className="glass-card rounded-xl p-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Mail size={18} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-display font-semibold mb-1">Email</h3>
+                    <a
+                      href="mailto:geral.i9learning@gmail.com"
+                      className="text-muted-foreground text-sm hover:text-primary transition-colors"
+                    >
+                      geral.i9learning@gmail.com
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="glass-card rounded-xl p-6">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Phone size={18} className="text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-display font-semibold mb-1">Telemóvel</h3>
-                  <a
-                    href="tel:+351910213246"
-                    className="text-muted-foreground text-sm hover:text-primary transition-colors"
-                  >
-                    +351 910 213 246
-                  </a>
+              <div className="glass-card rounded-xl p-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Phone size={18} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-display font-semibold mb-1">Telemóvel</h3>
+                    <a
+                      href="tel:+351910213246"
+                      className="text-muted-foreground text-sm hover:text-primary transition-colors"
+                    >
+                      +351 910 213 246
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="glass-card rounded-xl p-6">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <MapPin size={18} className="text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-display font-semibold mb-1">Localização</h3>
-                  <p className="text-muted-foreground text-sm">Coimbra, Portugal</p>
+              <div className="glass-card rounded-xl p-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <MapPin size={18} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-display font-semibold mb-1">Localização</h3>
+                    <p className="text-muted-foreground text-sm">Coimbra, Portugal</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
           </div>
 
           {/* Form */}
@@ -148,11 +153,7 @@ const Contact = () => {
               </button>
             </div>
           ) : (
-            <form
-              onSubmit={handleSubmit}
-              className="lg:col-span-3 glass-card rounded-xl p-8 space-y-5"
-            >
-
+            <form onSubmit={handleSubmit} className="lg:col-span-3 glass-card rounded-xl p-8 space-y-5">
               <div>
                 <label htmlFor="nome" className="block text-sm font-medium mb-2">
                   Nome
