@@ -170,9 +170,11 @@ const Contact = () => {
                   type="text"
                   id="nome"
                   name="nome"
+                  required
+                  minLength={2}
+                  maxLength={100}
                   value={formData.nome}
                   onChange={handleChange}
-                  maxLength={100}
                   className="w-full bg-secondary/50 border border-border/50 rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all"
                   placeholder="O seu nome"
                 />
@@ -186,9 +188,10 @@ const Contact = () => {
                   type="email"
                   id="email"
                   name="email"
+                  required
+                  maxLength={255}
                   value={formData.email}
                   onChange={handleChange}
-                  maxLength={255}
                   className="w-full bg-secondary/50 border border-border/50 rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all"
                   placeholder="o-seu-email@exemplo.pt"
                 />
@@ -201,10 +204,12 @@ const Contact = () => {
                 <textarea
                   id="mensagem"
                   name="mensagem"
+                  required
+                  minLength={10}
+                  maxLength={1000}
+                  rows={5}
                   value={formData.mensagem}
                   onChange={handleChange}
-                  rows={5}
-                  maxLength={1000}
                   className="w-full bg-secondary/50 border border-border/50 rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all resize-none"
                   placeholder="Descreva o seu projeto ou dúvida..."
                 />
