@@ -3,7 +3,8 @@ import { Send, Mail, Phone, MapPin, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { z } from "zod";
-import { supabase } from "@/integrations/supabase/client";
+
+const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY;
 
 const contactSchema = z.object({
   nome: z.string().trim().min(2, "Nome deve ter pelo menos 2 caracteres").max(100, "Nome deve ter no máximo 100 caracteres"),
@@ -43,12 +44,21 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const { data, error } = await supabase.functions.invoke("contact-form", {
-        body: result.data,
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: "🚀 NOVO CONTACTO: i9 Learning Portal",
+          from_name: "i9 Learning",
+          name: result.data.nome,
+          email: result.data.email,
+          message: result.data.mensagem,
+        }),
       });
 
-      if (error) throw error;
-      if (!data?.success) throw new Error("Erro ao enviar");
+      const data = await res.json();
+      if (!res.ok || !data?.success) throw new Error("Erro ao enviar");
 
       setFormData({ nome: "", email: "", mensagem: "" });
       setIsSuccess(true);
