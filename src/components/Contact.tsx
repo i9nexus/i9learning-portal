@@ -2,8 +2,14 @@ import { useState } from "react";
 import { Send, Mail, Phone, MapPin, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { z } from "zod";
+import { supabase } from "@/integrations/supabase/client";
 
-const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY;
+const contactSchema = z.object({
+  nome: z.string().trim().min(2, "Nome deve ter pelo menos 2 caracteres").max(100, "Nome deve ter no máximo 100 caracteres"),
+  email: z.string().trim().email("Email inválido").max(255, "Email deve ter no máximo 255 caracteres"),
+  mensagem: z.string().trim().min(10, "Mensagem deve ter pelo menos 10 caracteres").max(1000, "Mensagem deve ter no máximo 1000 caracteres"),
+});
 
 const Contact = () => {
   const { toast } = useToast();
@@ -23,10 +29,12 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.nome.trim() || !formData.email.trim() || !formData.mensagem.trim()) {
+    const result = contactSchema.safeParse(formData);
+    if (!result.success) {
+      const firstError = result.error.errors[0];
       toast({
-        title: "Campos obrigatórios",
-        description: "Por favor, preencha todos os campos.",
+        title: "Campos inválidos",
+        description: firstError.message,
         variant: "destructive",
       });
       return;
@@ -35,22 +43,12 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          access_key: WEB3FORMS_KEY,
-          subject: "🚀 NOVO CONTACTO: i9 Learning Portal",
-          from_name: "i9 Learning",
-          to: "geral.i9learning@gmail.com",
-          name: formData.nome,
-          email: formData.email,
-          message: formData.mensagem,
-        }),
+      const { data, error } = await supabase.functions.invoke("contact-form", {
+        body: result.data,
       });
 
-      const data = await res.json();
-      if (!data.success) throw new Error("Erro ao enviar");
+      if (error) throw error;
+      if (!data?.success) throw new Error("Erro ao enviar");
 
       setFormData({ nome: "", email: "", mensagem: "" });
       setIsSuccess(true);
