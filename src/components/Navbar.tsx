@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Menu } from "lucide-react";
 import {
   Sheet,
@@ -8,18 +9,20 @@ import {
 } from "@/components/ui/sheet";
 
 const navLinks = [
-  { label: "Sobre", href: "#o-que-fazemos" },
-  { label: "Serviços", href: "#servicos" },
-  { label: "Metodologia", href: "#como-trabalhamos" },
-  { label: "Mercados", href: "#solucoes" },
-  { label: "Impacto", href: "#impacto" },
-  { label: "Benefícios", href: "#beneficios" },
-  { label: "Contactos", href: "#contacto" },
+  { label: "Sobre", hash: "#o-que-fazemos" },
+  { label: "Serviços", hash: "#servicos" },
+  { label: "Metodologia", hash: "#como-trabalhamos" },
+  { label: "Mercados", hash: "#solucoes" },
+  { label: "Impacto", hash: "#impacto" },
+  { label: "Benefícios", hash: "#beneficios" },
+  { label: "Contactos", hash: "#contacto" },
 ];
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [sheetOpen, setSheetOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -27,13 +30,15 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (href: string) => {
+  const handleNavClick = (hash: string) => {
     setSheetOpen(false);
-    if (href.startsWith("#")) {
+    if (location.pathname === "/") {
       setTimeout(() => {
-        const el = document.querySelector(href);
+        const el = document.querySelector(hash);
         el?.scrollIntoView({ behavior: "smooth" });
       }, 300);
+    } else {
+      navigate("/" + hash);
     }
   };
 
@@ -60,8 +65,8 @@ const Navbar = () => {
         <div className="hidden md:flex flex-1 items-center justify-center gap-6 lg:gap-8">
           {navLinks.map((link) => (
             <button
-              key={link.href}
-              onClick={() => handleNavClick(link.href)}
+              key={link.hash}
+              onClick={() => handleNavClick(link.hash)}
               className="nav-link-hover text-base text-muted-foreground hover:text-foreground transition-colors duration-200 whitespace-nowrap"
             >
               {link.label}
@@ -100,9 +105,9 @@ const Navbar = () => {
               {/* Navigation links */}
               <nav className="flex flex-col gap-2">
                 {navLinks.map((link) => (
-                  <SheetClose asChild key={link.href}>
+                  <SheetClose asChild key={link.hash}>
                     <button
-                      onClick={() => handleNavClick(link.href)}
+                      onClick={() => handleNavClick(link.hash)}
                       className="text-left text-lg font-display font-medium text-muted-foreground hover:text-foreground hover:bg-white/[0.05] rounded-lg px-4 py-3 transition-all duration-200"
                     >
                       {link.label}
