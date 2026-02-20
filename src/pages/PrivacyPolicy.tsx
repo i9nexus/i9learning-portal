@@ -1,7 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useCanonical } from "@/hooks/use-canonical";
 
 const PrivacyPolicy = () => {
+  useCanonical("/politica-de-privacidade");
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
