@@ -1,7 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useCanonical } from "@/hooks/use-canonical";
 
 const TermsOfUse = () => {
+  useCanonical("/termos-de-utilizacao");
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />

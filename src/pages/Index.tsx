@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 import Navbar from "@/components/Navbar";
+import { useCanonical } from "@/hooks/use-canonical";
 import Hero from "@/components/Hero";
 import ScrollToTop from "@/components/ScrollToTop";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -29,6 +30,7 @@ const SectionFallback = () => (
 );
 
 const Index = () => {
+  useCanonical("/");
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Navbar />
