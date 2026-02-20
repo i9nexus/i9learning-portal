@@ -1,9 +1,18 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useEffect } from "react";
 import { useCanonical } from "@/hooks/use-canonical";
 
 const PrivacyPolicy = () => {
   useCanonical("/politica-de-privacidade");
+
+  useEffect(() => {
+    const meta = document.createElement("meta");
+    meta.name = "robots";
+    meta.content = "noindex, nofollow";
+    document.head.appendChild(meta);
+    return () => { document.head.removeChild(meta); };
+  }, []);
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
