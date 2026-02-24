@@ -5,7 +5,6 @@ const Hero = () => {
     document.querySelector("#servicos")?.scrollIntoView({ behavior: "smooth" });
   };
 
-
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20">
       {/* Background - Limpo e Tecnológico */}
@@ -55,7 +54,7 @@ const Hero = () => {
             rel="noopener noreferrer"
             className="w-full sm:w-auto bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] text-primary-foreground px-8 py-3.5 rounded-lg font-semibold text-base hover:opacity-90 transition-opacity flex items-center justify-center gap-2 group"
           >
-            Falar com Especialista
+            Falar com um Consultor
             <ArrowRight size={18} width={18} height={18} className="group-hover:translate-x-1 transition-transform" />
           </a>
 
