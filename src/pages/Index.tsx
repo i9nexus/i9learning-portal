@@ -2,8 +2,6 @@ import { lazy, Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import { useCanonical } from "@/hooks/use-canonical";
 import Hero from "@/components/Hero";
-import ScrollToTop from "@/components/ScrollToTop";
-import WhatsAppButton from "@/components/WhatsAppButton";
 
 // Lazy load below-the-fold sections
 const WhatWeDo = lazy(() => import("@/components/WhatWeDo"));
@@ -61,8 +59,6 @@ const Index = () => {
       <Suspense fallback={null}>
         <Footer />
       </Suspense>
-      <ScrollToTop />
-      <WhatsAppButton />
     </div>
   );
 };
