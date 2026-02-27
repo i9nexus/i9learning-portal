@@ -23,7 +23,7 @@ const TermsAndConditions = () => {
           </h1>
           <p className="text-muted-foreground mb-4">Última atualização: Fevereiro de 2026</p>
 
-          <section className="space-y-6 text-muted-foreground leading-relaxed">
+          <section className="space-y-6 text-muted-foreground leading-relaxed [&_strong]:text-foreground">
             <div>
               <h2 className="font-display text-xl font-semibold text-foreground mb-3">1. Objeto e Âmbito</h2>
               <p>
