@@ -11,7 +11,9 @@ const PrivacyPolicy = () => {
     meta.name = "robots";
     meta.content = "noindex, nofollow";
     document.head.appendChild(meta);
-    return () => { document.head.removeChild(meta); };
+    return () => {
+      document.head.removeChild(meta);
+    };
   }, []);
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -25,8 +27,13 @@ const PrivacyPolicy = () => {
 
           <section className="space-y-6 text-muted-foreground leading-relaxed">
             <div>
-              <h2 className="font-display text-xl font-semibold text-foreground mb-3">1. Responsável pelo Tratamento</h2>
-              <p>A i9 Learning é um portal de soluções de formação online (eLearning) com base em Coimbra, Portugal, responsável pelo tratamento dos dados pessoais recolhidos através deste website.</p>
+              <h2 className="font-display text-xl font-semibold text-foreground mb-3">
+                1. Responsável pelo Tratamento
+              </h2>
+              <p>
+                A i9 Learning é um portal de soluções de formação online (eLearning) com base em Coimbra, Portugal,
+                responsável pelo tratamento dos dados pessoais recolhidos através deste website.
+              </p>
               <p>Email de contacto: geral.i9learning@gmail.com</p>
             </div>
 
@@ -44,7 +51,7 @@ const PrivacyPolicy = () => {
               <h2 className="font-display text-xl font-semibold text-foreground mb-3">3. Finalidade do Tratamento</h2>
               <p>Os dados pessoais são tratados para as seguintes finalidades:</p>
               <ul className="list-disc pl-6 space-y-1 mt-2">
-                <li>Responder a pedidos de contacto e demonstrações</li>
+                <li>Responder a pedidos de contacto e orçamentos</li>
                 <li>Comunicar informações sobre os nossos serviços</li>
                 <li>Cumprir obrigações legais aplicáveis</li>
               </ul>
@@ -52,17 +59,26 @@ const PrivacyPolicy = () => {
 
             <div>
               <h2 className="font-display text-xl font-semibold text-foreground mb-3">4. Base Legal</h2>
-              <p>O tratamento de dados baseia-se no consentimento do titular (artigo 6.º, n.º 1, alínea a) do RGPD) e no interesse legítimo da i9 Learning em responder aos pedidos recebidos.</p>
+              <p>
+                O tratamento de dados baseia-se no consentimento do titular (artigo 6.º, n.º 1, alínea a) do RGPD) e no
+                interesse legítimo da i9 Learning em responder aos pedidos recebidos.
+              </p>
             </div>
 
             <div>
               <h2 className="font-display text-xl font-semibold text-foreground mb-3">5. Conservação dos Dados</h2>
-              <p>Os dados pessoais são conservados apenas pelo período necessário para a finalidade para a qual foram recolhidos, ou conforme exigido por lei.</p>
+              <p>
+                Os dados pessoais são conservados apenas pelo período necessário para a finalidade para a qual foram
+                recolhidos, ou conforme exigido por lei.
+              </p>
             </div>
 
             <div>
               <h2 className="font-display text-xl font-semibold text-foreground mb-3">6. Partilha de Dados</h2>
-              <p>Não partilhamos, vendemos ou cedemos os seus dados pessoais a terceiros, exceto quando necessário para cumprir obrigações legais.</p>
+              <p>
+                Não partilhamos, vendemos ou cedemos os seus dados pessoais a terceiros, exceto quando necessário para
+                cumprir obrigações legais.
+              </p>
             </div>
 
             <div>
@@ -80,17 +96,28 @@ const PrivacyPolicy = () => {
 
             <div>
               <h2 className="font-display text-xl font-semibold text-foreground mb-3">8. Segurança</h2>
-              <p>Implementamos medidas técnicas e organizativas adequadas para proteger os seus dados pessoais contra acesso não autorizado, perda ou destruição.</p>
+              <p>
+                Implementamos medidas técnicas e organizativas adequadas para proteger os seus dados pessoais contra
+                acesso não autorizado, perda ou destruição.
+              </p>
             </div>
 
             <div>
               <h2 className="font-display text-xl font-semibold text-foreground mb-3">9. Cookies</h2>
-              <p>Este website pode utilizar cookies essenciais para o seu funcionamento. Não utilizamos cookies de rastreamento ou publicidade.</p>
+              <p>
+                Este website pode utilizar cookies essenciais para o seu funcionamento. Não utilizamos cookies de
+                rastreamento ou publicidade.
+              </p>
             </div>
 
             <div>
-              <h2 className="font-display text-xl font-semibold text-foreground mb-3">10. Alterações a Esta Política</h2>
-              <p>Reservamo-nos o direito de atualizar esta política de privacidade. Quaisquer alterações serão publicadas nesta página com a data de atualização revista.</p>
+              <h2 className="font-display text-xl font-semibold text-foreground mb-3">
+                10. Alterações a Esta Política
+              </h2>
+              <p>
+                Reservamo-nos o direito de atualizar esta política de privacidade. Quaisquer alterações serão publicadas
+                nesta página com a data de atualização revista.
+              </p>
             </div>
           </section>
         </article>
