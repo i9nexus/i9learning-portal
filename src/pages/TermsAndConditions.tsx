@@ -17,13 +17,13 @@ const TermsAndConditions = () => {
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       <main className="pt-32 pb-20 px-4 md:px-8">
-        <article className="container-narrow mx-auto prose prose-invert prose-strong:text-foreground max-w-3xl [&_strong]:text-foreground">
+        <article className="container-narrow mx-auto prose prose-invert prose-strong:text-white max-w-3xl">
           <h1 className="font-display text-4xl md:text-5xl font-bold mb-8">
             Termos e Condições de <span className="text-primary">Prestação de Serviços</span>
           </h1>
           <p className="text-muted-foreground mb-4">Última atualização: Fevereiro de 2026</p>
 
-          <section className="space-y-6 text-muted-foreground leading-relaxed">
+          <section className="space-y-6 text-muted-foreground leading-relaxed [&_strong]:text-foreground">
             <div>
               <h2 className="font-display text-xl font-semibold text-foreground mb-3">1. Objeto e Âmbito</h2>
               <p>

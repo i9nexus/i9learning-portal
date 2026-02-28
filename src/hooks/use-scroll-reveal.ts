@@ -33,3 +33,11 @@ export function useScrollReveal<T extends HTMLElement = HTMLDivElement>(
   return { ref, isVisible };
 }
 
+/** Utility: returns className for a reveal-animated element */
+export function revealClass(isVisible: boolean, delay?: number): string {
+  const base = "transition-all duration-700 ease-out";
+  const hidden = "opacity-0 translate-y-8";
+  const visible = "opacity-100 translate-y-0";
+  const delayStyle = delay ? `delay-[${delay}ms]` : "";
+  return `${base} ${isVisible ? visible : hidden} ${delayStyle}`.trim();
+}

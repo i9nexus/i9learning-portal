@@ -1,8 +1,10 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useEffect } from "react";
+import { useCanonical } from "@/hooks/use-canonical";
 
 const TermsOfUse = () => {
+  useCanonical("/termos-de-utilizacao");
 
   useEffect(() => {
     const meta = document.createElement("meta");
@@ -15,7 +17,7 @@ const TermsOfUse = () => {
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       <main className="pt-32 pb-20 px-4 md:px-8">
-        <article className="container-narrow mx-auto prose prose-invert prose-strong:text-foreground max-w-3xl">
+        <article className="container-narrow mx-auto prose prose-invert max-w-3xl">
           <h1 className="font-display text-4xl md:text-5xl font-bold mb-8">
             Termos de <span className="text-primary">Utilização</span>
           </h1>
