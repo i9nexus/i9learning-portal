@@ -11,7 +11,7 @@ const navLinks = [
   { label: "Sobre", href: "/#o-que-fazemos" },
   { label: "Serviços", href: "/#servicos" },
   { label: "Metodologia", href: "/#como-trabalhamos" },
-  { label: "Soluções", href: "/#solucoes" },
+  { label: "Setores", href: "/#solucoes" },
   { label: "Impacto", href: "/#impacto" },
   { label: "Benefícios", href: "/#beneficios" },
   { label: "Contactos", href: "/#contacto" },
