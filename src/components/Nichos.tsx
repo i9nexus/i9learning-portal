@@ -1,4 +1,14 @@
-import { Briefcase, GraduationCap, HeartPulse, ShoppingCart, Award, Landmark, Factory, UserCog, UtensilsCrossed } from "lucide-react";
+import {
+  Briefcase,
+  GraduationCap,
+  HeartPulse,
+  ShoppingCart,
+  Award,
+  Landmark,
+  Factory,
+  UserCog,
+  UtensilsCrossed,
+} from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const nichos = [
@@ -17,44 +27,37 @@ const nichos = [
   {
     icon: HeartPulse,
     title: "Saúde & Indústria Farmacêutica",
-    description:
-      "Módulos rigorosos e interativos. Estruturação pedagógica em ambientes regulados.",
+    description: "Módulos rigorosos e interativos. Estruturação pedagógica em ambientes regulados.",
   },
   {
     icon: ShoppingCart,
     title: "Retalho & Serviços",
-    description:
-      "Cursos dinâmicos para equipas operacionais com conteúdos adaptados a contextos práticos.",
+    description: "Cursos dinâmicos para equipas operacionais com conteúdos adaptados a contextos práticos.",
   },
   {
     icon: Award,
     title: "Formação Profissional & Consultoria",
-    description:
-      "Conversão de conteúdos presenciais em percursos digitais certificados (SCORM) e apoio técnico.",
+    description: "Conversão de conteúdos presenciais em percursos digitais certificados (SCORM) e apoio técnico.",
   },
   {
     icon: Landmark,
     title: "Banca & Seguros",
-    description:
-      "Academias digitais para produtos e compliance com avaliação de conhecimentos integrada.",
+    description: "Academias digitais para produtos e compliance com avaliação de conhecimentos integrada.",
   },
   {
     icon: Factory,
     title: "Indústria & Engenharia",
-    description:
-      "Simulações e conteúdos técnicos interativos. Digitalização de manuais com acompanhamento dedicado.",
+    description: "Simulações e conteúdos técnicos interativos. Digitalização de manuais com acompanhamento dedicado.",
   },
   {
     icon: UserCog,
     title: "Serviços Profissionais",
-    description:
-      "Programas formativos especializados com gestão técnica da plataforma.",
+    description: "Programas formativos especializados com gestão técnica da plataforma.",
   },
   {
     icon: UtensilsCrossed,
     title: "Restauração & Hotelaria",
-    description:
-      "Digitalização de normas e formação operacional visual, acessível em qualquer dispositivo.",
+    description: "Digitalização de normas e formação operacional visual, acessível em qualquer dispositivo.",
   },
 ];
 
@@ -64,13 +67,15 @@ const Nichos = () => {
   return (
     <section id="solucoes" className="section-padding" ref={ref}>
       <div className="container-narrow mx-auto">
-        <div className={`text-center mb-16 transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+        <div
+          className={`text-center mb-16 transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+        >
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            Setores onde{" "}
-            <span className="text-gradient">atuamos</span>
+            Mercados onde <span className="text-gradient">atuamos</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Experiência comprovada em setores-chave, com soluções de formação adaptadas às necessidades específicas de cada indústria.
+            Experiência sólida em setores-chave, com soluções formativas desenhadas para responder aos desafios
+            específicos de cada indústria.
           </p>
         </div>
 
