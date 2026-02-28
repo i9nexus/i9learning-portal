@@ -66,7 +66,7 @@ const Nichos = () => {
       <div className="container-narrow mx-auto">
         <div className={`text-center mb-16 transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            Mercados onde{" "}
+            Setores onde{" "}
             <span className="text-gradient">atuamos</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
