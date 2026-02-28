@@ -26,24 +26,24 @@ const TermsAndConditions = () => {
           <section className="space-y-6 text-muted-foreground leading-relaxed [&_strong]:text-foreground">
             <div>
               <h2 className="font-display text-xl font-semibold text-foreground mb-3">1. Objeto e Âmbito</h2>
-              <p>
-                Os presentes Termos e Condições regulam a prestação de serviços, especialmente de natureza tecnológica,
-                pela i9 Learning, definindo os direitos e obrigações de ambas as partes — Prestador de Serviços e
-                Cliente — no âmbito dos projetos contratados.
+              <p>Os presentes Termos e Condições regulam a prestação de serviços tecnológicos pela i9 Learning, definindo os direitos e obrigações de ambas as partes — Prestador de Serviços e Cliente — no âmbito dos projetos contratados.
+
+
+
               </p>
               <ul className="list-disc pl-6 space-y-2 mt-3">
-                <li>
+                <li>Conformidade com a Proposta: O projeto abrange exclusivamente as especificações definidas no plano de trabalhos e na proposta comercial aprovada. Quaisquer funcionalidades, serviços ou entregas fora do âmbito da proposta original não fazem parte do projeto e carecem de aprovação prévia do Prestador de Serviços
                   <strong>Conformidade com a Proposta:</strong> O projeto abrange exclusivamente as especificações
                   definidas no plano de trabalhos e na proposta comercial aprovada. Quaisquer funcionalidades ou
                   entregas estão limitadas ao âmbito expressamente acordado.
                 </li>
-                <li>
+                <li>Alterações ao Âmbito: Qualquer funcionalidade, serviço ou alteração não prevista expressamente será objeto de novo orçamento e dependerá de aprovação prévia, por escrito, do Prestador de Serviços. As alterações solicitadas fora do âmbito original poderão impactar os prazos e custos inicialmente acordados.
                   <strong>Alterações ao Âmbito:</strong> Qualquer funcionalidade, serviço ou alteração não prevista
                   expressamente na proposta original será objeto de novo orçamento e dependerá de aprovação prévia, por
                   escrito, do Prestador de Serviços. Estas alterações poderão impactar os prazos e custos inicialmente
                   estabelecidos.
                 </li>
-                <li>
+                <li>Validade: As propostas apresentadas têm uma validade de 30 (trinta) dias a contar da data de emissão, salvo indicação em contrário expressa na proposta.
                   <strong>Validade:</strong> As propostas apresentadas têm uma validade de 30 (trinta) dias a contar da
                   data de emissão, salvo indicação expressa em contrário.
                 </li>
@@ -56,24 +56,24 @@ const TermsAndConditions = () => {
               </h2>
               <p>A execução eficaz dos serviços depende da colaboração ativa e atempada do Cliente, nomeadamente:</p>
               <ul className="list-disc pl-6 space-y-2 mt-3">
-                <li>
+                <li>Fornecimento de Conteúdos: O Cliente deve disponibilizar, de forma completa e atempada, todos os conteúdos, informações, credenciais e acessos técnicos necessários à execução dos serviços. A qualidade e pertinência dos materiais fornecidos são da responsabilidade do Cliente.
                   <strong>Fornecimento de Conteúdos:</strong> O Cliente deve disponibilizar, de forma completa e
                   atempada, todos os conteúdos, informações, credenciais e acessos técnicos necessários à execução dos
                   serviços. A qualidade e pontualidade deste fornecimento são determinantes para o cumprimento dos
                   prazos estabelecidos.
                 </li>
-                <li>
+                <li>Titularidade: O Cliente garante ser o legítimo titular (ou possuir autorização válida) de todos os materiais, marcas, logótipos e dados fornecidos, assumindo total responsabilidade civil e legal perante quaisquer reclamações de terceiros relacionadas com direitos de propriedade intelectual ou industrial.
                   <strong>Titularidade:</strong> O Cliente garante ser o legítimo titular (ou possuir a devida
                   autorização) de todos os materiais, marcas, logótipos e dados fornecidos ao Prestador de Serviços,
                   assumindo total responsabilidade perante quaisquer reclamações, disputas ou ações legais intentadas
                   por terceiros.
                 </li>
-                <li>
+                <li>Condições Técnicas: É da responsabilidade do Cliente assegurar que dispõe das infraestruturas, plataformas externas e requisitos técnicos necessários ao correto funcionamento da solução, incluindo serviços de alojamento, domínio e conectividade.
                   <strong>Condições Técnicas:</strong> É da inteira responsabilidade do Cliente assegurar que dispõe das
                   infraestruturas, plataformas externas e requisitos técnicos necessários ao correto funcionamento e
                   implementação da solução contratada.
                 </li>
-                <li>
+                <li>Conformidade Legal: A utilização da solução desenvolvida deve cumprir toda a legislação vigente aplicável, incluindo, mas não se limitando ao RGPD, direitos de autor, legislação comercial e regulamentações setoriais, sendo essa conformidade da inteira responsabilidade do Cliente.
                   <strong>Conformidade Legal:</strong> A utilização da solução desenvolvida deve cumprir rigorosamente a
                   legislação vigente, incluindo, mas não se limitando ao RGPD, direitos de autor e demais normas
                   aplicáveis, sendo essa conformidade da inteira responsabilidade do Cliente.
@@ -83,18 +83,18 @@ const TermsAndConditions = () => {
 
             <div>
               <h2 className="font-display text-xl font-semibold text-foreground mb-3">3. Execução e Prazos</h2>
-              <p>
-                A execução dos serviços está sujeita aos prazos acordados na proposta comercial, podendo ser afetada
-                pelas seguintes circunstâncias:
+              <p>O cumprimento dos prazos acordados está diretamente dependente da colaboração do Cliente e do respeito pelas condições estabelecidas nestes termos:
+
+
               </p>
               <ul className="list-disc pl-6 space-y-2 mt-3">
-                <li>
+                <li>Suspensão por Atraso do Cliente: O atraso no fornecimento de conteúdos, acessos ou validações por parte do Cliente suspende automaticamente a contagem dos prazos de entrega, não sendo imputável ao Prestador de Serviços qualquer responsabilidade por esse adiamento. A retoma dos trabalhos fica condicionada à disponibilidade da agenda do Prestador de Serviços.
                   <strong>Suspensão por Atraso do Cliente:</strong> O atraso no fornecimento de conteúdos, informações
                   ou acessos por parte do Cliente suspende automaticamente a contagem dos prazos de entrega, não sendo
                   imputável ao Prestador de Serviços qualquer responsabilidade por esse adiamento. A retoma dos
                   trabalhos será efetuada mediante nova calendarização a acordar entre as partes.
                 </li>
-                <li>
+                <li>Intervenções Técnicas Externas: O Cliente não deve proceder a alterações técnicas, estruturais ou de configuração na solução sem validação prévia e expressa do Prestador de Serviços. Qualquer modificação não autorizada liberta o Prestador de Serviços de toda e qualquer responsabilidade por falhas, mau funcionamento ou perda de dados resultantes dessa intervenção.
                   <strong>Intervenções Técnicas Externas:</strong> O Cliente não deve proceder a alterações técnicas ou
                   estruturais na solução sem a validação prévia e expressa do Prestador de Serviços. Qualquer
                   modificação não autorizada liberta o Prestador de Serviços de toda e qualquer responsabilidade por
@@ -107,22 +107,22 @@ const TermsAndConditions = () => {
               <h2 className="font-display text-xl font-semibold text-foreground mb-3">
                 4. Conclusão Técnica e Entrega
               </h2>
-              <p>
-                A entrega do projeto segue um processo estruturado que assegura a qualidade e a transferência de
-                conhecimento ao Cliente:
+              <p>A entrega do projeto segue um processo estruturado que assegura a correta transferência de conhecimento e operacionalidade:
+
+
               </p>
               <ul className="list-disc pl-6 space-y-2 mt-3">
-                <li>
+                <li>Definição de Conclusão: Considera-se "Conclusão Técnica" a implementação funcional de todos os itens e funcionalidades previstos na proposta original aprovada, independentemente de pedidos adicionais realizados fora do âmbito inicial do projeto.
                   <strong>Definição de Conclusão:</strong> Considera-se "Conclusão Técnica" a implementação funcional de
                   todos os itens e funcionalidades previstos na proposta original, independentemente de pedidos
                   adicionais ou alterações fora do âmbito inicialmente acordado.
                 </li>
-                <li>
+                <li>Guia do Utilizador e Acessos: O Guia do Utilizador, contendo credenciais de acesso e instruções operacionais, será disponibilizado momentos antes da sessão de formação. A entrega deste guia e dos respetivos acessos está condicionada à liquidação total do valor do projeto.
                   <strong>Guia do Utilizador e Acessos:</strong> O Guia do Utilizador, contendo credenciais de acesso e
                   instruções de operação, será disponibilizado momentos antes da sessão de formação. A entrega deste
                   guia e dos respetivos acessos está condicionada à liquidação total do valor do projeto.
                 </li>
-                <li>
+                <li>Sessão de Formação: A sessão de formação destina-se a capacitar o Cliente na utilização autónoma da solução desenvolvida e será agendada após a confirmação do pagamento final. A formação cobre exclusivamente as funcionalidades previstas na proposta original.
                   <strong>Sessão de Formação:</strong> A sessão de formação destina-se a capacitar o Cliente na correta
                   utilização e gestão da solução desenvolvida e será agendada após a confirmação do pagamento final.
                   Esta sessão é parte integrante do serviço contratado.
@@ -132,8 +132,8 @@ const TermsAndConditions = () => {
 
             <div>
               <h2 className="font-display text-xl font-semibold text-foreground mb-3">5. Condições Financeiras</h2>
-              <p>
-                Os pagamentos seguem a modalidade descrita na proposta comercial, obedecendo às seguintes condições:
+              <p>Os pagamentos seguem a modalidade descrita na proposta comercial, obedecendo às seguintes condições:
+
               </p>
               <ul className="list-disc pl-6 space-y-2 mt-3">
                 <li>
@@ -143,29 +143,29 @@ const TermsAndConditions = () => {
                       <strong>50% na Adjudicação:</strong> Pagamento inicial obrigatório para reserva de agenda e início
                       do desenvolvimento do projeto.
                     </li>
-                    <li>
+                    <li>50% na Conclusão: Pagamento devido após a Conclusão Técnica do projeto, sendo condição obrigatória para a entrega de acessos, credenciais e realização da sessão de formação.
                       <strong>50% na Conclusão:</strong> Pagamento devido após a Conclusão Técnica do projeto, sendo
                       condição obrigatória para a entrega de acessos, credenciais e realização da sessão de formação.
                     </li>
                   </ul>
                 </li>
-                <li>
-                  <strong>Pré-pagamento para Serviços de Formação, Consultoria ou Suporte:</strong> Todos os serviços de
+                <li>Modalidade de Pré-pagamento para Serviços de Formação, Consultoria ou Suporte: Todos os serviços de formação, consultoria ou suporte deverão ser pagos na totalidade (100%) antes do início da prestação do serviço, conforme valor apresentado na proposta comercial. Este pagamento é condição obrigatória para iniciar a execução destes serviços.
+                  <strong>Pré-pagamento (para serviços Formação, Consultoria, Suporte):</strong> Todos os serviços de
                   formação, consultoria ou suporte deverão ser pagos na totalidade (100%) antes do início da prestação
                   do serviço, conforme valor apresentado na proposta comercial. Este pagamento é condição obrigatória
                   para iniciar a execução destes serviços.
                 </li>
-                <li>
+                <li>Cancelamento: Em caso de desistência ou cancelamento do projeto após a adjudicação, o valor inicial de 50% não será reembolsável, a título de compensação pelos recursos alocados e trabalho já realizado ou planeado.
                   <strong>Cancelamento:</strong> Em caso de desistência ou cancelamento do projeto após a adjudicação, o
                   valor inicial de 50% não será reembolsável, a título de compensação pelos recursos alocados e trabalho
                   já realizado ou planeado.
                 </li>
-                <li>
+                <li>Incumprimento: O não cumprimento dos prazos de pagamento acordados determina a suspensão imediata da execução dos trabalhos, sem prejuízo do direito do Prestador de Serviços a exigir o pagamento das quantias em dívida.
                   <strong>Incumprimento:</strong> O não cumprimento dos prazos de pagamento acordados determina a
                   suspensão imediata da execução dos trabalhos, sem prejuízo do direito do Prestador de Serviços a
                   exigir o pagamento das quantias em dívida.
                 </li>
-                <li>
+                <li>Taxas e Impostos: Aos valores apresentados nas propostas comerciais acresce o IVA à taxa legal em vigor. Os pagamentos são efetuados por transferência bancária para a conta indicada na fatura.
                   <strong>Taxas e Impostos:</strong> Aos valores apresentados nas propostas comerciais acresce o IVA à
                   taxa legal em vigor. Os pagamentos são efetuados por transferência bancária para a conta indicada na
                   fatura.
@@ -177,24 +177,24 @@ const TermsAndConditions = () => {
               <h2 className="font-display text-xl font-semibold text-foreground mb-3">
                 6. Propriedade Intelectual e Confidencialidade
               </h2>
-              <p>
-                A proteção da propriedade intelectual e a confidencialidade são pilares fundamentais da relação entre o
-                Prestador de Serviços e o Cliente:
+              <p>A proteção da propriedade intelectual e a confidencialidade são pilares fundamentais da relação contratual:
+
+
               </p>
               <ul className="list-disc pl-6 space-y-2 mt-3">
-                <li>
+                <li>Direitos de Utilização: O Cliente adquire o direito de utilizar e operar a solução desenvolvida para os fins exclusivamente acordados na proposta, após a liquidação integral do orçamento. Este direito não inclui a propriedade do código-fonte ou das metodologias utilizadas.
                   <strong>Direitos de Utilização:</strong> O Cliente adquire o direito de utilizar e operar a solução
                   desenvolvida para os fins expressamente acordados na proposta comercial, após a liquidação integral do
                   orçamento contratado.
                 </li>
-                <li>
+                <li>Titularidade do Prestador: A propriedade intelectual do código-fonte, design, arquitetura, metodologias, frameworks e know-how técnico permanece na titularidade exclusiva do Prestador de Serviços. É expressamente proibida a reprodução, engenharia reversa, revenda, sublicença ou cessão da solução, no todo ou em parte, sem autorização prévia e escrita do Prestador de Serviços.
                   <strong>Titularidade do Prestador:</strong> A propriedade intelectual do código-fonte, design,
                   metodologias, frameworks, templates e know-how técnico empregues na solução permanece na titularidade
                   exclusiva do Prestador de Serviços. É expressamente proibida a reprodução, engenharia reversa, revenda
                   ou sublicença da solução, no todo ou em parte, sem autorização prévia e escrita do Prestador de
                   Serviços.
                 </li>
-                <li>
+                <li>Sigilo Profissional: É proibida a partilha, divulgação ou reprodução da proposta comercial, métodos de trabalho, processos internos, ou a gravação e divulgação de sessões de formação, reuniões online e qualquer comunicação privada sem autorização prévia e expressa, por escrito, do Prestador de Serviços.
                   <strong>Sigilo Profissional:</strong> É estritamente proibida a partilha da proposta comercial,
                   métodos de trabalho, processos internos ou a gravação e/ou divulgação de sessões de formação e
                   reuniões online sem autorização prévia e expressa, por escrito, do Prestador de Serviços. O
@@ -204,12 +204,12 @@ const TermsAndConditions = () => {
             </div>
 
             <div>
-              <h2 className="font-display text-xl font-semibold text-foreground mb-3">
-                7. Exclusões e Responsabilidade
+              <h2 className="font-display text-xl font-semibold text-foreground mb-3">7. Exclusões e Limitação de Responsabilidade
+
               </h2>
-              <p>
-                A responsabilidade do Prestador de Serviços está limitada ao âmbito do projeto contratado, excluindo-se
-                as seguintes situações:
+              <p>As seguintes exclusões e limitações aplicam-se à prestação de serviços pela i9 Learning:
+
+
               </p>
               <ul className="list-disc pl-6 space-y-2 mt-3">
                 <li>
@@ -218,13 +218,13 @@ const TermsAndConditions = () => {
                   plataformas de terceiros não estão incluídos no orçamento e são da inteira responsabilidade do
                   Cliente.
                 </li>
-                <li>
+                <li>Falhas Externas: O Prestador de Serviços não se responsabiliza por falhas, indisponibilidades, alterações de preço ou descontinuação de serviços de terceiros após a entrega do projeto, incluindo mas não se limitando a serviços de alojamento, APIs externas e plataformas de pagamento.
                   <strong>Falhas Externas:</strong> O Prestador de Serviços não se responsabiliza por falhas,
                   interrupções, atualizações ou descontinuação de serviços prestados por entidades terceiras após a
                   entrega do projeto, incluindo alterações em APIs, plataformas de alojamento ou outros serviços
                   externos.
                 </li>
-                <li>
+                <li>Limite de Responsabilidade: A responsabilidade total do Prestador de Serviços está limitada ao valor efetivamente pago pelo Cliente no âmbito do projeto em causa, excluindo-se expressamente quaisquer danos indiretos, consequenciais, lucros cessantes, perda de dados ou perdas de oportunidade de negócio.
                   <strong>Limite de Responsabilidade:</strong> A responsabilidade total do Prestador de Serviços, por
                   qualquer causa e independentemente da forma da ação, limita-se ao valor efetivamente pago pelo Cliente
                   no âmbito do projeto em questão, excluindo-se expressamente quaisquer danos indiretos, incidentais,
@@ -235,26 +235,26 @@ const TermsAndConditions = () => {
 
             <div>
               <h2 className="font-display text-xl font-semibold text-foreground mb-3">8. Lei Aplicável e Foro</h2>
-              <p>
-                O presente contrato e os presentes Termos e Condições regem-se pela legislação portuguesa. Para a
-                resolução de qualquer litígio emergente da interpretação ou execução dos presentes termos, é competente
-                o foro da comarca de Coimbra, com renúncia expressa a qualquer outro.
+              <p>O presente contrato e os presentes Termos e Condições de Prestação de Serviços regem-se pela lei portuguesa. Para a resolução de qualquer litígio emergente da interpretação ou execução destes termos, é competente o foro da comarca de Coimbra, com renúncia expressa a qualquer outro.
+
+
+
               </p>
             </div>
 
             <div>
               <h2 className="font-display text-xl font-semibold text-foreground mb-3">9. Contacto</h2>
-              <p>
-                Para quaisquer questões relacionadas com estes Termos e Condições de Prestação de Serviços, contacte-nos
-                através de geral.i9learning@gmail.com ou pelo telemóvel +351 910 213 246.
+              <p>Para quaisquer questões relacionadas com estes termos, contacte-nos através de geral.i9nexus@gmail.com ou pelo telemóvel +351 910 213 246.
+
+
               </p>
             </div>
           </section>
         </article>
       </main>
       <Footer />
-    </div>
-  );
+    </div>);
+
 };
 
 export default TermsAndConditions;
