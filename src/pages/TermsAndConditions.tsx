@@ -139,24 +139,16 @@ const TermsAndConditions = () => {
                   <strong>Modalidade de Pagamento 50/50 para Projetos de Desenvolvimento e Produção:</strong>
                   <ul className="list-disc pl-6 space-y-1 mt-2">
                     <li>
-                      50% na Adjudicação: Pagamento inicial obrigatório para reserva de agenda e início do
-                      desenvolvimento do projeto.
                       <strong>50% na Adjudicação:</strong> Pagamento inicial obrigatório para reserva de agenda e início
                       do desenvolvimento do projeto.
                     </li>
                     <li>
-                      50% na Conclusão: Pagamento devido após a Conclusão Técnica do projeto, sendo condição obrigatória
-                      para a entrega de acessos, credenciais e realização da sessão de formação.
                       <strong>50% na Conclusão:</strong> Pagamento devido após a Conclusão Técnica do projeto, sendo
                       condição obrigatória para a entrega de acessos, credenciais e realização da sessão de formação.
                     </li>
                   </ul>
                 </li>
                 <li>
-                  Modalidade de Pré-pagamento para Serviços de Formação, Consultoria ou Suporte:  Todos os serviços de
-                  formação, consultoria ou suporte deverão ser pagos na totalidade (100%) antes do início da prestação
-                  do serviço, conforme valor apresentado na proposta comercial. Este pagamento é condição obrigatória
-                  para iniciar a execução destes serviços.
                   <strong>Pré-pagamento para Serviços de Formação, Consultoria ou Suporte:</strong> Todos os serviços de
                   formação, consultoria ou suporte deverão ser pagos na totalidade (100%) antes do início da prestação
                   do serviço, conforme valor apresentado na proposta comercial. Este pagamento é condição obrigatória
