@@ -17,7 +17,7 @@ const TermsAndConditions = () => {
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       <main className="pt-32 pb-20 px-4 md:px-8">
-        <article className="container-narrow mx-auto prose prose-invert prose-strong:text-foreground max-w-3xl">
+        <article className="container-narrow mx-auto prose prose-invert prose-strong:text-foreground max-w-3xl [&_strong]:text-foreground">
           <h1 className="font-display text-4xl md:text-5xl font-bold mb-8">
             Termos e Condições de <span className="text-primary">Prestação de Serviços</span>
           </h1>
