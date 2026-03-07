@@ -8,7 +8,7 @@ import { Analytics } from "@vercel/analytics/react";
 import Index from "./pages/Index";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
-import TermsAndConditions from "./pages/TermsAndConditions";
+
 import NotFound from "./pages/NotFound";
 import ScrollToTopButton from "./components/ScrollToTop";
 import WhatsAppButton from "./components/WhatsAppButton";
