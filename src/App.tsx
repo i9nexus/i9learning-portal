@@ -44,7 +44,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/politica-de-privacidade" element={<PrivacyPolicy />} />
           <Route path="/termos-de-utilizacao" element={<TermsOfUse />} />
-          <Route path="/termos-e-condicoes" element={<TermsAndConditions />} />
+          
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
