@@ -1,17 +1,19 @@
-import { Monitor, BookOpen, Brain, Wrench, Search, GraduationCap, X } from "lucide-react";
+import { Monitor, BookOpen, Brain, Wrench, Search, GraduationCap, X, CheckCircle2, Sparkles, Shield } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { useState } from "react";
-import { Dialog, DialogContent, DialogClose, DialogTitle } from "@/components/ui/dialog";
+import { Dialog, DialogPortal, DialogOverlay, DialogTitle } from "@/components/ui/dialog";
+import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { cn } from "@/lib/utils";
 
 interface ServiceDetail {
   icon: React.ElementType;
   title: string;
   description: string;
   modal: {
-    descricao: string;
-    inclui: string;
-    vantagens: string;
+    descricao: string[];
+    inclui: string[];
+    vantagens: string[];
   };
 }
 
@@ -22,9 +24,25 @@ const services: ServiceDetail[] = [
     description:
       "Implementamos plataformas eLearning modernas e flexíveis, com desenvolvimento gráfico personalizado, acessíveis em qualquer dispositivo.",
     modal: {
-      descricao: "Implementação e gestão de plataformas baseadas em Moodle, focadas na experiência do utilizador.",
-      inclui: "Instalação técnica, parametrização essencial e design gráfico personalizado.",
-      vantagens: "Totalmente responsivo, sem limite de utilizadores ou cursos, e em conformidade com as normas das entidades reguladoras de formação.",
+      descricao: [
+        "Implementação e gestão de plataformas baseadas em Moodle, focadas na experiência do utilizador e nas necessidades específicas de cada organização.",
+        "Cada plataforma é configurada à medida, garantindo que a interface, os fluxos de navegação e os processos de inscrição e certificação se adaptam perfeitamente ao contexto formativo do cliente.",
+        "Trabalhamos com as versões mais recentes do Moodle e plugins cuidadosamente selecionados, assegurando desempenho, estabilidade e uma experiência de aprendizagem de excelência para formandos e formadores.",
+      ],
+      inclui: [
+        "Instalação técnica em servidor dedicado ou cloud, com configuração otimizada de desempenho",
+        "Parametrização essencial: inscrições, certificados, relatórios, notificações e integrações",
+        "Design gráfico personalizado com identidade visual da organização (logótipo, cores, tipografia)",
+        "Configuração de perfis de utilizador (administrador, formador, formando) com permissões diferenciadas",
+        "Integração com sistemas externos (SSO, videoconferência, sistemas de gestão de formação)",
+      ],
+      vantagens: [
+        "Totalmente responsivo — acesso perfeito em desktop, tablet e smartphone",
+        "Sem limite de utilizadores, cursos ou conteúdos alojados na plataforma",
+        "Em conformidade com as normas da DGERT, IEFP e outras entidades reguladoras de formação",
+        "Atualizações contínuas e compatibilidade com os mais recentes standards do eLearning (SCORM, xAPI)",
+        "Redução significativa de custos operacionais face à formação presencial tradicional",
+      ],
     },
   },
   {
@@ -33,9 +51,25 @@ const services: ServiceDetail[] = [
     description:
       "Desenvolvemos cursos desde o zero ou a partir dos materiais do cliente, enriquecidos com conteúdos multimédia, atividades interativas e gamificação.",
     modal: {
-      descricao: "Desenvolvimento de conteúdos interativos do zero ou a partir de materiais existentes.",
-      inclui: "Design de ambiente virtual, produção multimédia (Vídeo, Áudio, Motion Graphics) e atividades de avaliação.",
-      vantagens: "Conteúdos em formato SCORM, alta interatividade e estratégias de gamificação integradas.",
+      descricao: [
+        "Desenvolvimento de conteúdos interativos do zero ou a partir de materiais existentes, transformando documentos estáticos em experiências de aprendizagem envolventes e eficazes.",
+        "A nossa equipa de designers instrucionais e produtores multimédia trabalha em conjunto para criar cursos que maximizam a retenção de conhecimento através de narrativas visuais, interatividade e avaliações contextualizadas.",
+        "Cada curso é desenhado com objetivos pedagógicos claros, garantindo que o percurso de aprendizagem é progressivo, intuitivo e alinhado com as competências que se pretende desenvolver.",
+      ],
+      inclui: [
+        "Design instrucional completo com definição de objetivos, conteúdos e estratégias de avaliação",
+        "Produção multimédia profissional: vídeo, áudio, motion graphics e animações 2D/3D",
+        "Design de ambiente virtual imersivo com navegação intuitiva",
+        "Atividades interativas de avaliação: quizzes, drag & drop, cenários ramificados e simulações",
+        "Implementação de estratégias de gamificação: badges, leaderboards e progressão por níveis",
+      ],
+      vantagens: [
+        "Conteúdos exportáveis em formato SCORM 1.2 e 2004, compatíveis com qualquer LMS",
+        "Alta interatividade que aumenta o engagement e a taxa de conclusão dos cursos",
+        "Estratégias de gamificação que motivam e promovem a competição saudável entre formandos",
+        "Conteúdos acessíveis e inclusivos, seguindo normas WCAG de acessibilidade digital",
+        "Possibilidade de atualização e reutilização modular dos conteúdos produzidos",
+      ],
     },
   },
   {
@@ -44,9 +78,25 @@ const services: ServiceDetail[] = [
     description:
       "Integramos Inteligência Artificial em plataformas e cursos para personalizar a experiência de aprendizagem e otimizar a gestão do seu eLearning.",
     modal: {
-      descricao: "Integração de soluções de IA para potenciar a aprendizagem e automatizar processos.",
-      inclui: "Implementação de tutores virtuais inteligentes, geração automática de sumários e análise preditiva de desempenho.",
-      vantagens: "Personalização da aprendizagem em tempo real e redução drástica do trabalho administrativo do formador.",
+      descricao: [
+        "Integração de soluções de Inteligência Artificial para potenciar a aprendizagem e automatizar processos pedagógicos e administrativos de forma inteligente.",
+        "Utilizamos modelos de IA de última geração para criar experiências de aprendizagem adaptativas, onde o conteúdo se ajusta automaticamente ao ritmo, nível de conhecimento e estilo de aprendizagem de cada formando.",
+        "As nossas soluções de IA permitem aos formadores focar-se no que realmente importa — ensinar — enquanto a tecnologia trata da análise de dados, geração de relatórios e personalização do percurso formativo.",
+      ],
+      inclui: [
+        "Implementação de tutores virtuais inteligentes com processamento de linguagem natural",
+        "Geração automática de sumários, resumos e materiais de estudo a partir de conteúdos existentes",
+        "Análise preditiva de desempenho com identificação precoce de formandos em risco de desistência",
+        "Sistemas de recomendação de conteúdos baseados no perfil e progresso de cada utilizador",
+        "Ferramentas de avaliação automática com feedback contextualizado e instantâneo",
+      ],
+      vantagens: [
+        "Personalização da aprendizagem em tempo real, adaptando-se ao ritmo de cada formando",
+        "Redução drástica do trabalho administrativo do formador (até 60% menos tempo em tarefas repetitivas)",
+        "Insights acionáveis sobre o desempenho individual e coletivo dos formandos",
+        "Melhoria contínua dos conteúdos com base em dados reais de utilização e feedback",
+        "Escalabilidade: suporte a milhares de formandos sem perda de qualidade na experiência",
+      ],
     },
   },
   {
@@ -55,9 +105,25 @@ const services: ServiceDetail[] = [
     description:
       "Fornecemos suporte técnico a plataformas e cursos eLearning, abrangendo a sua gestão, manutenção e otimização para garantir o melhor serviço.",
     modal: {
-      descricao: "Apoio especializado 24x7 para garantir a estabilidade da sua operação digital.",
-      inclui: "Resolução de problemas, gestão de backups, atualizações de segurança e instalação de plugins.",
-      vantagens: "Continuidade de negócio garantida e resposta rápida a incidentes técnicos.",
+      descricao: [
+        "Apoio especializado 24x7 para garantir a estabilidade, segurança e desempenho contínuo da sua operação digital de formação.",
+        "A nossa equipa de suporte monitoriza proativamente as plataformas, identificando e resolvendo potenciais problemas antes que afetem os utilizadores finais.",
+        "Oferecemos diferentes níveis de suporte (SLA) adaptados à dimensão e necessidades de cada organização, com tempos de resposta garantidos e canais de comunicação dedicados.",
+      ],
+      inclui: [
+        "Resolução de problemas técnicos com diagnóstico especializado e tempos de resposta garantidos",
+        "Gestão de backups automatizados (diários, semanais, mensais) com política de retenção configurável",
+        "Atualizações de segurança e patches críticos aplicados em janelas de manutenção planeadas",
+        "Instalação, configuração e atualização de plugins e módulos complementares",
+        "Monitorização contínua de desempenho, uptime e alertas automáticos de anomalias",
+      ],
+      vantagens: [
+        "Continuidade de negócio garantida com SLA de disponibilidade até 99,9%",
+        "Resposta rápida a incidentes técnicos — resolução em minutos, não em dias",
+        "Tranquilidade total: a sua equipa foca-se na formação, nós tratamos da tecnologia",
+        "Relatórios periódicos de estado da plataforma com recomendações de melhoria",
+        "Custos previsíveis com planos de suporte mensais ou anuais sem surpresas",
+      ],
     },
   },
   {
@@ -66,9 +132,25 @@ const services: ServiceDetail[] = [
     description:
       "Prestamos apoio estratégico e auditorias técnicas para otimizar plataformas e conteúdos, garantindo o máximo desempenho e impacto do seu eLearning.",
     modal: {
-      descricao: "Estratégia e aconselhamento para a transformação digital de centros de formação e empresas.",
-      inclui: "Auditoria de ecossistemas digitais, escolha de stack tecnológica e otimização de workflows de formação.",
-      vantagens: "Decisões baseadas em dados e alinhamento tecnológico com os objetivos de negócio.",
+      descricao: [
+        "Estratégia e aconselhamento especializado para a transformação digital de centros de formação, empresas e instituições de ensino.",
+        "Realizamos um diagnóstico profundo do ecossistema tecnológico e pedagógico existente, identificando oportunidades de melhoria e definindo um roadmap claro para a evolução digital.",
+        "A nossa abordagem é pragmática e orientada a resultados, combinando conhecimento técnico profundo com experiência real em projetos de eLearning de grande escala.",
+      ],
+      inclui: [
+        "Auditoria completa de ecossistemas digitais existentes (plataformas, conteúdos, processos)",
+        "Análise e recomendação de stack tecnológica adequada aos objetivos e orçamento",
+        "Otimização de workflows de formação: desde a conceção à certificação",
+        "Definição de estratégia de migração e transição entre plataformas quando necessário",
+        "Benchmarking com as melhores práticas do setor e análise competitiva",
+      ],
+      vantagens: [
+        "Decisões informadas baseadas em dados concretos e análise técnica especializada",
+        "Alinhamento tecnológico completo com os objetivos estratégicos de negócio",
+        "Redução de riscos na adoção de novas tecnologias com validação prévia",
+        "Visão independente e imparcial — recomendamos a melhor solução, não a mais cara",
+        "Acompanhamento pós-consultoria para garantir a correta implementação das recomendações",
+      ],
     },
   },
   {
@@ -77,12 +159,34 @@ const services: ServiceDetail[] = [
     description:
       "Desenvolvemos programas de formação adaptados às necessidades da sua equipa, disponíveis em videoconferência ou cursos de microlearning.",
     modal: {
-      descricao: "Programas de capacitação para equipas pedagógicas e administradores de sistemas.",
-      inclui: "Formação de formadores para o digital, gestão avançada de LMS e criação de conteúdos autónoma.",
-      vantagens: "Autonomia total da sua equipa na gestão diária da plataforma e conteúdos.",
+      descricao: [
+        "Programas de capacitação desenhados à medida para equipas pedagógicas, técnicas e administradores de sistemas de gestão de aprendizagem.",
+        "Acreditamos que a tecnologia só gera impacto quando as pessoas sabem utilizá-la. Por isso, desenvolvemos formações práticas, hands-on, que transformam utilizadores básicos em power users das plataformas.",
+        "Os nossos programas combinam sessões síncronas (presenciais ou por videoconferência) com materiais assíncronos de microlearning, permitindo flexibilidade total na aprendizagem.",
+      ],
+      inclui: [
+        "Formação de formadores para o digital: boas práticas pedagógicas em ambiente online",
+        "Formação em gestão avançada de LMS (Moodle e outras plataformas)",
+        "Workshops práticos de criação de conteúdos eLearning autónoma (Articulate, H5P, Canva)",
+        "Programas de certificação interna com avaliação de competências adquiridas",
+        "Materiais de apoio e guias de referência rápida para consulta posterior",
+      ],
+      vantagens: [
+        "Autonomia total da sua equipa na gestão diária da plataforma e conteúdos",
+        "Redução da dependência de fornecedores externos para tarefas operacionais",
+        "Formação adaptada ao nível de conhecimento e ritmo de cada participante",
+        "Certificação reconhecida que valoriza o currículo dos colaboradores",
+        "Suporte pós-formação durante 30 dias para esclarecimento de dúvidas",
+      ],
     },
   },
 ];
+
+const tabIcons = {
+  descricao: Sparkles,
+  inclui: CheckCircle2,
+  vantagens: Shield,
+};
 
 const Services = () => {
   const { ref, isVisible } = useScrollReveal();
@@ -122,53 +226,109 @@ const Services = () => {
 
               {/* SEO: hidden content rendered in DOM for indexability */}
               <div className="sr-only" aria-hidden="false">
-                <p>{service.modal.descricao}</p>
-                <p>{service.modal.inclui}</p>
-                <p>{service.modal.vantagens}</p>
+                {service.modal.descricao.map((t, i) => <p key={i}>{t}</p>)}
+                {service.modal.inclui.map((t, i) => <p key={i}>{t}</p>)}
+                {service.modal.vantagens.map((t, i) => <p key={i}>{t}</p>)}
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Modals */}
+      {/* Modals — using DialogPrimitive.Content directly to avoid the built-in close button */}
       {services.map((service, index) => (
         <Dialog key={service.title} open={openIndex === index} onOpenChange={(open) => !open && setOpenIndex(null)}>
-          <DialogContent className="sm:max-w-lg border-primary/20 bg-background/80 backdrop-blur-xl shadow-2xl shadow-primary/5 p-0 gap-0 overflow-hidden">
-            <div className="p-6 pb-4 flex items-start gap-4">
-              <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                <service.icon size={22} className="text-primary" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <DialogTitle className="font-display text-lg font-semibold">{service.title}</DialogTitle>
-              </div>
-              <DialogClose className="rounded-full p-1.5 hover:bg-muted transition-colors shrink-0 -mt-1 -mr-1">
-                <X size={18} className="text-muted-foreground" />
-                <span className="sr-only">Fechar</span>
-              </DialogClose>
-            </div>
+          <DialogPortal>
+            <DialogOverlay className="backdrop-blur-sm" />
+            <DialogPrimitive.Content
+              className={cn(
+                "fixed left-[50%] top-[50%] z-50 w-[95vw] max-w-2xl max-h-[90vh] translate-x-[-50%] translate-y-[-50%]",
+                "border border-primary/20 bg-background/90 backdrop-blur-2xl shadow-2xl shadow-primary/10 rounded-2xl",
+                "p-0 overflow-hidden",
+                "data-[state=open]:animate-in data-[state=closed]:animate-out",
+                "data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0",
+                "data-[state=open]:zoom-in-90 data-[state=closed]:zoom-out-90",
+                "data-[state=open]:slide-in-from-bottom-4 data-[state=closed]:slide-out-to-bottom-4",
+                "duration-300 ease-out"
+              )}
+            >
+              {/* Glow effect */}
+              <div className="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-primary/5 blur-3xl pointer-events-none" />
+              <div className="absolute -bottom-10 -left-10 w-32 h-32 rounded-full bg-accent/5 blur-3xl pointer-events-none" />
 
-            <Tabs defaultValue="descricao" className="w-full">
-              <div className="px-6">
-                <TabsList className="w-full bg-muted/50 h-10">
-                  <TabsTrigger value="descricao" className="flex-1 text-xs sm:text-sm">Descrição</TabsTrigger>
-                  <TabsTrigger value="inclui" className="flex-1 text-xs sm:text-sm">O que inclui</TabsTrigger>
-                  <TabsTrigger value="vantagens" className="flex-1 text-xs sm:text-sm">Vantagens</TabsTrigger>
-                </TabsList>
+              {/* Header */}
+              <div className="relative p-6 pb-4 flex items-start gap-4 border-b border-border/50">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <service.icon size={24} className="text-primary" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <DialogTitle className="font-display text-xl font-bold">{service.title}</DialogTitle>
+                  <p className="text-muted-foreground text-sm mt-1">{service.description}</p>
+                </div>
+                <button
+                  onClick={() => setOpenIndex(null)}
+                  className="rounded-full p-2 hover:bg-muted transition-colors shrink-0 -mt-1 -mr-1"
+                >
+                  <X size={18} className="text-muted-foreground" />
+                  <span className="sr-only">Fechar</span>
+                </button>
               </div>
-              <div className="p-6 pt-5 min-h-[120px]">
-                <TabsContent value="descricao" className="mt-0">
-                  <p className="text-muted-foreground text-sm leading-relaxed">{service.modal.descricao}</p>
-                </TabsContent>
-                <TabsContent value="inclui" className="mt-0">
-                  <p className="text-muted-foreground text-sm leading-relaxed">{service.modal.inclui}</p>
-                </TabsContent>
-                <TabsContent value="vantagens" className="mt-0">
-                  <p className="text-muted-foreground text-sm leading-relaxed">{service.modal.vantagens}</p>
-                </TabsContent>
-              </div>
-            </Tabs>
-          </DialogContent>
+
+              {/* Tabs */}
+              <Tabs defaultValue="descricao" className="w-full">
+                <div className="px-6 pt-4">
+                  <TabsList className="w-full bg-muted/40 h-11 rounded-xl p-1">
+                    {(["descricao", "inclui", "vantagens"] as const).map((tab) => {
+                      const Icon = tabIcons[tab];
+                      const labels = { descricao: "Descrição", inclui: "O que inclui", vantagens: "Vantagens" };
+                      return (
+                        <TabsTrigger
+                          key={tab}
+                          value={tab}
+                          className="flex-1 text-xs sm:text-sm gap-1.5 rounded-lg data-[state=active]:bg-primary/10 data-[state=active]:text-primary data-[state=active]:shadow-sm transition-all"
+                        >
+                          <Icon size={14} className="hidden sm:inline-block" />
+                          {labels[tab]}
+                        </TabsTrigger>
+                      );
+                    })}
+                  </TabsList>
+                </div>
+
+                <div className="p-6 pt-5 overflow-y-auto max-h-[50vh] scrollbar-hide">
+                  <TabsContent value="descricao" className="mt-0 space-y-4">
+                    {service.modal.descricao.map((paragraph, i) => (
+                      <p key={i} className="text-muted-foreground text-sm leading-relaxed">
+                        {paragraph}
+                      </p>
+                    ))}
+                  </TabsContent>
+
+                  <TabsContent value="inclui" className="mt-0">
+                    <ul className="space-y-3">
+                      {service.modal.inclui.map((item, i) => (
+                        <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
+                          <CheckCircle2 size={16} className="text-primary shrink-0 mt-0.5" />
+                          <span className="leading-relaxed">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </TabsContent>
+
+                  <TabsContent value="vantagens" className="mt-0">
+                    <ul className="space-y-3">
+                      {service.modal.vantagens.map((item, i) => (
+                        <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
+                          <Shield size={16} className="text-primary shrink-0 mt-0.5" />
+                          <span className="leading-relaxed">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </TabsContent>
+                </div>
+              </Tabs>
+            </DialogPrimitive.Content>
+          </DialogPortal>
         </Dialog>
       ))}
     </section>
