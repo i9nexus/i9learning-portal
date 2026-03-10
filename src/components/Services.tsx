@@ -303,8 +303,15 @@ const Services = () => {
   );
 };
 
-const ModalTabs = ({ service }: { service: ServiceDetail }) => {
+const ModalTabs = ({ service, onClose }: { service: ServiceDetail; onClose: () => void }) => {
   const [activeTab, setActiveTab] = useState<"descricao" | "inclui" | "vantagens">("descricao");
+
+  const handleCTA = () => {
+    onClose();
+    setTimeout(() => {
+      document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" });
+    }, 350);
+  };
 
   const tabContent = {
     descricao: (
@@ -369,6 +376,17 @@ const ModalTabs = ({ service }: { service: ServiceDetail }) => {
             {tabContent[activeTab]}
           </motion.div>
         </AnimatePresence>
+      </div>
+
+      {/* CTA */}
+      <div className="px-6 pb-6 pt-2 border-t border-border/50">
+        <button
+          onClick={handleCTA}
+          className="w-full flex items-center justify-center gap-2 rounded-xl bg-primary text-primary-foreground font-semibold py-3 text-sm hover:bg-primary/90 transition-colors"
+        >
+          Pedir Orçamento
+          <ArrowRight size={16} />
+        </button>
       </div>
     </Tabs>
   );
