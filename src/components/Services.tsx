@@ -1,10 +1,10 @@
 import { Monitor, BookOpen, Brain, Wrench, Search, GraduationCap, X, CheckCircle2, Sparkles, Shield } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { useState } from "react";
-import { Dialog, DialogPortal, DialogOverlay, DialogTitle } from "@/components/ui/dialog";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { cn } from "@/lib/utils";
+import { AnimatePresence, motion } from "framer-motion";
 
 interface ServiceDetail {
   icon: React.ElementType;
@@ -235,103 +235,142 @@ const Services = () => {
         </div>
       </div>
 
-      {/* Modals — using DialogPrimitive.Content directly to avoid the built-in close button */}
-      {services.map((service, index) => (
-        <Dialog key={service.title} open={openIndex === index} onOpenChange={(open) => !open && setOpenIndex(null)}>
-          <DialogPortal>
-            <DialogOverlay className="backdrop-blur-sm" />
-            <DialogPrimitive.Content
-              className={cn(
-                "fixed left-[50%] top-[50%] z-50 w-[95vw] max-w-2xl max-h-[90vh] translate-x-[-50%] translate-y-[-50%]",
-                "border border-primary/20 bg-background/90 backdrop-blur-2xl shadow-2xl shadow-primary/10 rounded-2xl",
-                "p-0 overflow-hidden",
-                "data-[state=open]:animate-in data-[state=closed]:animate-out",
-                "data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0",
-                "data-[state=open]:zoom-in-90 data-[state=closed]:zoom-out-90",
-                "data-[state=open]:slide-in-from-bottom-4 data-[state=closed]:slide-out-to-bottom-4",
-                "duration-300 ease-out"
-              )}
-            >
-              {/* Glow effect */}
-              <div className="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-primary/5 blur-3xl pointer-events-none" />
-              <div className="absolute -bottom-10 -left-10 w-32 h-32 rounded-full bg-accent/5 blur-3xl pointer-events-none" />
-
-              {/* Header */}
-              <div className="relative p-6 pb-4 flex items-start gap-4 border-b border-border/50">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                  <service.icon size={24} className="text-primary" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <DialogTitle className="font-display text-xl font-bold">{service.title}</DialogTitle>
-                  <p className="text-muted-foreground text-sm mt-1">{service.description}</p>
-                </div>
-                <button
+      {/* Modals with Framer Motion */}
+      <AnimatePresence>
+        {openIndex !== null && (
+          <DialogPrimitive.Root open onOpenChange={(open) => !open && setOpenIndex(null)}>
+            <DialogPrimitive.Portal forceMount>
+              <DialogPrimitive.Overlay asChild forceMount>
+                <motion.div
+                  className="fixed inset-0 z-50 bg-black/60 backdrop-blur-[8px]"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.25 }}
                   onClick={() => setOpenIndex(null)}
-                  className="rounded-full p-2 hover:bg-muted transition-colors shrink-0 -mt-1 -mr-1"
+                />
+              </DialogPrimitive.Overlay>
+              <DialogPrimitive.Content asChild forceMount onEscapeKeyDown={() => setOpenIndex(null)}>
+                <motion.div
+                  className={cn(
+                    "fixed left-[50%] top-[50%] z-50 w-[95vw] max-w-2xl max-h-[90vh]",
+                    "border border-primary/20 bg-background/90 backdrop-blur-2xl shadow-2xl shadow-primary/10 rounded-2xl",
+                    "p-0 overflow-hidden outline-none"
+                  )}
+                  initial={{ opacity: 0, scale: 0.95, x: "-50%", y: "-50%" }}
+                  animate={{ opacity: 1, scale: 1, x: "-50%", y: "-50%" }}
+                  exit={{ opacity: 0, scale: 0.95, x: "-50%", y: "-50%" }}
+                  transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  <X size={18} className="text-muted-foreground" />
-                  <span className="sr-only">Fechar</span>
-                </button>
-              </div>
+                  {(() => {
+                    const service = services[openIndex];
+                    return (
+                      <>
+                        {/* Glow effect */}
+                        <div className="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-primary/5 blur-3xl pointer-events-none" />
+                        <div className="absolute -bottom-10 -left-10 w-32 h-32 rounded-full bg-accent/5 blur-3xl pointer-events-none" />
 
-              {/* Tabs */}
-              <Tabs defaultValue="descricao" className="w-full">
-                <div className="px-6 pt-4">
-                  <TabsList className="w-full bg-muted/40 h-11 rounded-xl p-1">
-                    {(["descricao", "inclui", "vantagens"] as const).map((tab) => {
-                      const Icon = tabIcons[tab];
-                      const labels = { descricao: "Descrição", inclui: "O que inclui", vantagens: "Vantagens" };
-                      return (
-                        <TabsTrigger
-                          key={tab}
-                          value={tab}
-                          className="flex-1 text-xs sm:text-sm gap-1.5 rounded-lg data-[state=active]:bg-primary/10 data-[state=active]:text-primary data-[state=active]:shadow-sm transition-all"
-                        >
-                          <Icon size={14} className="hidden sm:inline-block" />
-                          {labels[tab]}
-                        </TabsTrigger>
-                      );
-                    })}
-                  </TabsList>
-                </div>
+                        {/* Header */}
+                        <div className="relative p-6 pb-4 flex items-start gap-4 border-b border-border/50">
+                          <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                            <service.icon size={24} className="text-primary" />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <DialogPrimitive.Title className="font-display text-xl font-bold">{service.title}</DialogPrimitive.Title>
+                            <p className="text-muted-foreground text-sm mt-1">{service.description}</p>
+                          </div>
+                          <button
+                            onClick={() => setOpenIndex(null)}
+                            className="rounded-full p-2 hover:bg-muted transition-colors shrink-0 -mt-1 -mr-1"
+                          >
+                            <X size={18} className="text-muted-foreground" />
+                            <span className="sr-only">Fechar</span>
+                          </button>
+                        </div>
 
-                <div className="p-6 pt-5 overflow-y-auto max-h-[50vh] scrollbar-hide">
-                  <TabsContent value="descricao" className="mt-0 space-y-4">
-                    {service.modal.descricao.map((paragraph, i) => (
-                      <p key={i} className="text-muted-foreground text-sm leading-relaxed">
-                        {paragraph}
-                      </p>
-                    ))}
-                  </TabsContent>
-
-                  <TabsContent value="inclui" className="mt-0">
-                    <ul className="space-y-3">
-                      {service.modal.inclui.map((item, i) => (
-                        <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
-                          <CheckCircle2 size={16} className="text-primary shrink-0 mt-0.5" />
-                          <span className="leading-relaxed">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </TabsContent>
-
-                  <TabsContent value="vantagens" className="mt-0">
-                    <ul className="space-y-3">
-                      {service.modal.vantagens.map((item, i) => (
-                        <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
-                          <Shield size={16} className="text-primary shrink-0 mt-0.5" />
-                          <span className="leading-relaxed">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </TabsContent>
-                </div>
-              </Tabs>
-            </DialogPrimitive.Content>
-          </DialogPortal>
-        </Dialog>
-      ))}
+                        {/* Tabs with animated content */}
+                        <ModalTabs service={service} />
+                      </>
+                    );
+                  })()}
+                </motion.div>
+              </DialogPrimitive.Content>
+            </DialogPrimitive.Portal>
+          </DialogPrimitive.Root>
+        )}
+      </AnimatePresence>
     </section>
+  );
+};
+
+const ModalTabs = ({ service }: { service: ServiceDetail }) => {
+  const [activeTab, setActiveTab] = useState<"descricao" | "inclui" | "vantagens">("descricao");
+
+  const tabContent = {
+    descricao: (
+      <div className="space-y-4">
+        {service.modal.descricao.map((paragraph, i) => (
+          <p key={i} className="text-muted-foreground text-sm leading-relaxed">{paragraph}</p>
+        ))}
+      </div>
+    ),
+    inclui: (
+      <ul className="space-y-3">
+        {service.modal.inclui.map((item, i) => (
+          <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
+            <CheckCircle2 size={16} className="text-primary shrink-0 mt-0.5" />
+            <span className="leading-relaxed">{item}</span>
+          </li>
+        ))}
+      </ul>
+    ),
+    vantagens: (
+      <ul className="space-y-3">
+        {service.modal.vantagens.map((item, i) => (
+          <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
+            <Shield size={16} className="text-primary shrink-0 mt-0.5" />
+            <span className="leading-relaxed">{item}</span>
+          </li>
+        ))}
+      </ul>
+    ),
+  };
+
+  return (
+    <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as typeof activeTab)} className="w-full">
+      <div className="px-6 pt-4">
+        <TabsList className="w-full bg-muted/40 h-11 rounded-xl p-1">
+          {(["descricao", "inclui", "vantagens"] as const).map((tab) => {
+            const Icon = tabIcons[tab];
+            const labels = { descricao: "Descrição", inclui: "O que inclui", vantagens: "Vantagens" };
+            return (
+              <TabsTrigger
+                key={tab}
+                value={tab}
+                className="flex-1 text-xs sm:text-sm gap-1.5 rounded-lg data-[state=active]:bg-primary/10 data-[state=active]:text-primary data-[state=active]:shadow-sm transition-all"
+              >
+                <Icon size={14} className="hidden sm:inline-block" />
+                {labels[tab]}
+              </TabsTrigger>
+            );
+          })}
+        </TabsList>
+      </div>
+
+      <div className="p-6 pt-5 overflow-y-auto max-h-[50vh] scrollbar-hide">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, x: 12 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -12 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+          >
+            {tabContent[activeTab]}
+          </motion.div>
+        </AnimatePresence>
+      </div>
+    </Tabs>
   );
 };
 
