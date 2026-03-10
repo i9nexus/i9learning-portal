@@ -289,7 +289,7 @@ const Services = () => {
                         </div>
 
                         {/* Tabs with animated content */}
-                        <ModalTabs service={service} />
+                        <ModalTabs service={service} onClose={() => setOpenIndex(null)} />
                       </>
                     );
                   })()}
