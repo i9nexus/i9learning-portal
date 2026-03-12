@@ -146,7 +146,7 @@ const Navbar = () => {
                     </SheetClose>
                   );
                 })}
-                ))}
+                
               </nav>
 
               {/* Footer accent */}
