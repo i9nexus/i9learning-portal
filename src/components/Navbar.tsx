@@ -69,14 +69,22 @@ const Navbar = () => {
 
         {/* Desktop nav */}
         <div className="hidden md:flex flex-1 items-center justify-center gap-6 lg:gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="nav-link-hover text-base text-muted-foreground hover:text-foreground transition-colors duration-200 whitespace-nowrap"
-            >
-              {link.label}
-            </a>
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.href.replace("/#", "");
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                className={`nav-link-hover text-base transition-colors duration-200 whitespace-nowrap ${
+                  isActive
+                    ? "text-foreground [&::after]:scale-x-100"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {link.label}
+              </a>
+            );
+          }
           ))}
         </div>
 
