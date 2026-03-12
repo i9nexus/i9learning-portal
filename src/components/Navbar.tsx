@@ -39,7 +39,7 @@ const Navbar = () => {
           setActiveSection(visible[0].target.id);
         }
       },
-      { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
+      { rootMargin: "-20% 0px -70% 0px", threshold: 0 }
     );
     sectionIds.forEach((id) => {
       const el = document.getElementById(id);
@@ -70,14 +70,16 @@ const Navbar = () => {
         {/* Desktop nav */}
         <div className="hidden md:flex flex-1 items-center justify-center gap-6 lg:gap-8">
           {navLinks.map((link) => {
-            const isActive = activeSection === link.href.replace("/#", "");
+            const sectionId = link.href.replace("/#", "");
+            const isActive = activeSection === sectionId;
             return (
               <a
                 key={link.href}
                 href={link.href}
+                onClick={() => setActiveSection(sectionId)}
                 className={`nav-link-hover text-base transition-colors duration-200 whitespace-nowrap ${
                   isActive
-                    ? "text-foreground [&::after]:scale-x-100"
+                    ? "text-foreground [&::after]:scale-x-100 [&::after]:opacity-100"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
