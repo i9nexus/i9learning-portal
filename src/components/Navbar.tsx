@@ -127,16 +127,26 @@ const Navbar = () => {
 
               {/* Navigation links */}
               <nav className="flex flex-col gap-2">
-                {navLinks.map((link) => (
-                  <SheetClose asChild key={link.href}>
-                    <a
-                      href={link.href}
-                      className="text-left text-lg font-display font-medium text-muted-foreground hover:text-foreground hover:bg-white/[0.05] rounded-lg px-4 py-3 transition-all duration-200"
-                    >
-                      {link.label}
-                    </a>
-                  </SheetClose>
-                ))}
+                {navLinks.map((link) => {
+                  const sectionId = link.href.replace("/#", "");
+                  const isActive = activeSection === sectionId;
+                  return (
+                    <SheetClose asChild key={link.href}>
+                      <a
+                        href={link.href}
+                        onClick={() => setActiveSection(sectionId)}
+                        className={`text-left text-lg font-display font-medium rounded-lg px-4 py-3 transition-all duration-200 border-l-[3px] ${
+                          isActive
+                            ? "text-foreground bg-primary/10 border-primary"
+                            : "text-muted-foreground hover:text-foreground hover:bg-white/[0.05] border-transparent"
+                        }`}
+                      >
+                        {link.label}
+                      </a>
+                    </SheetClose>
+                  );
+                })}
+                
               </nav>
 
               {/* Footer accent */}
