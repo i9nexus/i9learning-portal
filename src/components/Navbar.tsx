@@ -84,8 +84,7 @@ const Navbar = () => {
                 {link.label}
               </a>
             );
-          }
-          ))}
+          })}
         </div>
 
         {/* Theme toggle */}
