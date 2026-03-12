@@ -39,7 +39,7 @@ const Navbar = () => {
           setActiveSection(visible[0].target.id);
         }
       },
-      { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
+      { rootMargin: "-20% 0px -70% 0px", threshold: 0 }
     );
     sectionIds.forEach((id) => {
       const el = document.getElementById(id);
