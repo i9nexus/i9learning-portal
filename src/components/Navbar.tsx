@@ -20,32 +20,11 @@ const navLinks = [
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [sheetOpen, setSheetOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const sectionIds = navLinks.map((l) => l.href.replace("/#", ""));
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries.filter((e) => e.isIntersecting);
-        if (visible.length > 0) {
-          // pick the one closest to the top
-          visible.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-          setActiveSection(visible[0].target.id);
-        }
-      },
-      { rootMargin: "-20% 0px -70% 0px", threshold: 0 }
-    );
-    sectionIds.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-    return () => observer.disconnect();
   }, []);
 
   return (
@@ -69,24 +48,15 @@ const Navbar = () => {
 
         {/* Desktop nav */}
         <div className="hidden md:flex flex-1 items-center justify-center gap-6 lg:gap-8">
-          {navLinks.map((link) => {
-            const sectionId = link.href.replace("/#", "");
-            const isActive = activeSection === sectionId;
-            return (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setActiveSection(sectionId)}
-                className={`nav-link-hover text-base transition-colors duration-200 whitespace-nowrap ${
-                  isActive
-                    ? "text-foreground [&::after]:scale-x-100 [&::after]:opacity-100"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {link.label}
-              </a>
-            );
-          })}
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="nav-link-hover text-base text-muted-foreground hover:text-foreground transition-colors duration-200 whitespace-nowrap"
+            >
+              {link.label}
+            </a>
+          ))}
         </div>
 
         {/* Theme toggle */}
@@ -127,26 +97,16 @@ const Navbar = () => {
 
               {/* Navigation links */}
               <nav className="flex flex-col gap-2">
-                {navLinks.map((link) => {
-                  const sectionId = link.href.replace("/#", "");
-                  const isActive = activeSection === sectionId;
-                  return (
-                    <SheetClose asChild key={link.href}>
-                      <a
-                        href={link.href}
-                        onClick={() => setActiveSection(sectionId)}
-                        className={`text-left text-lg font-display font-medium rounded-lg px-4 py-3 transition-all duration-200 border-l-[3px] ${
-                          isActive
-                            ? "text-foreground bg-primary/10 border-primary"
-                            : "text-muted-foreground hover:text-foreground hover:bg-white/[0.05] border-transparent"
-                        }`}
-                      >
-                        {link.label}
-                      </a>
-                    </SheetClose>
-                  );
-                })}
-                
+                {navLinks.map((link) => (
+                  <SheetClose asChild key={link.href}>
+                    <a
+                      href={link.href}
+                      className="text-left text-lg font-display font-medium text-muted-foreground hover:text-foreground hover:bg-white/[0.05] rounded-lg px-4 py-3 transition-all duration-200"
+                    >
+                      {link.label}
+                    </a>
+                  </SheetClose>
+                ))}
               </nav>
 
               {/* Footer accent */}

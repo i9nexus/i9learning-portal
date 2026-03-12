@@ -186,15 +186,15 @@
 
   /* Nav link hover underline effect */
   .nav-link-hover {
-    @apply relative pb-1;
+    @apply relative;
   }
   .nav-link-hover::after {
     content: '';
-    @apply absolute left-0 bottom-0 w-full h-[3px] rounded-full origin-center scale-x-0 transition-all duration-300 ease-out opacity-0;
+    @apply absolute left-0 -bottom-1 w-full h-[2px] origin-left scale-x-0 transition-transform duration-300;
     background: linear-gradient(90deg, hsl(var(--gradient-start)), hsl(var(--gradient-end)));
   }
   .nav-link-hover:hover::after {
-    @apply scale-x-100 opacity-100;
+    @apply scale-x-100;
   }
 }
 
