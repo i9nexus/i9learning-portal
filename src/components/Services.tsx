@@ -1,4 +1,4 @@
-import { Monitor, BookOpen, Brain, Wrench, Search, GraduationCap, X, CheckCircle2, Sparkles, Shield, ArrowRight } from "lucide-react";
+import { Monitor, BookOpen, Brain, Wrench, Search, GraduationCap, X, CheckCircle2, Sparkles, Shield, ArrowRight, Video, Trophy, Settings } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { useState } from "react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
