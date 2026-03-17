@@ -1,4 +1,4 @@
-import { Monitor, BookOpen, Brain, Wrench, Search, GraduationCap, X, CheckCircle2, Sparkles, Shield, ArrowRight } from "lucide-react";
+import { Monitor, BookOpen, Brain, Wrench, Search, GraduationCap, X, CheckCircle2, Sparkles, Shield, ArrowRight, Video, Trophy, Settings } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { useState } from "react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
@@ -69,6 +69,87 @@ const services: ServiceDetail[] = [
         "Estratégias de gamificação que motivam e promovem a competição saudável entre formandos",
         "Conteúdos acessíveis e inclusivos, seguindo normas WCAG de acessibilidade digital",
         "Possibilidade de atualização e reutilização modular dos conteúdos produzidos",
+      ],
+    },
+  },
+  {
+    icon: Video,
+    title: "Criação de Conteúdos Digitais",
+    description:
+      "Produzimos vídeos explicativos, animações e elementos multimédia de alta qualidade que transformam conceitos complexos em experiências visuais memoráveis.",
+    modal: {
+      descricao: [
+        "Produção profissional de conteúdos digitais multimédia — desde vídeos explicativos e animações 2D/3D até infografias interativas e simulações — concebidos para maximizar a compreensão e a retenção de conhecimento.",
+        "A nossa equipa criativa combina storytelling visual, design de movimento e técnicas pedagógicas avançadas para criar materiais que captam a atenção do formando desde o primeiro segundo e mantêm o envolvimento ao longo de todo o percurso.",
+        "Cada conteúdo é produzido com rigor técnico e criativo, otimizado para múltiplos formatos e dispositivos, garantindo uma experiência consistente e de alta qualidade em qualquer ecrã.",
+      ],
+      inclui: [
+        "Produção de vídeos explicativos com locução profissional, legendagem e motion graphics",
+        "Criação de animações 2D e 3D para ilustrar processos, fluxos e conceitos abstratos",
+        "Design de infografias interativas e elementos visuais dinâmicos para enriquecer os cursos",
+        "Produção de screencasts e tutoriais passo-a-passo com anotações e destaques visuais",
+        "Edição e pós-produção profissional com color grading, sound design e efeitos visuais",
+      ],
+      vantagens: [
+        "Aumento comprovado de até 65% na retenção de conhecimento face a conteúdos apenas textuais",
+        "Conteúdos reutilizáveis e modulares — atualize secções sem refazer o vídeo completo",
+        "Compatibilidade total com LMS, redes sociais e plataformas de vídeo (YouTube, Vimeo)",
+        "Identidade visual consistente com a marca da organização em todos os materiais produzidos",
+        "Entrega em múltiplos formatos e resoluções (4K, Full HD, mobile-optimized) para máxima flexibilidade",
+      ],
+    },
+  },
+  {
+    icon: Trophy,
+    title: "Gamificação e Experiência do Aluno",
+    description:
+      "Implementamos estratégias de gamificação que transformam a aprendizagem numa experiência envolvente, com rankings, badges e dinâmicas motivacionais.",
+    modal: {
+      descricao: [
+        "Desenvolvimento e implementação de mecânicas de gamificação cientificamente fundamentadas que aumentam o envolvimento, a motivação intrínseca e as taxas de conclusão dos programas de formação.",
+        "Desenhamos experiências de aprendizagem que combinam elementos de jogo — pontos, níveis, desafios e recompensas — com objetivos pedagógicos claros, criando um equilíbrio perfeito entre diversão e eficácia formativa.",
+        "A nossa abordagem vai além dos simples badges: criamos narrativas imersivas, percursos adaptativos e dinâmicas sociais que fomentam a colaboração e a competição saudável entre formandos.",
+      ],
+      inclui: [
+        "Desenho de sistemas de pontos, níveis e progressão alinhados com os objetivos pedagógicos do curso",
+        "Criação de badges e certificados digitais personalizados que validam competências adquiridas",
+        "Implementação de leaderboards e rankings com filtros por equipa, departamento ou período",
+        "Desenvolvimento de desafios, missões e cenários interativos com recompensas desbloqueáveis",
+        "Configuração de notificações motivacionais e lembretes inteligentes para manter o engagement",
+      ],
+      vantagens: [
+        "Aumento médio de 40% nas taxas de conclusão dos cursos com mecânicas de gamificação",
+        "Maior envolvimento dos formandos — sessões mais longas e retorno mais frequente à plataforma",
+        "Dados acionáveis sobre motivação e comportamento dos utilizadores para melhoria contínua",
+        "Reforço positivo que promove a autonomia e a responsabilidade na aprendizagem",
+        "Possibilidade de integrar recompensas reais (certificações, prémios) ao sistema de gamificação",
+      ],
+    },
+  },
+  {
+    icon: Settings,
+    title: "Soluções Técnicas Avançadas",
+    description:
+      "Desenvolvemos integrações técnicas complexas — SSO, eCommerce, sistemas multilingue e ferramentas de controlo e monitorização avançadas.",
+    modal: {
+      descricao: [
+        "Implementação de soluções técnicas avançadas que estendem as capacidades nativas das plataformas de eLearning, permitindo integrações empresariais complexas e funcionalidades de controlo à medida das necessidades de cada organização.",
+        "Especializamo-nos em projetos de elevada complexidade técnica que exigem desenvolvimento personalizado — desde autenticação federada e gateways de pagamento até sistemas de gestão multilingue e ferramentas de compliance formativo.",
+        "Cada solução é arquitetada com foco na escalabilidade, segurança e manutenibilidade, seguindo as melhores práticas de desenvolvimento e integração de sistemas empresariais.",
+      ],
+      inclui: [
+        "Integração SSO (Single Sign-On) com Active Directory, SAML 2.0, OAuth e Azure AD",
+        "Configuração de eCommerce para venda de cursos com gateways de pagamento (Stripe, PayPal, MB Way)",
+        "Implementação de sistemas multilingue completos com gestão de traduções e conteúdos localizados",
+        "Desenvolvimento de ferramentas de registo de presenças com validação biométrica ou por código",
+        "Criação de dashboards de controlo com sumários automáticos e tempos de permanência por módulo",
+      ],
+      vantagens: [
+        "Experiência de autenticação única e segura para os utilizadores em todo o ecossistema digital",
+        "Monetização direta dos conteúdos formativos com checkout otimizado e relatórios financeiros",
+        "Alcance global com suporte nativo a múltiplos idiomas e adaptação cultural dos conteúdos",
+        "Conformidade total com requisitos regulatórios de registo de assiduidade e carga horária",
+        "Visibilidade completa sobre o progresso e envolvimento dos formandos através de analytics avançados",
       ],
     },
   },
@@ -181,7 +262,6 @@ const services: ServiceDetail[] = [
     },
   },
 ];
-
 const tabIcons = {
   descricao: Sparkles,
   inclui: CheckCircle2,
