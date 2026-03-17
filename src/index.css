@@ -51,6 +51,50 @@
     --gradient-start: 190 95% 50%;
     --gradient-end: 210 90% 55%;
   }
+
+  .light {
+    --background: 210 20% 98%;
+    --foreground: 222 28% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 28% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 28% 12%;
+
+    --primary: 190 85% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 15% 93%;
+    --secondary-foreground: 222 28% 12%;
+
+    --muted: 210 15% 93%;
+    --muted-foreground: 215 15% 45%;
+
+    --accent: 200 70% 42%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 190 85% 40%;
+
+    --sidebar-background: 210 20% 96%;
+    --sidebar-foreground: 222 28% 12%;
+    --sidebar-primary: 190 85% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 15% 93%;
+    --sidebar-accent-foreground: 222 28% 12%;
+    --sidebar-border: 214 20% 88%;
+    --sidebar-ring: 190 85% 40%;
+
+    --glow-primary: 190 85% 40%;
+    --surface-elevated: 210 15% 96%;
+    --gradient-start: 190 85% 40%;
+    --gradient-end: 210 80% 50%;
+  }
 }
 
 @layer base {
@@ -95,14 +139,14 @@
 
   /* Glassmorphism card */
   .glass-card {
-    @apply backdrop-blur-md border border-white/[0.08] relative overflow-hidden;
+    @apply backdrop-blur-md border border-black/[0.06] relative overflow-hidden;
     background: linear-gradient(
       135deg,
       hsl(var(--card) / 0.6),
       hsl(var(--card) / 0.3)
     );
     box-shadow:
-      0 8px 32px hsl(var(--background) / 0.4),
+      0 8px 32px hsl(var(--foreground) / 0.06),
       inset 0 1px 0 hsl(var(--foreground) / 0.05);
   }
 
