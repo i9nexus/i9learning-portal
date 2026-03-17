@@ -79,6 +79,11 @@ const Hero = () => {
 
       {/* Espaçador de fundo */}
       <div className="h-16 sm:h-24 md:h-32 w-full" aria-hidden="true" />
+
+      {/* SEO: Hidden semantic content for search engine indexing */}
+      <div className="sr-only" aria-hidden="false">
+        <p>i9 Learning — Especialistas em soluções de eLearning e formação online em Portugal. Implementação de plataformas LMS Moodle, Moodle Workplace, com suporte a normas SCORM 1.2, SCORM 2004, xAPI (Experience API), LTI (Learning Tools Interoperability). Produção de conteúdos interativos com Articulate Storyline, Articulate Rise 360 e H5P. Serviços de gamificação, microlearning, blended learning, desenho instrucional e consultoria EdTech. Digitalização de conteúdos formativos, produção de vídeos interativos, gestão de formação online e academia digital. Inteligência artificial aplicada à formação profissional com aprendizagem adaptativa (adaptive learning).</p>
+      </div>
     </section>
   );
 };
