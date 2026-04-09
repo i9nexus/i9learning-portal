@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 interface ScrollRevealOptions {
   threshold?: number;
@@ -33,11 +33,15 @@ export function useScrollReveal<T extends HTMLElement = HTMLDivElement>(
   return { ref, isVisible };
 }
 
-/** Utility: returns className for a reveal-animated element */
+/** Utility: returns className and style for a reveal-animated element */
 export function revealClass(isVisible: boolean, delay?: number): string {
   const base = "transition-all duration-700 ease-out";
   const hidden = "opacity-0 translate-y-8";
   const visible = "opacity-100 translate-y-0";
-  const delayStyle = delay ? `delay-[${delay}ms]` : "";
-  return `${base} ${isVisible ? visible : hidden} ${delayStyle}`.trim();
+  return `${base} ${isVisible ? visible : hidden}`.trim();
+}
+
+/** Returns inline style for transition delay */
+export function revealStyle(delay?: number): React.CSSProperties {
+  return delay ? { transitionDelay: `${delay}ms` } : {};
 }
