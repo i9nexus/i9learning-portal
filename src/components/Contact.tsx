@@ -74,7 +74,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contacto" className="section-padding bg-card/30" ref={ref}>
+    <section id="contacto" className="section-padding bg-card/30" ref={ref} aria-label="Contactar a i9 Learning para soluções de eLearning">
       <div className="container-narrow mx-auto">
         <div
           className={`text-center mb-16 transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}

@@ -26,7 +26,7 @@ const WhatWeDo = () => {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="o-que-fazemos" className="section-padding" ref={ref}>
+    <section id="o-que-fazemos" className="section-padding" ref={ref} aria-label="Pilares de formação online da i9 Learning">
       <div className="container-narrow mx-auto">
         <div className={`text-center mb-16 transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
