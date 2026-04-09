@@ -65,7 +65,7 @@ const Nichos = () => {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="solucoes" className="section-padding" ref={ref}>
+    <section id="solucoes" className="section-padding" ref={ref} aria-label="Setores e mercados de eLearning onde a i9 Learning atua">
       <div className="container-narrow mx-auto">
         <div
           className={`text-center mb-16 transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}

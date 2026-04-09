@@ -80,9 +80,26 @@ const Hero = () => {
       {/* Espaçador de fundo */}
       <div className="h-16 sm:h-24 md:h-32 w-full" aria-hidden="true" />
 
-      {/* SEO: Hidden semantic content for search engine indexing */}
+      {/* SEO: Hidden semantic content for search engine and AI indexing */}
       <div className="sr-only" aria-hidden="false">
-        <p>i9 Learning — Especialistas em soluções de eLearning e formação online em Portugal. Implementação de plataformas LMS Moodle, Moodle Workplace, com suporte a normas SCORM 1.2, SCORM 2004, xAPI (Experience API), LTI (Learning Tools Interoperability). Produção de conteúdos interativos com Articulate Storyline, Articulate Rise 360 e H5P. Serviços de gamificação, microlearning, blended learning, desenho instrucional e consultoria EdTech. Digitalização de conteúdos formativos, produção de vídeos interativos, gestão de formação online e academia digital. Inteligência artificial aplicada à formação profissional com aprendizagem adaptativa (adaptive learning).</p>
+        <h2>i9 Learning — Soluções de eLearning e Formação Online em Portugal</h2>
+        <p>A i9 Learning é um portal de soluções especializado em eLearning, e-learning e formação online em Portugal, com sede em Coimbra. Desenvolvemos soluções de formação digital à medida para organizações de todos os setores.</p>
+        <h3>Plataformas LMS e Moodle</h3>
+        <p>Implementação e personalização de plataformas LMS Moodle, incluindo Moodle LMS e Moodle Workplace. Configuração completa com design responsivo, integração SSO (Single Sign-On), compatibilidade total com normas SCORM 1.2, SCORM 2004, xAPI (Experience API / Tin Can API) e LTI (Learning Tools Interoperability). Integração com sistemas de videoconferência, gestão de inscrições, certificados digitais, relatórios avançados e conformidade com DGERT e IEFP. Plataformas de formação online escaláveis e seguras.</p>
+        <h3>Criação de Cursos Online e Conteúdos Interativos</h3>
+        <p>Produção profissional de cursos eLearning interativos com Articulate Storyline, Articulate Rise 360, Articulate 360 e H5P. Conteúdos exportáveis em SCORM 1.2 e SCORM 2004, compatíveis com qualquer Learning Management System. Produção multimédia: vídeo, motion graphics, animações 2D/3D, storytelling digital. Desenho instrucional (instructional design), design pedagógico, gamificação com badges, leaderboards e progressão por níveis. Estratégias de microlearning, blended learning e b-learning. Conformidade WCAG de acessibilidade digital.</p>
+        <h3>Inteligência Artificial Aplicada à Formação</h3>
+        <p>Soluções de IA e inteligência artificial para eLearning: aprendizagem adaptativa (adaptive learning), tutores virtuais inteligentes, chatbots educativos, geração automática de conteúdos e materiais de estudo, análise preditiva de desempenho, sistemas de recomendação de conteúdos personalizados, avaliação automática com feedback contextualizado. Automação de processos pedagógicos e administrativos com IA.</p>
+        <h3>Suporte Técnico e Manutenção LMS</h3>
+        <p>Suporte técnico especializado para plataformas Moodle e LMS. Monitorização proativa, backups automatizados, atualizações de segurança, gestão de plugins e módulos. Manutenção Moodle com SLA de disponibilidade até 99,9%.</p>
+        <h3>Consultoria EdTech e Estratégia Digital</h3>
+        <p>Consultoria especializada em EdTech, transformação digital da formação, auditoria de ecossistemas digitais, análise de stack tecnológica, otimização de workflows, migração entre plataformas LMS, benchmarking e melhores práticas do setor. Consultoria eLearning em Portugal.</p>
+        <h3>Formação Profissional e Formação de Formadores</h3>
+        <p>Programas de formação à medida: gestão avançada de LMS Moodle, criação de conteúdos com Articulate Storyline e Rise 360, H5P, boas práticas pedagógicas online, microlearning, blended learning. Formação de formadores para o digital, workshops práticos, certificação interna. Formação corporativa, formação empresarial, academia corporativa, academia digital.</p>
+        <h3>Setores de Atuação</h3>
+        <p>Corporate e Business (academias internas, onboarding digital), Educação e Academia, Saúde e Indústria Farmacêutica, Retalho e Serviços, Formação Profissional e Consultoria, Banca e Seguros, Indústria e Engenharia, Serviços Profissionais, Restauração e Hotelaria. Soluções de eLearning para todos os setores em Portugal e PALOP.</p>
+        <h3>Tecnologias e Normas</h3>
+        <p>SCORM 1.2, SCORM 2004, xAPI, Experience API, Tin Can API, LTI, Learning Tools Interoperability, H5P, Articulate Storyline, Articulate Rise 360, Moodle, Moodle LMS, Moodle Workplace, SSO, Single Sign-On, eCommerce de cursos online, venda de cursos online, certificação digital, DGERT, IEFP, WCAG, acessibilidade digital. eLearning Portugal, formação online Portugal, LMS Portugal, Moodle Portugal, cursos online Portugal.</p>
       </div>
     </section>
   );
