@@ -20,6 +20,32 @@ const navLinks = [
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [sheetOpen, setSheetOpen] = useState(false);
+  const [isDark, setIsDark] = useState(true);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    const stored = localStorage.getItem("theme");
+    if (stored === "light") {
+      root.classList.add("light");
+      setIsDark(false);
+    } else {
+      root.classList.remove("light");
+      setIsDark(true);
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const root = document.documentElement;
+    if (isDark) {
+      root.classList.add("light");
+      localStorage.setItem("theme", "light");
+      setIsDark(false);
+    } else {
+      root.classList.remove("light");
+      localStorage.setItem("theme", "dark");
+      setIsDark(true);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
