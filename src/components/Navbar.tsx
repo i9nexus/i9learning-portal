@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Menu, Sun, Moon } from "lucide-react";
 import {
   Sheet,
@@ -21,6 +22,15 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [sheetOpen, setSheetOpen] = useState(false);
   const [isDark, setIsDark] = useState(true);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleLogoClick = useCallback((e: React.MouseEvent) => {
+    if (location.pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [location.pathname]);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -63,7 +73,7 @@ const Navbar = () => {
     >
       <div className="container-narrow mx-auto flex items-center justify-between py-4 px-4 md:px-8">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-3 flex-shrink-0">
+        <a href="/" onClick={handleLogoClick} className="flex items-center gap-3 flex-shrink-0">
           <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[hsl(190,95%,50%)] to-[hsl(210,90%,55%)] flex items-center justify-center shadow-lg shadow-primary/20">
             <span className="font-display text-[18px] font-bold tracking-tight text-background leading-none">i9</span>
           </div>
