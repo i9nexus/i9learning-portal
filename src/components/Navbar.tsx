@@ -86,7 +86,15 @@ const Navbar = () => {
         </div>
 
         {/* Spacer to balance logo width */}
-        <div className="hidden lg:flex items-center w-[100px] flex-shrink-0 justify-end" />
+        <div className="hidden lg:flex items-center w-[100px] flex-shrink-0 justify-end">
+          <button
+            onClick={toggleTheme}
+            className="p-2 text-muted-foreground hover:text-foreground transition-colors duration-200"
+            aria-label={isDark ? "Mudar para modo claro" : "Mudar para modo escuro"}
+          >
+            {isDark ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+        </div>
 
         {/* Mobile/Tablet drawer */}
         <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
