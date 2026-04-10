@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, Sun, Moon } from "lucide-react";
+import { Menu } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -59,16 +59,8 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Theme toggle */}
-        <div className="hidden lg:flex items-center w-[100px] flex-shrink-0 justify-end">
-          <button
-            onClick={() => document.documentElement.classList.toggle("light")}
-            className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent/20 transition-colors"
-            aria-label="Alternar tema"
-          >
-            <Sun size={18} />
-          </button>
-        </div>
+        {/* Spacer to balance logo width */}
+        <div className="hidden lg:flex items-center w-[100px] flex-shrink-0 justify-end" />
 
         {/* Mobile/Tablet drawer */}
         <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
