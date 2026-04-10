@@ -5,7 +5,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border/50 py-8 pb-20 sm:pb-8 px-4 sm:px-6 md:px-8">
+    <footer className="border-t border-border/50 py-8 pb-24 sm:pb-20 md:pb-8 px-4 sm:px-6 md:px-8">
       <div className="container-narrow mx-auto flex flex-col items-center gap-6 md:flex-row md:justify-between md:gap-4">
         {/* LADO ESQUERDO: LOGO E COPYRIGHT */}
         <div className="flex flex-col items-center gap-2 sm:flex-row sm:gap-3">
