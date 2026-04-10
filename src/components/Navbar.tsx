@@ -135,11 +135,18 @@ const Navbar = () => {
                 ))}
               </nav>
 
-              {/* Footer accent */}
-              <div className="mt-auto pt-8 border-t border-white/[0.06]">
+              {/* Theme toggle + Footer */}
+              <div className="mt-auto pt-8 border-t border-white/[0.06] flex items-center justify-between">
                 <p className="text-xs text-muted-foreground/60">
                   © {new Date().getFullYear()} i9 Learning
                 </p>
+                <button
+                  onClick={toggleTheme}
+                  className="p-2 text-muted-foreground hover:text-foreground transition-colors duration-200"
+                  aria-label={isDark ? "Mudar para modo claro" : "Mudar para modo escuro"}
+                >
+                  {isDark ? <Sun size={18} /> : <Moon size={18} />}
+                </button>
               </div>
             </div>
           </SheetContent>
