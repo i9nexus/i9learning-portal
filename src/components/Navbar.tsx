@@ -22,6 +22,15 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [sheetOpen, setSheetOpen] = useState(false);
   const [isDark, setIsDark] = useState(true);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleLogoClick = useCallback((e: React.MouseEvent) => {
+    if (location.pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [location.pathname]);
 
   useEffect(() => {
     const root = document.documentElement;
