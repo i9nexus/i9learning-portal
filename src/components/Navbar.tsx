@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu } from "lucide-react";
+import { Menu, Sun, Moon } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -20,6 +20,32 @@ const navLinks = [
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [sheetOpen, setSheetOpen] = useState(false);
+  const [isDark, setIsDark] = useState(true);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    const stored = localStorage.getItem("theme");
+    if (stored === "light") {
+      root.classList.add("light");
+      setIsDark(false);
+    } else {
+      root.classList.remove("light");
+      setIsDark(true);
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const root = document.documentElement;
+    if (isDark) {
+      root.classList.add("light");
+      localStorage.setItem("theme", "light");
+      setIsDark(false);
+    } else {
+      root.classList.remove("light");
+      localStorage.setItem("theme", "dark");
+      setIsDark(true);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -60,7 +86,15 @@ const Navbar = () => {
         </div>
 
         {/* Spacer to balance logo width */}
-        <div className="hidden lg:flex items-center w-[100px] flex-shrink-0 justify-end" />
+        <div className="hidden lg:flex items-center w-[100px] flex-shrink-0 justify-end">
+          <button
+            onClick={toggleTheme}
+            className="p-2 text-muted-foreground hover:text-foreground transition-colors duration-200"
+            aria-label={isDark ? "Mudar para modo claro" : "Mudar para modo escuro"}
+          >
+            {isDark ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+        </div>
 
         {/* Mobile/Tablet drawer */}
         <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
@@ -101,11 +135,18 @@ const Navbar = () => {
                 ))}
               </nav>
 
-              {/* Footer accent */}
-              <div className="mt-auto pt-8 border-t border-white/[0.06]">
+              {/* Theme toggle + Footer */}
+              <div className="mt-auto pt-8 border-t border-white/[0.06] flex items-center justify-between">
                 <p className="text-xs text-muted-foreground/60">
                   © {new Date().getFullYear()} i9 Learning
                 </p>
+                <button
+                  onClick={toggleTheme}
+                  className="p-2 text-muted-foreground hover:text-foreground transition-colors duration-200"
+                  aria-label={isDark ? "Mudar para modo claro" : "Mudar para modo escuro"}
+                >
+                  {isDark ? <Sun size={18} /> : <Moon size={18} />}
+                </button>
               </div>
             </div>
           </SheetContent>
