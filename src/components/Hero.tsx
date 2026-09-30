@@ -31,7 +31,7 @@ const Hero = () => {
           style={{ animationDelay: "0.2s" }}
         >
           Transforme a sua Formação <br className="hidden sm:block" />
-          com <span className="text-gradient">Tecnologia e IA</span>
+          com <span className="text-gradient">Tecnologia e Estratégia</span>
         </h1>
 
         {/* Descrição Curta - 2 linhas */}
