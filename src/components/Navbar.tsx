@@ -259,7 +259,17 @@ const Navbar = () => {
                         </Link>
                       </SheetClose>
                     ))}
+                    <SheetClose asChild>
+                      <a
+                        href="/#servicos"
+                        onClick={goToServicesSection}
+                        className="text-sm text-muted-foreground/80 hover:text-foreground hover:bg-white/[0.05] rounded-lg px-3 py-2.5 transition-all duration-200"
+                      >
+                        Ver todos os serviços
+                      </a>
+                    </SheetClose>
                   </div>
+
                 )}
 
                 {navLinks.slice(1).map((link) => (
