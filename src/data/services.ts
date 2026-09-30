@@ -57,14 +57,15 @@ export const services: ServiceDefinition[] = [
     heroTitle: "Plataformas",
     heroHighlight: "eLearning",
     heroSubtitle:
-      "Implementamos, configuramos e personalizamos plataformas de formação online adaptadas à realidade de cada organização.",
+      "Instalamos, configuramos e personalizamos plataformas LMS Moodle, adaptadas à realidade de cada organização e prontas a utilizar.",
     cardDescription:
-      "Implementação, configuração e personalização de plataformas LMS, incluindo Moodle e outras soluções de mercado.",
-    metaTitle: "Plataformas eLearning | Implementação e Personalização LMS | i9 Learning",
+      "Instalação, configuração e personalização de plataformas LMS Moodle, incluindo temas à medida, integrações e migrações.",
+    metaTitle: "Instalação de Plataformas Moodle | LMS eLearning à Medida | i9 Learning",
     metaDescription:
-      "Implementação, configuração e personalização de plataformas eLearning e LMS, incluindo Moodle. Ambientes de aprendizagem adaptados à sua organização.",
+      "Instalação, configuração e personalização de plataformas Moodle (LMS). Temas à medida, integrações, migrações, SCORM e suporte especializado em Portugal.",
     keywords:
-      "plataforma eLearning, LMS, Moodle, Moodle Workplace, implementação LMS, personalização LMS, SCORM, xAPI, LTI, SSO, ambiente de aprendizagem",
+      "instalação Moodle, plataforma Moodle, configuração Moodle, personalização Moodle, tema Moodle, migração Moodle, Moodle Portugal, Moodle Workplace, plataforma LMS, LMS Moodle, SCORM, xAPI, LTI, SSO",
+
     navLabel: "Plataformas",
     challenge: {
       title: "O desafio",
@@ -77,43 +78,44 @@ export const services: ServiceDefinition[] = [
     solution: {
       title: "A solução",
       paragraphs: [
-        "Trabalhamos a plataforma como aquilo que ela é: o ambiente onde a aprendizagem acontece. Não nos limitamos a instalar software.",
-        "Analisamos o contexto, definimos a estrutura de cursos e de utilizadores, configuramos o que é necessário e personalizamos a experiência para que seja simples de usar e reconhecível como sua.",
-        "Trabalhamos com Moodle e com outras soluções LMS, escolhendo a abordagem mais adequada ao projeto em vez de impor uma ferramenta única.",
+        "Construímos as nossas plataformas sobre o LMS Moodle, o sistema de gestão de aprendizagem mais utilizado no mundo, com milhões de utilizadores e uma comunidade global que garante evolução constante.",
+        "Não nos limitamos a instalar o Moodle: analisamos o contexto, definimos a estrutura de cursos, utilizadores e permissões, configuramos o que é necessário e personalizamos por completo a experiência, para que a plataforma seja simples de usar e reconhecível como sua.",
+        "Tratamos de tudo — instalação, alojamento, tema à medida, integrações, normas SCORM, cópias de segurança, atualizações e migrações a partir de plataformas antigas — para que a organização se concentre apenas na formação.",
       ],
     },
     capabilities: [
       {
-        title: "Implementação de plataformas LMS",
+        title: "Instalação de plataformas Moodle",
         description:
-          "Instalação e arranque de plataformas de formação online preparadas para utilização real, com estrutura de cursos, utilizadores e permissões definida desde o início.",
+          "Instalação e arranque de plataformas Moodle preparadas para utilização real, com alojamento otimizado, domínio próprio, certificado de segurança e desempenho afinado.",
       },
       {
         title: "Configuração e parametrização",
         description:
-          "Definição de perfis, categorias, inscrições, regras de acesso e fluxos de utilização alinhados com o funcionamento da organização.",
+          "Definição de perfis, categorias, inscrições, permissões e fluxos de utilização alinhados com o funcionamento da organização.",
       },
       {
-        title: "Personalização gráfica",
+        title: "Tema e personalização gráfica",
         description:
-          "Adaptação visual da plataforma à identidade da marca, com um ambiente coerente, profissional e reconhecível pelos formandos.",
+          "Desenvolvimento de temas Moodle à medida, com a identidade da marca aplicada a todo o ambiente: cores, tipografia, painel inicial e páginas de entrada.",
       },
       {
-        title: "Melhoria de plataformas existentes",
+        title: "Compatibilidade com conteúdos SCORM",
         description:
-          "Revisão e otimização de plataformas já instaladas, corrigindo pontos de fricção e ativando funcionalidades subaproveitadas.",
+          "Plataformas preparadas para receber conteúdos em SCORM 1.2 e SCORM 2004, com registo fiável de progresso, tempos e resultados de avaliação.",
       },
       {
-        title: "Estruturação de ambientes de aprendizagem",
+        title: "Migração e melhoria de plataformas existentes",
         description:
-          "Organização de percursos, cursos e materiais de forma clara, para que cada formando saiba sempre onde está e o que se segue.",
+          "Migração de plataformas antigas para versões atuais do Moodle, sem perda de cursos, utilizadores nem histórico, e otimização do que já existe.",
       },
       {
-        title: "Adaptação da experiência de utilização",
+        title: "Atualizações, segurança e desempenho",
         description:
-          "Simplificação da navegação e da interação, com atenção à utilização em computador, tablet e telemóvel.",
+          "Atualizações regulares do Moodle, cópias de segurança automáticas, monitorização e afinação de velocidade para suportar muitos utilizadores em simultâneo.",
       },
     ],
+
     possibilities: {
       heading: "Possibilidades a integrar na plataforma",
       note:
