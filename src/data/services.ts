@@ -427,7 +427,8 @@ export const services: ServiceDefinition[] = [
       {
         question: "Que ferramentas utilizam na produção?",
         answer:
-          "Utilizamos ferramentas como Articulate Storyline, Articulate Rise 360 e H5P, entre outras, escolhidas em função do tipo de curso e do nível de interatividade pretendido.",
+          "Utilizamos ferramentas de autor profissionais de altíssima qualidade, reconhecidas internacionalmente, escolhidas em função do tipo de curso e do nível de interatividade pretendido. O resultado é sempre entregue em SCORM, compatível com Moodle e qualquer LMS.",
+
       },
       {
         question: "É possível incluir gamificação?",
@@ -1033,12 +1034,13 @@ export const services: ServiceDefinition[] = [
     heroSubtitle:
       "Preparamos equipas para gerir plataformas, produzir conteúdos e tirar partido real das ferramentas de eLearning.",
     cardDescription:
-      "Formação adaptada a administradores de plataformas, formadores e criadores de conteúdos, em Moodle, Articulate, H5P e boas práticas eLearning.",
-    metaTitle: "Formação e Capacitação em eLearning | Moodle, Articulate, H5P | i9 Learning",
+      "Formação adaptada a administradores de plataformas Moodle, formadores e criadores de conteúdos SCORM e interativos.",
+    metaTitle: "Formação e Capacitação em eLearning e Moodle | i9 Learning",
     metaDescription:
-      "Formação para administradores de plataformas, gestores de LMS, formadores e criadores de conteúdos: Moodle, Articulate Storyline, Rise 360, H5P e boas práticas.",
+      "Formação para administradores e gestores de plataformas Moodle, formadores e criadores de conteúdos: gestão de LMS, conteúdos SCORM e boas práticas de eLearning.",
     keywords:
-      "formação Moodle, formação LMS, formação Articulate Storyline, formação Rise 360, formação H5P, capacitação de formadores, criação de conteúdos eLearning",
+      "formação Moodle, formação LMS, gestão de plataformas Moodle, formação conteúdos SCORM, capacitação de formadores, criação de conteúdos eLearning",
+
     navLabel: "Formação",
     challenge: {
       title: "O desafio",
@@ -1094,10 +1096,11 @@ export const services: ServiceDefinition[] = [
         "A formação é adaptável às necessidades da organização, tanto no conteúdo como na profundidade.",
       items: [
         "Moodle",
+        "Administração de Moodle",
         "Gestão de plataformas LMS",
-        "Articulate Storyline",
-        "Articulate Rise 360",
-        "H5P",
+        "Produção de conteúdos SCORM",
+        "Ferramentas de autor",
+
         "Criação de conteúdos",
         "Formação online",
         "Boas práticas de eLearning",
@@ -1177,7 +1180,8 @@ export const services: ServiceDefinition[] = [
       {
         question: "Que áreas podem ser abordadas?",
         answer:
-          "Moodle, gestão de plataformas LMS, Articulate Storyline, Articulate Rise 360, H5P, criação de conteúdos, formação online e boas práticas de eLearning.",
+          "Administração e gestão de plataformas Moodle, produção de conteúdos SCORM e interativos, criação de cursos, formação online e boas práticas de eLearning.",
+
       },
       {
         question: "A formação é adaptada à nossa realidade?",
