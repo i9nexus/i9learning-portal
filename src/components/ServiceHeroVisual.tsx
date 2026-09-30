@@ -1,4 +1,4 @@
-import { Check, ShieldCheck, Sparkles, Activity, Zap } from "lucide-react";
+import { ShieldCheck, Sparkles, Activity } from "lucide-react";
 
 interface Stat {
   value: string;
