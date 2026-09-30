@@ -48,8 +48,13 @@ const App = () => (
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/politica-de-privacidade" element={<PrivacyPolicy />} />
-          <Route path="/termos-de-utilizacao" element={<TermsOfUse />} />
+          <Route path="/servicos/plataformas-elearning" element={<PlataformasElearning />} />
+          <Route path="/servicos/cursos-conteudos-elearning" element={<CursosConteudosElearning />} />
+          <Route path="/servicos/integracoes-desenvolvimento" element={<IntegracoesDesenvolvimento />} />
+          <Route path="/servicos/suporte-manutencao" element={<SuporteManutencao />} />
+          <Route path="/servicos/consultoria-estrategia" element={<ConsultoriaEstrategia />} />
+          <Route path="/servicos/formacao-capacitacao" element={<FormacaoCapacitacao />} />
+          <Route path="*" element={<NotFound />} />
           
           <Route path="*" element={<NotFound />} />
         </Routes>
