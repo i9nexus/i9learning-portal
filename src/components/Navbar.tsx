@@ -159,12 +159,13 @@ const Navbar = () => {
                   <div className="border-t border-white/[0.06] mt-2 pt-2">
                     <a
                       href="/#servicos"
-                      onClick={() => setServicesOpen(false)}
+                      onClick={goToServicesSection}
                       className="block rounded-lg px-3 py-2 text-xs text-muted-foreground/80 hover:text-foreground hover:bg-white/[0.06] transition-colors"
                     >
                       Ver todos os serviços
                     </a>
                   </div>
+
                 </div>
               </div>
             )}
