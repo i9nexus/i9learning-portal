@@ -1,16 +1,16 @@
 import { useState, useEffect, useCallback } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import { Menu, Sun, Moon } from "lucide-react";
+import { useLocation, useNavigate, Link } from "react-router-dom";
+import { Menu, Sun, Moon, ChevronDown } from "lucide-react";
 import {
   Sheet,
   SheetContent,
   SheetTrigger,
   SheetClose,
 } from "@/components/ui/sheet";
+import { services } from "@/data/services";
 
 const navLinks = [
   { label: "Sobre", href: "/#o-que-fazemos" },
-  { label: "Serviços", href: "/#servicos" },
   { label: "Metodologia", href: "/#como-trabalhamos" },
   { label: "Setores", href: "/#solucoes" },
   { label: "Impacto", href: "/#impacto" },
