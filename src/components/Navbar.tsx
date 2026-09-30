@@ -75,14 +75,14 @@ const Navbar = () => {
     >
       <div className="container-narrow mx-auto flex items-center justify-between py-4 px-4 md:px-8">
         {/* Logo */}
-        <a href="/" onClick={handleLogoClick} className="flex items-center gap-3 flex-shrink-0">
+        <Link to="/" onClick={handleLogoClick} className="flex items-center gap-3 flex-shrink-0">
           <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[hsl(190,95%,50%)] to-[hsl(210,90%,55%)] flex items-center justify-center shadow-lg shadow-primary/20">
             <span className="font-display text-[18px] font-bold tracking-tight text-background leading-none">i9</span>
           </div>
           <span className="font-display text-[22px] font-bold tracking-tight text-foreground">
             Learning
           </span>
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <div className="hidden lg:flex flex-1 items-center justify-center gap-5 xl:gap-8">
