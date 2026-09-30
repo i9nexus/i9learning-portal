@@ -303,14 +303,14 @@ export const services: ServiceDefinition[] = [
           "Organização da informação em módulos e sequências coerentes, com ritmo e progressão pensados para o formato digital.",
       },
       {
-        title: "Produção de conteúdos",
+        title: "Produção em formato SCORM",
         description:
-          "Desenvolvimento de cursos a partir do zero ou a partir dos materiais existentes na organização.",
+          "Cursos exportados em SCORM 1.2 e SCORM 2004, prontos a carregar numa plataforma Moodle ou noutro LMS, com registo de progresso e classificações.",
       },
       {
-        title: "Conteúdos interativos",
+        title: "Conteúdos interativos avançados",
         description:
-          "Atividades, simulações e interações que envolvem o formando em vez de o manterem num papel passivo.",
+          "Atividades, simulações, cenários de decisão e interações criadas com ferramentas de autor profissionais de referência internacional.",
       },
       {
         title: "Vídeo e multimédia",
@@ -324,14 +324,14 @@ export const services: ServiceDefinition[] = [
       },
     ],
     possibilities: {
-      heading: "Recursos e tecnologias que podemos utilizar",
+      heading: "Recursos que podemos incluir nos cursos",
       note:
         "A combinação de recursos é definida em função dos objetivos do curso e do perfil dos formandos.",
       items: [
-        "SCORM",
-        "Articulate Storyline",
-        "Articulate Rise 360",
-        "H5P",
+        "SCORM 1.2",
+        "SCORM 2004",
+        "Interatividade avançada",
+        "Simulações",
         "Vídeo",
         "Multimédia",
         "Storytelling",
@@ -342,6 +342,7 @@ export const services: ServiceDefinition[] = [
         "Recursos personalizados",
       ],
     },
+
     benefits: [
       {
         title: "Mais envolvimento",
