@@ -34,6 +34,29 @@ const Navbar = () => {
     }
   }, [location.pathname]);
 
+  const goToServicesSection = useCallback(
+    (e: React.MouseEvent) => {
+      e.preventDefault();
+      setServicesOpen(false);
+      setMobileServicesOpen(false);
+      const scrollToServices = () => {
+        const el = document.getElementById("servicos");
+        if (el) {
+          const top = el.getBoundingClientRect().top + window.scrollY - 80;
+          window.scrollTo({ top, behavior: "smooth" });
+        }
+      };
+      if (location.pathname === "/") {
+        scrollToServices();
+      } else {
+        navigate("/");
+        window.setTimeout(scrollToServices, 260);
+      }
+    },
+    [location.pathname, navigate]
+  );
+
+
   useEffect(() => {
     const root = document.documentElement;
     const stored = localStorage.getItem("theme");
@@ -136,12 +159,13 @@ const Navbar = () => {
                   <div className="border-t border-white/[0.06] mt-2 pt-2">
                     <a
                       href="/#servicos"
-                      onClick={() => setServicesOpen(false)}
+                      onClick={goToServicesSection}
                       className="block rounded-lg px-3 py-2 text-xs text-muted-foreground/80 hover:text-foreground hover:bg-white/[0.06] transition-colors"
                     >
                       Ver todos os serviços
                     </a>
                   </div>
+
                 </div>
               </div>
             )}
@@ -235,7 +259,17 @@ const Navbar = () => {
                         </Link>
                       </SheetClose>
                     ))}
+                    <SheetClose asChild>
+                      <a
+                        href="/#servicos"
+                        onClick={goToServicesSection}
+                        className="text-sm text-muted-foreground/80 hover:text-foreground hover:bg-white/[0.05] rounded-lg px-3 py-2.5 transition-all duration-200"
+                      >
+                        Ver todos os serviços
+                      </a>
+                    </SheetClose>
                   </div>
+
                 )}
 
                 {navLinks.slice(1).map((link) => (

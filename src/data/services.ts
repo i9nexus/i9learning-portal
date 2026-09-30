@@ -57,14 +57,15 @@ export const services: ServiceDefinition[] = [
     heroTitle: "Plataformas",
     heroHighlight: "eLearning",
     heroSubtitle:
-      "Implementamos, configuramos e personalizamos plataformas de formação online adaptadas à realidade de cada organização.",
+      "Instalamos, configuramos e personalizamos plataformas LMS Moodle, adaptadas à realidade de cada organização e prontas a utilizar.",
     cardDescription:
-      "Implementação, configuração e personalização de plataformas LMS, incluindo Moodle e outras soluções de mercado.",
-    metaTitle: "Plataformas eLearning | Implementação e Personalização LMS | i9 Learning",
+      "Instalação, configuração e personalização de plataformas LMS Moodle, incluindo temas à medida, integrações e migrações.",
+    metaTitle: "Instalação de Plataformas Moodle | LMS eLearning à Medida | i9 Learning",
     metaDescription:
-      "Implementação, configuração e personalização de plataformas eLearning e LMS, incluindo Moodle. Ambientes de aprendizagem adaptados à sua organização.",
+      "Instalação, configuração e personalização de plataformas Moodle (LMS). Temas à medida, integrações, migrações, SCORM e suporte especializado em Portugal.",
     keywords:
-      "plataforma eLearning, LMS, Moodle, Moodle Workplace, implementação LMS, personalização LMS, SCORM, xAPI, LTI, SSO, ambiente de aprendizagem",
+      "instalação Moodle, plataforma Moodle, configuração Moodle, personalização Moodle, tema Moodle, migração Moodle, Moodle Portugal, Moodle Workplace, plataforma LMS, LMS Moodle, SCORM, xAPI, LTI, SSO",
+
     navLabel: "Plataformas",
     challenge: {
       title: "O desafio",
@@ -77,43 +78,44 @@ export const services: ServiceDefinition[] = [
     solution: {
       title: "A solução",
       paragraphs: [
-        "Trabalhamos a plataforma como aquilo que ela é: o ambiente onde a aprendizagem acontece. Não nos limitamos a instalar software.",
-        "Analisamos o contexto, definimos a estrutura de cursos e de utilizadores, configuramos o que é necessário e personalizamos a experiência para que seja simples de usar e reconhecível como sua.",
-        "Trabalhamos com Moodle e com outras soluções LMS, escolhendo a abordagem mais adequada ao projeto em vez de impor uma ferramenta única.",
+        "Construímos as nossas plataformas sobre o LMS Moodle, o sistema de gestão de aprendizagem mais utilizado no mundo, com milhões de utilizadores e uma comunidade global que garante evolução constante.",
+        "Não nos limitamos a instalar o Moodle: analisamos o contexto, definimos a estrutura de cursos, utilizadores e permissões, configuramos o que é necessário e personalizamos por completo a experiência, para que a plataforma seja simples de usar e reconhecível como sua.",
+        "Tratamos de tudo — instalação, alojamento, tema à medida, integrações, normas SCORM, cópias de segurança, atualizações e migrações a partir de plataformas antigas — para que a organização se concentre apenas na formação.",
       ],
     },
     capabilities: [
       {
-        title: "Implementação de plataformas LMS",
+        title: "Instalação de plataformas Moodle",
         description:
-          "Instalação e arranque de plataformas de formação online preparadas para utilização real, com estrutura de cursos, utilizadores e permissões definida desde o início.",
+          "Instalação e arranque de plataformas Moodle preparadas para utilização real, com alojamento otimizado, domínio próprio, certificado de segurança e desempenho afinado.",
       },
       {
         title: "Configuração e parametrização",
         description:
-          "Definição de perfis, categorias, inscrições, regras de acesso e fluxos de utilização alinhados com o funcionamento da organização.",
+          "Definição de perfis, categorias, inscrições, permissões e fluxos de utilização alinhados com o funcionamento da organização.",
       },
       {
-        title: "Personalização gráfica",
+        title: "Tema e personalização gráfica",
         description:
-          "Adaptação visual da plataforma à identidade da marca, com um ambiente coerente, profissional e reconhecível pelos formandos.",
+          "Desenvolvimento de temas Moodle à medida, com a identidade da marca aplicada a todo o ambiente: cores, tipografia, painel inicial e páginas de entrada.",
       },
       {
-        title: "Melhoria de plataformas existentes",
+        title: "Compatibilidade com conteúdos SCORM",
         description:
-          "Revisão e otimização de plataformas já instaladas, corrigindo pontos de fricção e ativando funcionalidades subaproveitadas.",
+          "Plataformas preparadas para receber conteúdos em SCORM 1.2 e SCORM 2004, com registo fiável de progresso, tempos e resultados de avaliação.",
       },
       {
-        title: "Estruturação de ambientes de aprendizagem",
+        title: "Migração e melhoria de plataformas existentes",
         description:
-          "Organização de percursos, cursos e materiais de forma clara, para que cada formando saiba sempre onde está e o que se segue.",
+          "Migração de plataformas antigas para versões atuais do Moodle, sem perda de cursos, utilizadores nem histórico, e otimização do que já existe.",
       },
       {
-        title: "Adaptação da experiência de utilização",
+        title: "Atualizações, segurança e desempenho",
         description:
-          "Simplificação da navegação e da interação, com atenção à utilização em computador, tablet e telemóvel.",
+          "Atualizações regulares do Moodle, cópias de segurança automáticas, monitorização e afinação de velocidade para suportar muitos utilizadores em simultâneo.",
       },
     ],
+
     possibilities: {
       heading: "Possibilidades a integrar na plataforma",
       note:
@@ -201,15 +203,26 @@ export const services: ServiceDefinition[] = [
     ],
     faq: [
       {
-        question: "Trabalham apenas com Moodle?",
+        question: "Que plataforma utilizam?",
         answer:
-          "Trabalhamos com Moodle e com outras soluções LMS. A escolha depende dos objetivos, do contexto e das necessidades técnicas de cada projeto.",
+          "Trabalhamos com o LMS Moodle, o sistema de gestão de aprendizagem mais utilizado a nível mundial. É robusto, seguro, escalável e permite um nível de personalização que soluções fechadas não oferecem.",
       },
       {
-        question: "Podem melhorar uma plataforma que já temos?",
+        question: "Fazem a instalação do Moodle de raiz?",
         answer:
-          "Sim. Analisamos a plataforma existente e intervimos ao nível da configuração, da organização dos conteúdos, da experiência de utilização e da personalização gráfica.",
+          "Sim. Tratamos da instalação completa: alojamento, domínio, certificado de segurança, configuração inicial, estrutura de cursos e utilizadores, tema personalizado e afinação de desempenho.",
       },
+      {
+        question: "Podem migrar ou melhorar um Moodle que já temos?",
+        answer:
+          "Sim. Migramos plataformas antigas para versões atuais do Moodle sem perda de cursos, utilizadores ou histórico, e otimizamos configuração, organização de conteúdos e imagem.",
+      },
+      {
+        question: "A plataforma aceita conteúdos SCORM?",
+        answer:
+          "Sim. As nossas plataformas Moodle estão preparadas para SCORM 1.2 e SCORM 2004, com registo de progresso, tempos de utilização e resultados de avaliação.",
+      },
+
       {
         question: "A plataforma pode ter a imagem da nossa marca?",
         answer:
@@ -251,14 +264,15 @@ export const services: ServiceDefinition[] = [
     heroTitle: "Cursos e Conteúdos",
     heroHighlight: "eLearning",
     heroSubtitle:
-      "Concebemos e produzimos cursos online com estrutura pedagógica sólida e conteúdos que prendem a atenção de quem aprende.",
+      "Produzimos cursos em formato SCORM e conteúdos interativos de alta qualidade, prontos a integrar em qualquer plataforma Moodle ou LMS.",
     cardDescription:
-      "Conceção pedagógica, desenho instrucional e produção de cursos interativos, multimédia e compatíveis com SCORM.",
-    metaTitle: "Cursos e Conteúdos eLearning | Produção e Desenho Instrucional | i9 Learning",
+      "Desenho instrucional e produção de cursos interativos em formato SCORM, compatíveis com Moodle e qualquer LMS.",
+    metaTitle: "Cursos e Conteúdos eLearning em SCORM | Conteúdos Interativos | i9 Learning",
     metaDescription:
-      "Conceção e produção de cursos eLearning: desenho instrucional, conteúdos interativos, SCORM, Articulate Storyline, Rise 360, H5P, vídeo e gamificação.",
+      "Produção de cursos eLearning e conteúdos interativos em SCORM 1.2 e SCORM 2004, compatíveis com Moodle e qualquer LMS. Desenho instrucional, vídeo e gamificação.",
     keywords:
-      "cursos eLearning, produção de conteúdos, desenho instrucional, SCORM, Articulate Storyline, Rise 360, H5P, gamificação, microlearning, conteúdos interativos",
+      "conteúdos SCORM, cursos SCORM, SCORM 1.2, SCORM 2004, conteúdos interativos, cursos eLearning, desenho instrucional, conteúdos para Moodle, gamificação, microlearning, produção de cursos online",
+
     navLabel: "Cursos",
     challenge: {
       title: "O desafio",
@@ -272,9 +286,10 @@ export const services: ServiceDefinition[] = [
       title: "A solução",
       paragraphs: [
         "Concebemos cursos a partir dos objetivos de aprendizagem, não a partir do material disponível. A estrutura pedagógica vem primeiro.",
-        "Trabalhamos desde o zero ou a partir de conteúdos já existentes na organização, transformando-os em percursos claros, interativos e adequados ao formato digital.",
-        "A tecnologia é escolhida em função do curso: interatividade, vídeo, storytelling, gamificação ou microlearning, conforme aquilo que o público e o tema exigem.",
+        "A produção é feita com ferramentas de autor profissionais de altíssima qualidade, reconhecidas internacionalmente, que nos permitem criar interatividade avançada, simulações, avaliações e percursos adaptativos.",
+        "Todos os cursos são entregues em formato SCORM (1.2 e 2004), prontos a integrar numa plataforma Moodle ou em qualquer outro LMS, com registo fiável de progresso, tempos e resultados.",
       ],
+
     },
     capabilities: [
       {
@@ -288,14 +303,14 @@ export const services: ServiceDefinition[] = [
           "Organização da informação em módulos e sequências coerentes, com ritmo e progressão pensados para o formato digital.",
       },
       {
-        title: "Produção de conteúdos",
+        title: "Produção em formato SCORM",
         description:
-          "Desenvolvimento de cursos a partir do zero ou a partir dos materiais existentes na organização.",
+          "Cursos exportados em SCORM 1.2 e SCORM 2004, prontos a carregar numa plataforma Moodle ou noutro LMS, com registo de progresso e classificações.",
       },
       {
-        title: "Conteúdos interativos",
+        title: "Conteúdos interativos avançados",
         description:
-          "Atividades, simulações e interações que envolvem o formando em vez de o manterem num papel passivo.",
+          "Atividades, simulações, cenários de decisão e interações criadas com ferramentas de autor profissionais de referência internacional.",
       },
       {
         title: "Vídeo e multimédia",
@@ -309,14 +324,14 @@ export const services: ServiceDefinition[] = [
       },
     ],
     possibilities: {
-      heading: "Recursos e tecnologias que podemos utilizar",
+      heading: "Recursos que podemos incluir nos cursos",
       note:
         "A combinação de recursos é definida em função dos objetivos do curso e do perfil dos formandos.",
       items: [
-        "SCORM",
-        "Articulate Storyline",
-        "Articulate Rise 360",
-        "H5P",
+        "SCORM 1.2",
+        "SCORM 2004",
+        "Interatividade avançada",
+        "Simulações",
         "Vídeo",
         "Multimédia",
         "Storytelling",
@@ -327,6 +342,7 @@ export const services: ServiceDefinition[] = [
         "Recursos personalizados",
       ],
     },
+
     benefits: [
       {
         title: "Mais envolvimento",
@@ -411,7 +427,8 @@ export const services: ServiceDefinition[] = [
       {
         question: "Que ferramentas utilizam na produção?",
         answer:
-          "Utilizamos ferramentas como Articulate Storyline, Articulate Rise 360 e H5P, entre outras, escolhidas em função do tipo de curso e do nível de interatividade pretendido.",
+          "Utilizamos ferramentas de autor profissionais de altíssima qualidade, reconhecidas internacionalmente, escolhidas em função do tipo de curso e do nível de interatividade pretendido. O resultado é sempre entregue em SCORM, compatível com Moodle e qualquer LMS.",
+
       },
       {
         question: "É possível incluir gamificação?",
@@ -1017,12 +1034,13 @@ export const services: ServiceDefinition[] = [
     heroSubtitle:
       "Preparamos equipas para gerir plataformas, produzir conteúdos e tirar partido real das ferramentas de eLearning.",
     cardDescription:
-      "Formação adaptada a administradores de plataformas, formadores e criadores de conteúdos, em Moodle, Articulate, H5P e boas práticas eLearning.",
-    metaTitle: "Formação e Capacitação em eLearning | Moodle, Articulate, H5P | i9 Learning",
+      "Formação adaptada a administradores de plataformas Moodle, formadores e criadores de conteúdos SCORM e interativos.",
+    metaTitle: "Formação e Capacitação em eLearning e Moodle | i9 Learning",
     metaDescription:
-      "Formação para administradores de plataformas, gestores de LMS, formadores e criadores de conteúdos: Moodle, Articulate Storyline, Rise 360, H5P e boas práticas.",
+      "Formação para administradores e gestores de plataformas Moodle, formadores e criadores de conteúdos: gestão de LMS, conteúdos SCORM e boas práticas de eLearning.",
     keywords:
-      "formação Moodle, formação LMS, formação Articulate Storyline, formação Rise 360, formação H5P, capacitação de formadores, criação de conteúdos eLearning",
+      "formação Moodle, formação LMS, gestão de plataformas Moodle, formação conteúdos SCORM, capacitação de formadores, criação de conteúdos eLearning",
+
     navLabel: "Formação",
     challenge: {
       title: "O desafio",
@@ -1078,10 +1096,11 @@ export const services: ServiceDefinition[] = [
         "A formação é adaptável às necessidades da organização, tanto no conteúdo como na profundidade.",
       items: [
         "Moodle",
+        "Administração de Moodle",
         "Gestão de plataformas LMS",
-        "Articulate Storyline",
-        "Articulate Rise 360",
-        "H5P",
+        "Produção de conteúdos SCORM",
+        "Ferramentas de autor",
+
         "Criação de conteúdos",
         "Formação online",
         "Boas práticas de eLearning",
@@ -1161,7 +1180,8 @@ export const services: ServiceDefinition[] = [
       {
         question: "Que áreas podem ser abordadas?",
         answer:
-          "Moodle, gestão de plataformas LMS, Articulate Storyline, Articulate Rise 360, H5P, criação de conteúdos, formação online e boas práticas de eLearning.",
+          "Administração e gestão de plataformas Moodle, produção de conteúdos SCORM e interativos, criação de cursos, formação online e boas práticas de eLearning.",
+
       },
       {
         question: "A formação é adaptada à nossa realidade?",

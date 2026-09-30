@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Check, ChevronDown, Minus, Plus } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ServiceHeroVisual from "@/components/ServiceHeroVisual";
+
 import { useCanonical } from "@/hooks/use-canonical";
 import { services, type ServiceDefinition } from "@/data/services";
 
@@ -122,22 +124,14 @@ const useServiceSeo = (service: ServiceDefinition) => {
   }, [service]);
 };
 
-const sectionNav = [
-  { id: "o-servico", label: "O Serviço" },
-  { id: "solucao", label: "Solução" },
-  { id: "possibilidades", label: "Possibilidades" },
-  { id: "como-trabalhamos-servico", label: "Como Trabalhamos" },
-  { id: "faq", label: "FAQ" },
-  { id: "contacto-servico", label: "Contacto" },
-];
-
 const scrollToSection = (id: string) => {
   const el = document.getElementById(id);
   if (el) {
-    const top = el.getBoundingClientRect().top + window.scrollY - 130;
+    const top = el.getBoundingClientRect().top + window.scrollY - 90;
     window.scrollTo({ top, behavior: "smooth" });
   }
 };
+
 
 interface ServiceLandingProps {
   service: ServiceDefinition;
@@ -154,31 +148,11 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Navbar />
 
-      {/* Navegação interna da página */}
-      <div className="fixed top-[72px] left-0 right-0 z-40 bg-background/85 backdrop-blur-xl border-b border-white/10">
-        <div className="container-narrow mx-auto px-4 md:px-8">
-          <div className="flex items-center gap-5 overflow-x-auto py-3 scrollbar-none">
-            <span className="hidden sm:inline text-xs font-semibold text-primary whitespace-nowrap">
-              {service.number}
-            </span>
-            {sectionNav.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap"
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <main className="pt-[132px]">
+      <main className="pt-20">
         {/* HERO */}
-        <section className="relative overflow-hidden py-16 md:py-24">
+        <section className="relative overflow-hidden py-14 md:py-24 lg:py-28">
           <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[70vw] max-w-[560px] h-[70vw] max-h-[560px] bg-primary/5 rounded-full blur-[120px]" />
+            <div className="absolute top-0 left-1/4 w-[70vw] max-w-[620px] h-[70vw] max-h-[620px] bg-primary/5 rounded-full blur-[130px]" />
           </div>
           <div
             className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -190,64 +164,69 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
             }}
           />
           <div className="relative z-10 container-narrow mx-auto px-4 md:px-8">
-            <nav aria-label="Caminho de navegação" className="mb-6 text-sm text-muted-foreground">
-              <Link to="/" className="hover:text-foreground transition-colors">
-                Início
-              </Link>
-              <span className="mx-2">/</span>
-              <Link to="/#servicos" className="hover:text-foreground transition-colors">
-                Serviços
-              </Link>
-              <span className="mx-2">/</span>
-              <span className="text-foreground">{service.title}</span>
-            </nav>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              {/* Coluna de texto */}
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <Icon
+                      size={22}
+                      width={22}
+                      height={22}
+                      className="text-primary"
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <span className="text-sm font-semibold tracking-widest text-primary">
+                    SERVIÇO {service.number}
+                  </span>
+                </div>
 
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                <Icon size={24} width={24} height={24} className="text-primary" aria-hidden="true" />
+                <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight mb-6">
+                  {service.heroTitle}{" "}
+                  <span className="text-gradient">{service.heroHighlight}</span>
+                </h1>
+
+                <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-10 max-w-xl">
+                  {service.heroSubtitle}
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a
+                    href={contactHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] text-primary-foreground px-8 py-3.5 rounded-lg font-semibold text-base hover:opacity-90 transition-opacity flex items-center justify-center gap-2 group"
+                  >
+                    Falar sobre o projeto
+                    <ArrowRight
+                      size={18}
+                      width={18}
+                      height={18}
+                      className="group-hover:translate-x-1 transition-transform"
+                    />
+                  </a>
+                  <button
+                    onClick={() => scrollToSection("o-servico")}
+                    className="w-full sm:w-auto border border-white/15 px-8 py-3.5 rounded-lg font-semibold text-base text-foreground hover:bg-white/[0.05] transition-colors flex items-center justify-center gap-2"
+                  >
+                    Conhecer o serviço
+                    <ChevronDown size={18} width={18} height={18} aria-hidden="true" />
+                  </button>
+                </div>
               </div>
-              <span className="text-sm font-semibold tracking-widest text-primary">
-                SERVIÇO {service.number}
-              </span>
-            </div>
 
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight mb-6">
-              {service.heroTitle}{" "}
-              <span className="text-gradient">{service.heroHighlight}</span>
-            </h1>
-
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mb-10">
-              {service.heroSubtitle}
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href={contactHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] text-primary-foreground px-8 py-3.5 rounded-lg font-semibold text-base hover:opacity-90 transition-opacity flex items-center justify-center gap-2 group"
-              >
-                Falar sobre o projeto
-                <ArrowRight
-                  size={18}
-                  width={18}
-                  height={18}
-                  className="group-hover:translate-x-1 transition-transform"
-                />
-              </a>
-              <button
-                onClick={() => scrollToSection("o-servico")}
-                className="w-full sm:w-auto border border-white/15 px-8 py-3.5 rounded-lg font-semibold text-base text-foreground hover:bg-white/[0.05] transition-colors flex items-center justify-center gap-2"
-              >
-                Conhecer o serviço
-                <ChevronDown size={18} width={18} height={18} aria-hidden="true" />
-              </button>
+              {/* Coluna visual */}
+              <div className="lg:pl-4">
+                <ServiceHeroVisual slug={service.slug} />
+              </div>
             </div>
           </div>
         </section>
 
+
         {/* DESAFIO */}
-        <section id="o-servico" className="section-padding bg-card/30 scroll-mt-32">
+        <section id="o-servico" className="section-padding bg-card/30 scroll-mt-24">
           <div className="container-narrow mx-auto">
             <div className="max-w-3xl">
               <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
@@ -265,7 +244,7 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
         </section>
 
         {/* SOLUÇÃO */}
-        <section id="solucao" className="section-padding scroll-mt-32">
+        <section id="solucao" className="section-padding scroll-mt-24">
           <div className="container-narrow mx-auto">
             <div className="max-w-3xl mb-14">
               <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
@@ -295,7 +274,7 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
         </section>
 
         {/* POSSIBILIDADES */}
-        <section id="possibilidades" className="section-padding bg-card/30 scroll-mt-32">
+        <section id="possibilidades" className="section-padding bg-card/30 scroll-mt-24">
           <div className="container-narrow mx-auto">
             <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
               {service.possibilities.heading}
@@ -383,7 +362,7 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
         </section>
 
         {/* COMO TRABALHAMOS */}
-        <section id="como-trabalhamos-servico" className="section-padding bg-card/30 scroll-mt-32">
+        <section id="como-trabalhamos-servico" className="section-padding bg-card/30 scroll-mt-24">
           <div className="container-narrow mx-auto">
             <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-10">
               Como trabalhamos
@@ -418,7 +397,7 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
         </section>
 
         {/* FAQ */}
-        <section id="faq" className="section-padding bg-card/30 scroll-mt-32">
+        <section id="faq" className="section-padding bg-card/30 scroll-mt-24">
           <div className="container-narrow mx-auto">
             <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-10">
               Perguntas <span className="text-gradient">frequentes</span>
@@ -453,7 +432,7 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
         </section>
 
         {/* CTA FINAL */}
-        <section id="contacto-servico" className="section-padding scroll-mt-32">
+        <section id="contacto-servico" className="section-padding scroll-mt-24">
           <div className="container-narrow mx-auto">
             <div className="glass-card rounded-2xl p-8 md:p-14 text-center">
               <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
