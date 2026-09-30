@@ -8,6 +8,12 @@ import { Analytics } from "@vercel/analytics/react";
 import Index from "./pages/Index";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
+import PlataformasElearning from "./pages/servicos/PlataformasElearning";
+import CursosConteudosElearning from "./pages/servicos/CursosConteudosElearning";
+import IntegracoesDesenvolvimento from "./pages/servicos/IntegracoesDesenvolvimento";
+import SuporteManutencao from "./pages/servicos/SuporteManutencao";
+import ConsultoriaEstrategia from "./pages/servicos/ConsultoriaEstrategia";
+import FormacaoCapacitacao from "./pages/servicos/FormacaoCapacitacao";
 
 import NotFound from "./pages/NotFound";
 import ScrollToTopButton from "./components/ScrollToTop";
@@ -44,7 +50,12 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/politica-de-privacidade" element={<PrivacyPolicy />} />
           <Route path="/termos-de-utilizacao" element={<TermsOfUse />} />
-          
+          <Route path="/servicos/plataformas-elearning" element={<PlataformasElearning />} />
+          <Route path="/servicos/cursos-conteudos-elearning" element={<CursosConteudosElearning />} />
+          <Route path="/servicos/integracoes-desenvolvimento" element={<IntegracoesDesenvolvimento />} />
+          <Route path="/servicos/suporte-manutencao" element={<SuporteManutencao />} />
+          <Route path="/servicos/consultoria-estrategia" element={<ConsultoriaEstrategia />} />
+          <Route path="/servicos/formacao-capacitacao" element={<FormacaoCapacitacao />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
