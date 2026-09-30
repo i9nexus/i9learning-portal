@@ -34,6 +34,29 @@ const Navbar = () => {
     }
   }, [location.pathname]);
 
+  const goToServicesSection = useCallback(
+    (e: React.MouseEvent) => {
+      e.preventDefault();
+      setServicesOpen(false);
+      setMobileServicesOpen(false);
+      const scrollToServices = () => {
+        const el = document.getElementById("servicos");
+        if (el) {
+          const top = el.getBoundingClientRect().top + window.scrollY - 80;
+          window.scrollTo({ top, behavior: "smooth" });
+        }
+      };
+      if (location.pathname === "/") {
+        scrollToServices();
+      } else {
+        navigate("/");
+        window.setTimeout(scrollToServices, 260);
+      }
+    },
+    [location.pathname, navigate]
+  );
+
+
   useEffect(() => {
     const root = document.documentElement;
     const stored = localStorage.getItem("theme");
