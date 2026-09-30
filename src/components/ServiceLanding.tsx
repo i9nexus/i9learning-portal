@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Check, ChevronDown, Minus, Plus } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ServiceHeroVisual from "@/components/ServiceHeroVisual";
+
 import { useCanonical } from "@/hooks/use-canonical";
 import { services, type ServiceDefinition } from "@/data/services";
 
@@ -122,22 +124,14 @@ const useServiceSeo = (service: ServiceDefinition) => {
   }, [service]);
 };
 
-const sectionNav = [
-  { id: "o-servico", label: "O Serviço" },
-  { id: "solucao", label: "Solução" },
-  { id: "possibilidades", label: "Possibilidades" },
-  { id: "como-trabalhamos-servico", label: "Como Trabalhamos" },
-  { id: "faq", label: "FAQ" },
-  { id: "contacto-servico", label: "Contacto" },
-];
-
 const scrollToSection = (id: string) => {
   const el = document.getElementById(id);
   if (el) {
-    const top = el.getBoundingClientRect().top + window.scrollY - 130;
+    const top = el.getBoundingClientRect().top + window.scrollY - 90;
     window.scrollTo({ top, behavior: "smooth" });
   }
 };
+
 
 interface ServiceLandingProps {
   service: ServiceDefinition;
