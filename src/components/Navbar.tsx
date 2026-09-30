@@ -195,8 +195,50 @@ const Navbar = () => {
               </div>
 
               {/* Navigation links */}
-              <nav className="flex flex-col gap-2">
-                {navLinks.map((link) => (
+              <nav className="flex flex-col gap-2 overflow-y-auto">
+                <SheetClose asChild>
+                  <a
+                    href={navLinks[0].href}
+                    className="text-left text-lg font-display font-medium text-muted-foreground hover:text-foreground hover:bg-white/[0.05] rounded-lg px-4 py-3 transition-all duration-200"
+                  >
+                    {navLinks[0].label}
+                  </a>
+                </SheetClose>
+
+                {/* Serviços (expansível) */}
+                <button
+                  onClick={() => setMobileServicesOpen((prev) => !prev)}
+                  aria-expanded={mobileServicesOpen}
+                  className="flex items-center justify-between text-left text-lg font-display font-medium text-muted-foreground hover:text-foreground hover:bg-white/[0.05] rounded-lg px-4 py-3 transition-all duration-200"
+                >
+                  Serviços
+                  <ChevronDown
+                    size={18}
+                    width={18}
+                    height={18}
+                    aria-hidden="true"
+                    className={`transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""}`}
+                  />
+                </button>
+                {mobileServicesOpen && (
+                  <div className="flex flex-col gap-1 pl-3 border-l border-white/10 ml-4">
+                    {services.map((service) => (
+                      <SheetClose asChild key={service.slug}>
+                        <Link
+                          to={service.path}
+                          className="flex items-start gap-2 text-sm text-muted-foreground hover:text-foreground hover:bg-white/[0.05] rounded-lg px-3 py-2.5 transition-all duration-200"
+                        >
+                          <span className="text-primary/70 font-semibold w-5 flex-shrink-0">
+                            {service.number}
+                          </span>
+                          <span className="leading-snug">{service.title}</span>
+                        </Link>
+                      </SheetClose>
+                    ))}
+                  </div>
+                )}
+
+                {navLinks.slice(1).map((link) => (
                   <SheetClose asChild key={link.href}>
                     <a
                       href={link.href}
