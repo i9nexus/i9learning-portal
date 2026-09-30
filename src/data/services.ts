@@ -203,15 +203,26 @@ export const services: ServiceDefinition[] = [
     ],
     faq: [
       {
-        question: "Trabalham apenas com Moodle?",
+        question: "Que plataforma utilizam?",
         answer:
-          "Trabalhamos com Moodle e com outras soluções LMS. A escolha depende dos objetivos, do contexto e das necessidades técnicas de cada projeto.",
+          "Trabalhamos com o LMS Moodle, o sistema de gestão de aprendizagem mais utilizado a nível mundial. É robusto, seguro, escalável e permite um nível de personalização que soluções fechadas não oferecem.",
       },
       {
-        question: "Podem melhorar uma plataforma que já temos?",
+        question: "Fazem a instalação do Moodle de raiz?",
         answer:
-          "Sim. Analisamos a plataforma existente e intervimos ao nível da configuração, da organização dos conteúdos, da experiência de utilização e da personalização gráfica.",
+          "Sim. Tratamos da instalação completa: alojamento, domínio, certificado de segurança, configuração inicial, estrutura de cursos e utilizadores, tema personalizado e afinação de desempenho.",
       },
+      {
+        question: "Podem migrar ou melhorar um Moodle que já temos?",
+        answer:
+          "Sim. Migramos plataformas antigas para versões atuais do Moodle sem perda de cursos, utilizadores ou histórico, e otimizamos configuração, organização de conteúdos e imagem.",
+      },
+      {
+        question: "A plataforma aceita conteúdos SCORM?",
+        answer:
+          "Sim. As nossas plataformas Moodle estão preparadas para SCORM 1.2 e SCORM 2004, com registo de progresso, tempos de utilização e resultados de avaliação.",
+      },
+
       {
         question: "A plataforma pode ter a imagem da nossa marca?",
         answer:
