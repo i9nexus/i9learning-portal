@@ -264,14 +264,15 @@ export const services: ServiceDefinition[] = [
     heroTitle: "Cursos e Conteúdos",
     heroHighlight: "eLearning",
     heroSubtitle:
-      "Concebemos e produzimos cursos online com estrutura pedagógica sólida e conteúdos que prendem a atenção de quem aprende.",
+      "Produzimos cursos em formato SCORM e conteúdos interativos de alta qualidade, prontos a integrar em qualquer plataforma Moodle ou LMS.",
     cardDescription:
-      "Conceção pedagógica, desenho instrucional e produção de cursos interativos, multimédia e compatíveis com SCORM.",
-    metaTitle: "Cursos e Conteúdos eLearning | Produção e Desenho Instrucional | i9 Learning",
+      "Desenho instrucional e produção de cursos interativos em formato SCORM, compatíveis com Moodle e qualquer LMS.",
+    metaTitle: "Cursos e Conteúdos eLearning em SCORM | Conteúdos Interativos | i9 Learning",
     metaDescription:
-      "Conceção e produção de cursos eLearning: desenho instrucional, conteúdos interativos, SCORM, Articulate Storyline, Rise 360, H5P, vídeo e gamificação.",
+      "Produção de cursos eLearning e conteúdos interativos em SCORM 1.2 e SCORM 2004, compatíveis com Moodle e qualquer LMS. Desenho instrucional, vídeo e gamificação.",
     keywords:
-      "cursos eLearning, produção de conteúdos, desenho instrucional, SCORM, Articulate Storyline, Rise 360, H5P, gamificação, microlearning, conteúdos interativos",
+      "conteúdos SCORM, cursos SCORM, SCORM 1.2, SCORM 2004, conteúdos interativos, cursos eLearning, desenho instrucional, conteúdos para Moodle, gamificação, microlearning, produção de cursos online",
+
     navLabel: "Cursos",
     challenge: {
       title: "O desafio",
@@ -285,9 +286,10 @@ export const services: ServiceDefinition[] = [
       title: "A solução",
       paragraphs: [
         "Concebemos cursos a partir dos objetivos de aprendizagem, não a partir do material disponível. A estrutura pedagógica vem primeiro.",
-        "Trabalhamos desde o zero ou a partir de conteúdos já existentes na organização, transformando-os em percursos claros, interativos e adequados ao formato digital.",
-        "A tecnologia é escolhida em função do curso: interatividade, vídeo, storytelling, gamificação ou microlearning, conforme aquilo que o público e o tema exigem.",
+        "A produção é feita com ferramentas de autor profissionais de altíssima qualidade, reconhecidas internacionalmente, que nos permitem criar interatividade avançada, simulações, avaliações e percursos adaptativos.",
+        "Todos os cursos são entregues em formato SCORM (1.2 e 2004), prontos a integrar numa plataforma Moodle ou em qualquer outro LMS, com registo fiável de progresso, tempos e resultados.",
       ],
+
     },
     capabilities: [
       {
