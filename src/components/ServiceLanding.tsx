@@ -226,7 +226,7 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
 
 
         {/* DESAFIO */}
-        <section id="o-servico" className="section-padding bg-card/30 scroll-mt-32">
+        <section id="o-servico" className="section-padding bg-card/30 scroll-mt-24">
           <div className="container-narrow mx-auto">
             <div className="max-w-3xl">
               <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
@@ -244,7 +244,7 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
         </section>
 
         {/* SOLUÇÃO */}
-        <section id="solucao" className="section-padding scroll-mt-32">
+        <section id="solucao" className="section-padding scroll-mt-24">
           <div className="container-narrow mx-auto">
             <div className="max-w-3xl mb-14">
               <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
@@ -274,7 +274,7 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
         </section>
 
         {/* POSSIBILIDADES */}
-        <section id="possibilidades" className="section-padding bg-card/30 scroll-mt-32">
+        <section id="possibilidades" className="section-padding bg-card/30 scroll-mt-24">
           <div className="container-narrow mx-auto">
             <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
               {service.possibilities.heading}
@@ -362,7 +362,7 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
         </section>
 
         {/* COMO TRABALHAMOS */}
-        <section id="como-trabalhamos-servico" className="section-padding bg-card/30 scroll-mt-32">
+        <section id="como-trabalhamos-servico" className="section-padding bg-card/30 scroll-mt-24">
           <div className="container-narrow mx-auto">
             <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-10">
               Como trabalhamos
@@ -397,7 +397,7 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
         </section>
 
         {/* FAQ */}
-        <section id="faq" className="section-padding bg-card/30 scroll-mt-32">
+        <section id="faq" className="section-padding bg-card/30 scroll-mt-24">
           <div className="container-narrow mx-auto">
             <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-10">
               Perguntas <span className="text-gradient">frequentes</span>
@@ -432,7 +432,7 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
         </section>
 
         {/* CTA FINAL */}
-        <section id="contacto-servico" className="section-padding scroll-mt-32">
+        <section id="contacto-servico" className="section-padding scroll-mt-24">
           <div className="container-narrow mx-auto">
             <div className="glass-card rounded-2xl p-8 md:p-14 text-center">
               <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
