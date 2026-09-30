@@ -84,7 +84,68 @@ const Navbar = () => {
 
         {/* Desktop nav */}
         <div className="hidden lg:flex flex-1 items-center justify-center gap-5 xl:gap-8">
-          {navLinks.map((link) => (
+          <a
+            href={navLinks[0].href}
+            className="nav-link-hover text-sm xl:text-base text-muted-foreground hover:text-foreground transition-colors duration-200 whitespace-nowrap"
+          >
+            {navLinks[0].label}
+          </a>
+
+          {/* Dropdown Serviços */}
+          <div
+            className="relative"
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
+          >
+            <button
+              onClick={() => setServicesOpen((prev) => !prev)}
+              aria-expanded={servicesOpen}
+              aria-haspopup="true"
+              className="nav-link-hover flex items-center gap-1 text-sm xl:text-base text-muted-foreground hover:text-foreground transition-colors duration-200 whitespace-nowrap"
+            >
+              Serviços
+              <ChevronDown
+                size={15}
+                width={15}
+                height={15}
+                aria-hidden="true"
+                className={`transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`}
+              />
+            </button>
+
+            {servicesOpen && (
+              <div className="absolute left-1/2 -translate-x-1/2 top-full pt-4">
+                <div className="w-[330px] rounded-xl border border-white/10 bg-background/95 backdrop-blur-2xl shadow-2xl shadow-black/40 p-2">
+                  {services.map((service) => (
+                    <Link
+                      key={service.slug}
+                      to={service.path}
+                      onClick={() => setServicesOpen(false)}
+                      className="flex items-start gap-3 rounded-lg px-3 py-2.5 hover:bg-white/[0.06] transition-colors group/item"
+                    >
+                      <span className="font-display text-xs font-semibold text-primary/70 mt-0.5 w-5 flex-shrink-0">
+                        {service.number}
+                      </span>
+                      <span className="text-sm text-muted-foreground group-hover/item:text-foreground transition-colors leading-snug">
+                        {service.title}
+                      </span>
+                    </Link>
+                  ))}
+                  <div className="border-t border-white/[0.06] mt-2 pt-2">
+                    <a
+                      href="/#servicos"
+                      onClick={() => setServicesOpen(false)}
+                      className="block rounded-lg px-3 py-2 text-xs text-muted-foreground/80 hover:text-foreground hover:bg-white/[0.06] transition-colors"
+                    >
+                      Ver todos os serviços
+                    </a>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {navLinks.slice(1).map((link) => (
             <a
               key={link.href}
               href={link.href}
