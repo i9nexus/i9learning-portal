@@ -457,7 +457,7 @@ export const services: ServiceDefinition[] = [
     slug: "integracoes-desenvolvimento",
     path: "/servicos/integracoes-desenvolvimento",
     icon: Puzzle,
-    title: "Integrações e Desenvolvimento à Medida",
+    title: "Desenvolvimento à Medida",
     heroTitle: "Integrações e Desenvolvimento",
     heroHighlight: "à Medida",
     heroSubtitle:
@@ -1032,14 +1032,14 @@ export const services: ServiceDefinition[] = [
     heroTitle: "Formação e",
     heroHighlight: "Capacitação",
     heroSubtitle:
-      "Preparamos equipas para gerir plataformas, produzir conteúdos e tirar partido real das ferramentas de eLearning.",
+      "Capacitamos as equipas para utilizar e gerir no dia a dia as soluções eLearning implementadas, com autonomia e confiança.",
     cardDescription:
-      "Formação adaptada a administradores de plataformas Moodle, formadores e criadores de conteúdos SCORM e interativos.",
+      "Capacitação de gestores de formação, formadores e equipas para a utilização eficaz das plataformas e conteúdos eLearning implementados.",
     metaTitle: "Formação e Capacitação em eLearning e Moodle | i9 Learning",
     metaDescription:
-      "Formação para administradores e gestores de plataformas Moodle, formadores e criadores de conteúdos: gestão de LMS, conteúdos SCORM e boas práticas de eLearning.",
+      "Capacitação para gestores de formação, formadores e equipas: utilização da plataforma Moodle no dia a dia, gestão de formandos, tutoria online e boas práticas de eLearning.",
     keywords:
-      "formação Moodle, formação LMS, gestão de plataformas Moodle, formação conteúdos SCORM, capacitação de formadores, criação de conteúdos eLearning",
+      "formação Moodle, capacitação utilizadores Moodle, gestão de formação online, capacitação de formadores, tutoria online, adoção de plataformas eLearning",
 
     navLabel: "Formação",
     challenge: {
@@ -1060,19 +1060,19 @@ export const services: ServiceDefinition[] = [
     },
     capabilities: [
       {
-        title: "Administração de plataformas",
+        title: "Utilização da plataforma",
         description:
-          "Capacitação de administradores na gestão de utilizadores, cursos, permissões e configurações.",
+          "Capacitação na utilização diária da plataforma implementada: navegação, cursos, utilizadores e funcionalidades disponíveis.",
       },
       {
-        title: "Gestão de LMS",
+        title: "Gestão operacional da formação",
         description:
-          "Formação orientada a quem tem a responsabilidade operacional da plataforma de formação.",
+          "Inscrição e acompanhamento de formandos, consulta de relatórios de progresso e gestão de certificados.",
       },
       {
-        title: "Criação de conteúdos",
+        title: "Tutoria e dinamização online",
         description:
-          "Formação prática em ferramentas de autor para produção de cursos e recursos interativos.",
+          "Boas práticas de moderação, comunicação com formandos e acompanhamento da aprendizagem em ambiente digital.",
       },
       {
         title: "Capacitação de formadores",
@@ -1095,13 +1095,12 @@ export const services: ServiceDefinition[] = [
       note:
         "A formação é adaptável às necessidades da organização, tanto no conteúdo como na profundidade.",
       items: [
-        "Moodle",
-        "Administração de Moodle",
-        "Gestão de plataformas LMS",
-        "Produção de conteúdos SCORM",
-        "Ferramentas de autor",
-
-        "Criação de conteúdos",
+        "Utilização do Moodle",
+        "Gestão de formandos",
+        "Relatórios e progresso",
+        "Certificados",
+        "Tutoria online",
+        "Avaliação de aprendizagens",
         "Formação online",
         "Boas práticas de eLearning",
       ],
@@ -1128,7 +1127,7 @@ export const services: ServiceDefinition[] = [
       "Administradores de plataformas",
       "Gestores de LMS",
       "Formadores e equipas de formação",
-      "Criadores de conteúdos",
+      "Gestores de formação",
       "Departamentos de formação e recursos humanos",
       "Equipas em transição para a formação digital",
     ],
@@ -1175,12 +1174,12 @@ export const services: ServiceDefinition[] = [
       {
         question: "A quem se destina esta formação?",
         answer:
-          "A administradores de plataformas, gestores de LMS, formadores, equipas de formação e criadores de conteúdos, entre outros perfis envolvidos na formação digital.",
+          "A gestores de formação, formadores, tutores e equipas que utilizam no dia a dia as plataformas e os conteúdos eLearning implementados.",
       },
       {
         question: "Que áreas podem ser abordadas?",
         answer:
-          "Administração e gestão de plataformas Moodle, produção de conteúdos SCORM e interativos, criação de cursos, formação online e boas práticas de eLearning.",
+          "Utilização da plataforma Moodle, gestão de formandos, relatórios, certificados, tutoria online e boas práticas de eLearning. A produção de conteúdos, a implementação de plataformas e os desenvolvimentos continuam a ser serviços especializados prestados pela i9 Learning.",
 
       },
       {

@@ -1,6 +1,22 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { AlertTriangle, ArrowRight, CheckCircle2, ChevronDown, Sparkles, Users } from "lucide-react";
+import { AlertTriangle, ArrowRight, BarChart3, CalendarClock, Cloud, Cog, Code2, Database, FileCheck2, GraduationCap, Layers, LifeBuoy, Lock, Palette, Plug, RefreshCw, Search, ShieldCheck, Target, Video, Wand2, Workflow, CheckCircle2, ChevronDown, MessageSquare, Phone, Sparkles, Users } from "lucide-react";
+
+const ICON_RULES: [RegExp, React.ElementType][] = [
+  [/segur|prote/i, ShieldCheck], [/acess|sso|autentic/i, Lock], [/migra|atualiz/i, RefreshCw],
+  [/tema|gráfic|visual|design|identidade/i, Palette], [/instala|aloja|servidor/i, Cloud],
+  [/configura|parametri/i, Cog], [/integra|api|ligação/i, Plug], [/automat/i, Workflow],
+  [/ia\b|inteligência/i, Wand2], [/scorm|norma/i, FileCheck2], [/vídeo|video/i, Video],
+  [/relatório|análise|métric|dados/i, BarChart3], [/diagnós|auditor|avalia/i, Search],
+  [/estratég|plan|objetiv/i, Target], [/suporte|manuten|assist/i, LifeBuoy],
+  [/backup|cópia/i, Database], [/formador|tutoria|capacita|formação/i, GraduationCap],
+  [/funcionalidade|desenvolv|módulo/i, Code2], [/curso|conteúdo|estrutura/i, Layers],
+];
+const pickIcon = (title: string, fallback: React.ElementType) =>
+  ICON_RULES.find(([re]) => re.test(title))?.[1] ?? fallback;
+
+const CALENDAR_URL = "https://calendar.app.google/rMie36ftHYkKFzhD9";
+const PHONE_URL = "tel:+351910213246";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ServiceHeroVisual from "@/components/ServiceHeroVisual";
@@ -258,15 +274,18 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
               <p className="text-muted-foreground leading-relaxed">{service.solution.paragraphs[0]}</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-              {service.capabilities.map((item) => (
+              {service.capabilities.map((item) => {
+                const CapIcon = pickIcon(item.title, Icon);
+                return (
                 <article key={item.title} className="glass-card rounded-xl p-6 hover:border-primary/30 transition-colors">
                   <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
-                    <Icon size={20} width={20} height={20} className="text-primary" aria-hidden="true" />
+                    <CapIcon size={20} width={20} height={20} className="text-primary" aria-hidden="true" />
                   </div>
                   <h3 className="font-display text-base font-semibold mb-2">{item.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
                 </article>
-              ))}
+                );
+              })}
             </div>
             {service.solution.paragraphs.length > 1 && (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 mt-8">
@@ -343,31 +362,47 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
         </section>
 
         {/* CTA ÚNICO */}
-        <section id="contacto-servico" className="section-padding scroll-mt-24">
+        <section id="contacto-servico" className="section-padding bg-secondary/30 scroll-mt-24">
           <div className="container-narrow mx-auto">
-            <div className="relative overflow-hidden glass-card rounded-2xl p-8 md:p-14 text-center border-primary/30">
-              <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--gradient-start)/0.12)] to-[hsl(var(--gradient-end)/0.12)] pointer-events-none" aria-hidden="true" />
-              <div className="relative">
-                <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
+            <div className="glass-card rounded-3xl p-10 md:p-16 text-center relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 pointer-events-none" aria-hidden="true" />
+              <div className="relative z-10">
+                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase bg-primary/10 text-primary border border-primary/20 mb-6">
+                  <CalendarClock size={14} width={14} height={14} aria-hidden="true" />
+                  Reunião online, sem compromisso
+                </span>
+                <h2 className="font-display text-3xl sm:text-4xl font-bold mb-4">
                   {service.ctaFinal.title}
                 </h2>
-                <p className="text-muted-foreground max-w-xl mx-auto mb-8">{service.ctaFinal.text}</p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
+                  {service.ctaFinal.text}
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a
+                    href={CALENDAR_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-display font-semibold text-lg bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] text-primary-foreground shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-[1.03] transition-all duration-300"
+                  >
+                    Escolher Horário
+                    <ArrowRight size={20} width={20} height={20} aria-hidden="true" />
+                  </a>
                   <a
                     href={contactHref}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full sm:w-auto bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] text-primary-foreground px-8 py-3.5 rounded-lg font-semibold text-base hover:opacity-90 transition-opacity inline-flex items-center justify-center gap-2 group"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-display font-semibold text-lg glass-card text-foreground hover:border-primary/40 hover:scale-[1.03] transition-all duration-300"
                   >
-                    {service.ctaFinal.button}
-                    <ArrowRight size={18} width={18} height={18} className="group-hover:translate-x-1 transition-transform" />
+                    <MessageSquare size={20} width={20} height={20} className="text-primary" aria-hidden="true" />
+                    Falar no WhatsApp
                   </a>
-                  <Link
-                    to="/#contacto"
-                    className="w-full sm:w-auto border border-white/15 px-8 py-3.5 rounded-lg font-semibold text-base text-foreground hover:bg-white/[0.05] transition-colors inline-flex items-center justify-center"
+                  <a
+                    href={PHONE_URL}
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-display font-semibold text-lg glass-card text-foreground hover:border-primary/40 hover:scale-[1.03] transition-all duration-300"
                   >
-                    Enviar mensagem
-                  </Link>
+                    <Phone size={20} width={20} height={20} className="text-primary" aria-hidden="true" />
+                    Ligar Agora
+                  </a>
                 </div>
               </div>
             </div>
@@ -375,14 +410,14 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
         </section>
 
         {/* FAQ */}
-        <section id="faq" className="section-padding bg-card/30 scroll-mt-24">
-          <div className="container-narrow mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold">
+        <section id="faq" className="section-padding scroll-mt-24">
+          <div className="container-narrow mx-auto max-w-3xl">
+            <div className="text-center mb-14">
+              <h2 className="font-display text-3xl sm:text-4xl font-bold mb-4">
                 Perguntas <span className="text-gradient">frequentes</span>
               </h2>
             </div>
-            <div className="max-w-3xl mx-auto space-y-3">
+            <div className="space-y-3">
               {service.faq.map((item, index) => {
                 const isOpen = openFaq === index;
                 return (
