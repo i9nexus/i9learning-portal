@@ -25,16 +25,12 @@ const Footer = () => {
           <div className="flex items-center gap-4 sm:gap-6">
             <Link
               to="/politica-de-privacidade"
-              target="_blank"
-              rel="noopener noreferrer"
               className="text-muted-foreground text-xs sm:text-sm hover:text-foreground transition-colors"
             >
               Política de Privacidade
             </Link>
             <Link
               to="/termos-de-utilizacao"
-              target="_blank"
-              rel="noopener noreferrer"
               className="text-muted-foreground text-xs sm:text-sm hover:text-foreground transition-colors"
             >
               Termos de Utilização
