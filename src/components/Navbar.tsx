@@ -42,7 +42,8 @@ const Navbar = () => {
       const scrollToServices = () => {
         const el = document.getElementById("servicos");
         if (el) {
-          const top = el.getBoundingClientRect().top + window.scrollY - 80;
+          const padTop = parseFloat(window.getComputedStyle(el).paddingTop) || 0;
+          const top = el.getBoundingClientRect().top + window.scrollY + padTop - 112;
           window.scrollTo({ top, behavior: "smooth" });
         }
       };
@@ -172,9 +173,10 @@ const Navbar = () => {
                     <a
                       href="/#servicos"
                       onClick={goToServicesSection}
-                      className="block rounded-lg px-3 py-2 text-xs text-muted-foreground/80 hover:text-foreground hover:bg-white/[0.06] transition-colors"
+                      className="flex items-center justify-between rounded-lg px-3 py-2 text-xs font-medium text-primary bg-primary/5 hover:bg-primary/10 transition-colors group/all"
                     >
                       Ver todos os serviços
+                      <ArrowRight size={14} width={14} height={14} aria-hidden="true" className="group-hover/all:translate-x-0.5 transition-transform" />
                     </a>
                   </div>
 
