@@ -1,3 +1,4 @@
+import { possibilityDetails } from "@/data/possibilityDetails";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AlertTriangle, ArrowRight, BarChart3, CalendarClock, Cloud, Cog, Code2, Database, FileCheck2, GraduationCap, Layers, LifeBuoy, Lock, Palette, Plug, RefreshCw, Search, ShieldCheck, Target, Video, Wand2, Workflow, CheckCircle2, ChevronDown, MessageSquare, Phone, Sparkles, Users } from "lucide-react";
