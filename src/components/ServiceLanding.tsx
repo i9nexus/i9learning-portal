@@ -26,13 +26,8 @@ import ServiceHeroVisual from "@/components/ServiceHeroVisual";
 import { useCanonical } from "@/hooks/use-canonical";
 import { services, type ServiceDefinition } from "@/data/services";
 import { serviceEnrichment } from "@/data/serviceEnrichment";
+import { whatsappUrlForPath } from "@/lib/whatsapp";
 
-const WHATSAPP_BASE = "https://wa.me/351910213246?text=";
-
-const whatsappLink = (serviceTitle: string) =>
-  `${WHATSAPP_BASE}${encodeURIComponent(
-    `Olá, gostaria de saber mais sobre o serviço de ${serviceTitle}.`
-  )}`;
 
 const useServiceSeo = (service: ServiceDefinition) => {
   useCanonical(service.path);
@@ -175,7 +170,7 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
   const benefitItems = [...service.benefits, ...(enr?.extraBenefits ?? []), ...(moreBenefits[service.slug] ?? [])];
   const audienceItems = [...service.audience, ...(enr?.extraAudience ?? [])];
   const faqItems = [...service.faq, ...(enr?.extraFaq ?? [])];
-  const contactHref = whatsappLink(service.title);
+  const contactHref = whatsappUrlForPath(service.path);
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
