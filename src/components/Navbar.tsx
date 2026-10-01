@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { useLocation, useNavigate, Link } from "react-router-dom";
-import { Menu, Sun, Moon, ChevronDown } from "lucide-react";
+import { Menu, Sun, Moon, ChevronDown, ArrowRight } from "lucide-react";
 import {
   Sheet,
   SheetContent,
