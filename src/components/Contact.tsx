@@ -83,7 +83,7 @@ const Contact = () => {
             Pronto para transformar <span className="text-gradient">a sua formação?</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Preencha o formulário e entraremos em contacto nas próximas 24 horas.
+            Preencha o formulário e entraremos em contacto consigo para perceber como podemos ajudar no seu projeto de formação eLearning.
           </p>
         </div>
 
@@ -187,7 +187,7 @@ const Contact = () => {
               Agende uma reunião online num horário conveniente para si.
             </p>
             <a
-              href="https://calendar.app.google/Lm89ExvVLMvTWSWa7"
+              href="https://calendar.app.google/Lm89ExVvLMvTWSWa7"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-2 w-full max-w-sm inline-flex items-center justify-center gap-2 border border-primary/50 text-foreground px-6 py-3.5 rounded-lg font-semibold text-sm hover:bg-primary/10 transition-colors"
