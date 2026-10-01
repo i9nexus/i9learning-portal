@@ -50,8 +50,20 @@ const Navbar = () => {
         scrollToServices();
       } else {
         navigate("/");
-        window.setTimeout(scrollToServices, 260);
+        let attempts = 0;
+        const timer = window.setInterval(() => {
+          attempts += 1;
+          const el = document.getElementById("servicos");
+          if (el) {
+            window.setTimeout(scrollToServices, 180);
+            window.clearInterval(timer);
+
+          } else if (attempts > 25) {
+            window.clearInterval(timer);
+          }
+        }, 80);
       }
+
     },
     [location.pathname, navigate]
   );

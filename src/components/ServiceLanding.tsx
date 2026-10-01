@@ -228,11 +228,11 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
         {/* DESAFIO */}
         <section id="o-servico" className="section-padding bg-card/30 scroll-mt-24">
           <div className="container-narrow mx-auto">
-            <div className="max-w-3xl">
-              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14">
+              <h2 className="lg:col-span-4 font-display text-2xl sm:text-3xl md:text-4xl font-bold">
                 {service.challenge.title}
               </h2>
-              <div className="space-y-4">
+              <div className="lg:col-span-8 space-y-4">
                 {service.challenge.paragraphs.map((p) => (
                   <p key={p} className="text-muted-foreground leading-relaxed">
                     {p}
@@ -246,11 +246,11 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
         {/* SOLUÇÃO */}
         <section id="solucao" className="section-padding scroll-mt-24">
           <div className="container-narrow mx-auto">
-            <div className="max-w-3xl mb-14">
-              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 mb-14">
+              <h2 className="lg:col-span-4 font-display text-2xl sm:text-3xl md:text-4xl font-bold">
                 {service.solution.title}
               </h2>
-              <div className="space-y-4">
+              <div className="lg:col-span-8 space-y-4">
                 {service.solution.paragraphs.map((p) => (
                   <p key={p} className="text-muted-foreground leading-relaxed">
                     {p}
@@ -258,6 +258,7 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
                 ))}
               </div>
             </div>
+
 
             <h3 className="font-display text-xl sm:text-2xl font-semibold mb-8">
               O que podemos fazer
@@ -402,7 +403,7 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
             <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-10">
               Perguntas <span className="text-gradient">frequentes</span>
             </h2>
-            <div className="max-w-3xl space-y-3">
+            <div className="max-w-4xl mx-auto space-y-3">
               {service.faq.map((item, index) => {
                 const isOpen = openFaq === index;
                 return (
