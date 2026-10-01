@@ -403,7 +403,7 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
             <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-10">
               Perguntas <span className="text-gradient">frequentes</span>
             </h2>
-            <div className="max-w-3xl space-y-3">
+            <div className="max-w-4xl mx-auto space-y-3">
               {service.faq.map((item, index) => {
                 const isOpen = openFaq === index;
                 return (
