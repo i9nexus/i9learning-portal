@@ -55,8 +55,9 @@ const Navbar = () => {
           attempts += 1;
           const el = document.getElementById("servicos");
           if (el) {
-            scrollToServices();
+            window.setTimeout(scrollToServices, 180);
             window.clearInterval(timer);
+
           } else if (attempts > 25) {
             window.clearInterval(timer);
           }
