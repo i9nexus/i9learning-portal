@@ -296,20 +296,6 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
                 );
               })}
             </div>
-            {service.solution.paragraphs.length > 1 && (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 mt-8">
-                {service.solution.paragraphs.slice(1).map((p) => (
-                  <p key={p} className="border-l-2 border-primary/40 pl-5 text-muted-foreground leading-relaxed">
-                    {p}
-                  </p>
-                ))}
-              </div>
-            )}
-            {enr?.solutionExtra && (
-              <p className="mt-8 max-w-3xl mx-auto text-center text-muted-foreground leading-relaxed">
-                {enr.solutionExtra}
-              </p>
-            )}
           </div>
         </section>
 
@@ -320,11 +306,18 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
               {service.possibilities.heading}
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto mb-10">{service.possibilities.note}</p>
-            <ul className="flex flex-wrap justify-center gap-3">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 text-left">
               {possibilityItems.map((item) => (
-                <li key={item} className="glass-card rounded-lg px-4 py-2.5 text-sm text-foreground/90 flex items-center gap-2">
-                  <Sparkles size={14} width={14} height={14} className="text-primary" aria-hidden="true" />
-                  {item}
+                <li key={item} className="glass-card rounded-xl p-6 hover:border-primary/30 transition-colors">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Sparkles size={16} width={16} height={16} className="text-primary flex-shrink-0" aria-hidden="true" />
+                    <h3 className="font-display text-base font-semibold">{item}</h3>
+                  </div>
+                  {possibilityDetails[service.slug]?.[item] && (
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {possibilityDetails[service.slug][item]}
+                    </p>
+                  )}
                 </li>
               ))}
             </ul>
@@ -416,14 +409,9 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
                 <h2 className="font-display text-3xl sm:text-4xl font-bold mb-4">
                   {service.ctaFinal.title}
                 </h2>
-                <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-4 leading-relaxed">
-                  {service.ctaFinal.text}
+                <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
+                  {enr?.ctaText ?? service.ctaFinal.text}
                 </p>
-                {enr?.ctaText && (
-                  <p className="text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
-                    {enr.ctaText}
-                  </p>
-                )}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
                     href={CALENDAR_URL}
@@ -431,6 +419,7 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-display font-semibold text-lg bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] text-primary-foreground shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-[1.03] transition-all duration-300"
                   >
+                    <CalendarClock size={20} width={20} height={20} aria-hidden="true" />
                     Escolher Horário
                     <ArrowRight size={20} width={20} height={20} aria-hidden="true" />
                   </a>
