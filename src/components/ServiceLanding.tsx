@@ -1,6 +1,19 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { AlertTriangle, ArrowRight, CalendarClock, CheckCircle2, ChevronDown, MessageSquare, Phone, Sparkles, Users } from "lucide-react";
+import { AlertTriangle, ArrowRight, BarChart3, CalendarClock, Cloud, Cog, Code2, Database, FileCheck2, GraduationCap, Layers, LifeBuoy, Lock, Palette, Plug, RefreshCw, Search, ShieldCheck, Target, Video, Wand2, Workflow, CheckCircle2, ChevronDown, MessageSquare, Phone, Sparkles, Users } from "lucide-react";
+
+const ICON_RULES: [RegExp, React.ElementType][] = [
+  [/segur|prote/i, ShieldCheck], [/acess|sso|autentic/i, Lock], [/migra|atualiz/i, RefreshCw],
+  [/tema|gráfic|visual|design|identidade/i, Palette], [/instala|aloja|servidor/i, Cloud],
+  [/configura|parametri/i, Cog], [/integra|api|ligação/i, Plug], [/automat/i, Workflow],
+  [/ia\b|inteligência/i, Wand2], [/scorm|norma/i, FileCheck2], [/vídeo|video/i, Video],
+  [/relatório|análise|métric|dados/i, BarChart3], [/diagnós|auditor|avalia/i, Search],
+  [/estratég|plan|objetiv/i, Target], [/suporte|manuten|assist/i, LifeBuoy],
+  [/backup|cópia/i, Database], [/formador|tutoria|capacita|formação/i, GraduationCap],
+  [/funcionalidade|desenvolv|módulo/i, Code2], [/curso|conteúdo|estrutura/i, Layers],
+];
+const pickIcon = (title: string, fallback: React.ElementType) =>
+  ICON_RULES.find(([re]) => re.test(title))?.[1] ?? fallback;
 
 const CALENDAR_URL = "https://calendar.app.google/rMie36ftHYkKFzhD9";
 const PHONE_URL = "tel:+351910213246";
@@ -261,15 +274,18 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
               <p className="text-muted-foreground leading-relaxed">{service.solution.paragraphs[0]}</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-              {service.capabilities.map((item) => (
+              {service.capabilities.map((item) => {
+                const CapIcon = pickIcon(item.title, Icon);
+                return (
                 <article key={item.title} className="glass-card rounded-xl p-6 hover:border-primary/30 transition-colors">
                   <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
-                    <Icon size={20} width={20} height={20} className="text-primary" aria-hidden="true" />
+                    <CapIcon size={20} width={20} height={20} className="text-primary" aria-hidden="true" />
                   </div>
                   <h3 className="font-display text-base font-semibold mb-2">{item.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
                 </article>
-              ))}
+                );
+              })}
             </div>
             {service.solution.paragraphs.length > 1 && (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 mt-8">
