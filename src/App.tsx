@@ -58,9 +58,9 @@ const App = () => (
           <Route path="/servicos/formacao-capacitacao" element={<FormacaoCapacitacao />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <WhatsAppButton />
       </BrowserRouter>
       <ScrollToTopButton />
-      <WhatsAppButton />
     </TooltipProvider>
   </QueryClientProvider>
 );

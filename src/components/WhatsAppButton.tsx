@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 
-const WHATSAPP_URL = "https://wa.me/351910213246?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20vossos%20servi%C3%A7os.";
+import { useLocation } from "react-router-dom";
+import { whatsappUrlForPath } from "@/lib/whatsapp";
 
 const WhatsAppButton = () => {
   const [visible, setVisible] = useState(false);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const timer = setTimeout(() => setVisible(true), 1500);
@@ -12,7 +14,7 @@ const WhatsAppButton = () => {
 
   return (
     <a
-      href={WHATSAPP_URL}
+      href={whatsappUrlForPath(pathname)}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Contactar via WhatsApp"

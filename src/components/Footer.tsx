@@ -1,3 +1,4 @@
+import { GENERAL_WHATSAPP_URL } from "@/lib/whatsapp";
 import { Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -51,7 +52,7 @@ const Footer = () => {
 
             {/* WHATSAPP CORRIGIDO */}
             <a
-              href="https://wa.me/351910213246?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20vossos%20servi%C3%A7os."
+              href={GENERAL_WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
