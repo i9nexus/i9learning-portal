@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Send, Mail, Phone, MapPin, CheckCircle } from "lucide-react";
+import { Send, Mail, Phone, MapPin, CheckCircle, CalendarDays } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { z } from "zod";
@@ -88,67 +88,12 @@ const Contact = () => {
         </div>
 
         <div
-          className={`grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10 transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+          className={`grid grid-cols-1 lg:grid-cols-2 gap-8 transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
           style={{ transitionDelay: isVisible ? "200ms" : "0ms" }}
         >
-          {/* Contact Info */}
-          <div className="lg:col-span-2 flex flex-col">
-            <p className="text-muted-foreground leading-relaxed mb-6">
-              Estamos aqui para ajudar a elevar a formação da sua organização. Partilhe o seu desafio connosco e a nossa
-              equipa entrará em contacto para agendar uma demonstração gratuita.
-            </p>
-            <div className="space-y-6">
-              <div className="glass-card rounded-xl p-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Mail size={18} className="text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-display font-semibold mb-1">Email</h3>
-                    <a
-                      href="mailto:geral.i9learning@gmail.com"
-                      className="text-muted-foreground text-sm hover:text-primary transition-colors"
-                    >
-                      geral.i9learning@gmail.com
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="glass-card rounded-xl p-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Phone size={18} className="text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-display font-semibold mb-1">Telemóvel</h3>
-                    <a
-                      href="tel:+351910213246"
-                      className="text-muted-foreground text-sm hover:text-primary transition-colors"
-                    >
-                      +351 910 213 246
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="glass-card rounded-xl p-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <MapPin size={18} className="text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-display font-semibold mb-1">Localização</h3>
-                    <p className="text-muted-foreground text-sm">Coimbra, Portugal</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
           {/* Form */}
           {isSuccess ? (
-            <div className="lg:col-span-3 glass-card rounded-xl p-8 flex flex-col items-center justify-center text-center gap-4">
+            <div className="glass-card rounded-xl p-8 flex flex-col items-center justify-center text-center gap-4">
               <CheckCircle size={48} className="text-primary" />
               <h3 className="font-display text-2xl font-bold">Mensagem enviada com sucesso!</h3>
               <p className="text-muted-foreground">Entraremos em contacto nas próximas 24 horas. Obrigado!</p>
@@ -161,7 +106,7 @@ const Contact = () => {
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="lg:col-span-3 glass-card rounded-xl p-8 space-y-5">
+            <form onSubmit={handleSubmit} className="glass-card rounded-xl p-8 space-y-5">
               <div>
                 <label htmlFor="nome" className="block text-sm font-medium mb-2">
                   Nome
@@ -231,6 +176,76 @@ const Contact = () => {
               </button>
             </form>
           )}
+
+          {/* Scheduling */}
+          <div className="glass-card rounded-xl p-8 flex flex-col items-center justify-center text-center gap-5">
+            <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
+              <CalendarDays size={26} className="text-primary" />
+            </div>
+            <h3 className="font-display text-2xl font-bold">Prefere falar diretamente connosco?</h3>
+            <p className="text-muted-foreground max-w-sm">
+              Agende uma reunião online num horário conveniente para si.
+            </p>
+            <a
+              href="https://calendar.app.google/Lm89ExvVLMvTWSWa7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 w-full max-w-sm inline-flex items-center justify-center gap-2 border border-primary/50 text-foreground px-6 py-3.5 rounded-lg font-semibold text-sm hover:bg-primary/10 transition-colors"
+            >
+              <CalendarDays size={16} className="text-primary" />
+              Agendar reunião online
+            </a>
+          </div>
+        </div>
+
+        {/* Contact Info */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+              <div className="glass-card rounded-xl p-6 h-full">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Mail size={18} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-display font-semibold mb-1">Email</h3>
+                    <a
+                      href="mailto:geral.i9learning@gmail.com"
+                      className="text-muted-foreground text-sm hover:text-primary transition-colors"
+                    >
+                      geral.i9learning@gmail.com
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="glass-card rounded-xl p-6 h-full">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Phone size={18} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-display font-semibold mb-1">Telemóvel</h3>
+                    <a
+                      href="tel:+351910213246"
+                      className="text-muted-foreground text-sm hover:text-primary transition-colors"
+                    >
+                      +351 910 213 246
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="glass-card rounded-xl p-6 h-full">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <MapPin size={18} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-display font-semibold mb-1">Localização</h3>
+                    <p className="text-muted-foreground text-sm">Coimbra, Portugal</p>
+                  </div>
+                </div>
+              </div>
+            
         </div>
       </div>
     </section>
