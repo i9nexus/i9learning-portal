@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Check, ChevronDown, Minus, Plus } from "lucide-react";
+import { AlertTriangle, ArrowRight, CheckCircle2, ChevronDown, Sparkles, Users } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ServiceHeroVisual from "@/components/ServiceHeroVisual";
@@ -228,17 +228,21 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
         {/* DESAFIO */}
         <section id="o-servico" className="section-padding bg-card/30 scroll-mt-24">
           <div className="container-narrow mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14">
-              <h2 className="lg:col-span-4 font-display text-2xl sm:text-3xl md:text-4xl font-bold">
-                {service.challenge.title}
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="text-sm font-semibold tracking-widest text-primary">O PROBLEMA</span>
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mt-3">
+                O <span className="text-gradient">desafio</span>
               </h2>
-              <div className="lg:col-span-8 space-y-4">
-                {service.challenge.paragraphs.map((p) => (
-                  <p key={p} className="text-muted-foreground leading-relaxed">
-                    {p}
-                  </p>
-                ))}
-              </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+              {service.challenge.paragraphs.map((p) => (
+                <article key={p} className="glass-card rounded-xl p-6 sm:p-7">
+                  <div className="w-11 h-11 rounded-xl bg-destructive/10 flex items-center justify-center mb-5">
+                    <AlertTriangle size={20} width={20} height={20} className="text-destructive" aria-hidden="true" />
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed">{p}</p>
+                </article>
+              ))}
             </div>
           </div>
         </section>
@@ -246,47 +250,47 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
         {/* SOLUÇÃO */}
         <section id="solucao" className="section-padding scroll-mt-24">
           <div className="container-narrow mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 mb-14">
-              <h2 className="lg:col-span-4 font-display text-2xl sm:text-3xl md:text-4xl font-bold">
-                {service.solution.title}
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="text-sm font-semibold tracking-widest text-primary">A SOLUÇÃO</span>
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mt-3 mb-5">
+                O que <span className="text-gradient">fazemos</span>
               </h2>
-              <div className="lg:col-span-8 space-y-4">
-                {service.solution.paragraphs.map((p) => (
-                  <p key={p} className="text-muted-foreground leading-relaxed">
-                    {p}
-                  </p>
-                ))}
-              </div>
+              <p className="text-muted-foreground leading-relaxed">{service.solution.paragraphs[0]}</p>
             </div>
-
-
-            <h3 className="font-display text-xl sm:text-2xl font-semibold mb-8">
-              O que podemos fazer
-            </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
               {service.capabilities.map((item) => (
                 <article key={item.title} className="glass-card rounded-xl p-6 hover:border-primary/30 transition-colors">
-                  <h4 className="font-display text-base font-semibold mb-2">{item.title}</h4>
+                  <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
+                    <Icon size={20} width={20} height={20} className="text-primary" aria-hidden="true" />
+                  </div>
+                  <h3 className="font-display text-base font-semibold mb-2">{item.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
                 </article>
               ))}
             </div>
+            {service.solution.paragraphs.length > 1 && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 mt-8">
+                {service.solution.paragraphs.slice(1).map((p) => (
+                  <p key={p} className="border-l-2 border-primary/40 pl-5 text-muted-foreground leading-relaxed">
+                    {p}
+                  </p>
+                ))}
+              </div>
+            )}
           </div>
         </section>
 
         {/* POSSIBILIDADES */}
         <section id="possibilidades" className="section-padding bg-card/30 scroll-mt-24">
-          <div className="container-narrow mx-auto">
-            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
+          <div className="container-narrow mx-auto text-center">
+            <h2 className="font-display text-3xl sm:text-4xl font-bold mb-4">
               {service.possibilities.heading}
             </h2>
-            <p className="text-muted-foreground max-w-2xl mb-10">{service.possibilities.note}</p>
-            <ul className="flex flex-wrap gap-3">
+            <p className="text-muted-foreground max-w-2xl mx-auto mb-10">{service.possibilities.note}</p>
+            <ul className="flex flex-wrap justify-center gap-3">
               {service.possibilities.items.map((item) => (
-                <li
-                  key={item}
-                  className="glass-card rounded-lg px-4 py-2.5 text-sm text-foreground/90"
-                >
+                <li key={item} className="glass-card rounded-lg px-4 py-2.5 text-sm text-foreground/90 flex items-center gap-2">
+                  <Sparkles size={14} width={14} height={14} className="text-primary" aria-hidden="true" />
                   {item}
                 </li>
               ))}
@@ -294,23 +298,26 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
           </div>
         </section>
 
-        {/* BENEFÍCIOS */}
+        {/* VANTAGENS */}
         <section className="section-padding">
           <div className="container-narrow mx-auto">
-            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-10">
-              Benefícios
-            </h2>
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="text-sm font-semibold tracking-widest text-primary">VANTAGENS</span>
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mt-3">
+                Problemas <span className="text-gradient">resolvidos</span>
+              </h2>
+            </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
               {service.benefits.map((item) => (
-                <div key={item.title} className="flex gap-4">
-                  <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Check size={18} width={18} height={18} className="text-primary" aria-hidden="true" />
+                <article key={item.title} className="glass-card rounded-xl p-6 flex gap-4">
+                  <div className="w-11 h-11 rounded-xl bg-success/10 flex items-center justify-center flex-shrink-0">
+                    <CheckCircle2 size={20} width={20} height={20} className="text-success" aria-hidden="true" />
                   </div>
                   <div>
                     <h3 className="font-display text-base font-semibold mb-1.5">{item.title}</h3>
                     <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
                   </div>
-                </div>
+                </article>
               ))}
             </div>
           </div>
@@ -319,80 +326,50 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
         {/* PARA QUEM É */}
         <section className="section-padding bg-card/30">
           <div className="container-narrow mx-auto">
-            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-10">
-              Para quem se destina
-            </h2>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
-              {service.audience.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-muted-foreground">
-                  <span
-                    className="mt-2 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"
-                    aria-hidden="true"
-                  />
-                  <span className="leading-relaxed">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        {/* CTA INTERMÉDIO */}
-        <section className="py-16 md:py-20">
-          <div className="container-narrow mx-auto px-4 md:px-8">
-            <div className="glass-card rounded-2xl p-8 md:p-12 text-center">
-              <h2 className="font-display text-2xl sm:text-3xl font-bold mb-3">
-                {service.ctaMid.title}
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold">
+                Para quem se <span className="text-gradient">destina</span>
               </h2>
-              <p className="text-muted-foreground max-w-xl mx-auto mb-8">{service.ctaMid.text}</p>
-              <a
-                href={contactHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] text-primary-foreground px-8 py-3.5 rounded-lg font-semibold text-base hover:opacity-90 transition-opacity group"
-              >
-                {service.ctaMid.button}
-                <ArrowRight
-                  size={18}
-                  width={18}
-                  height={18}
-                  className="group-hover:translate-x-1 transition-transform"
-                />
-              </a>
             </div>
-          </div>
-        </section>
-
-        {/* COMO TRABALHAMOS */}
-        <section id="como-trabalhamos-servico" className="section-padding bg-card/30 scroll-mt-24">
-          <div className="container-narrow mx-auto">
-            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-10">
-              Como trabalhamos
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-              {service.process.map((step) => (
-                <div key={step.step} className="glass-card rounded-xl p-6">
-                  <span className="font-display text-2xl font-bold text-primary/60">{step.step}</span>
-                  <h3 className="font-display text-base font-semibold mt-3 mb-2">{step.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{step.description}</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {service.audience.map((item) => (
+                <div key={item} className="glass-card rounded-xl p-5 flex items-start gap-3">
+                  <Users size={18} width={18} height={18} className="text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
+                  <span className="text-sm text-foreground/90 leading-relaxed">{item}</span>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* ABORDAGEM i9 */}
-        <section className="section-padding">
+        {/* CTA ÚNICO */}
+        <section id="contacto-servico" className="section-padding scroll-mt-24">
           <div className="container-narrow mx-auto">
-            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-10">
-              A abordagem <span className="text-gradient">i9 Learning</span>
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
-              {service.approach.map((item) => (
-                <div key={item.title} className="border-l-2 border-primary/40 pl-5">
-                  <h3 className="font-display text-base font-semibold mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
+            <div className="relative overflow-hidden glass-card rounded-2xl p-8 md:p-14 text-center border-primary/30">
+              <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--gradient-start)/0.12)] to-[hsl(var(--gradient-end)/0.12)] pointer-events-none" aria-hidden="true" />
+              <div className="relative">
+                <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
+                  {service.ctaFinal.title}
+                </h2>
+                <p className="text-muted-foreground max-w-xl mx-auto mb-8">{service.ctaFinal.text}</p>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                  <a
+                    href={contactHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] text-primary-foreground px-8 py-3.5 rounded-lg font-semibold text-base hover:opacity-90 transition-opacity inline-flex items-center justify-center gap-2 group"
+                  >
+                    {service.ctaFinal.button}
+                    <ArrowRight size={18} width={18} height={18} className="group-hover:translate-x-1 transition-transform" />
+                  </a>
+                  <Link
+                    to="/#contacto"
+                    className="w-full sm:w-auto border border-white/15 px-8 py-3.5 rounded-lg font-semibold text-base text-foreground hover:bg-white/[0.05] transition-colors inline-flex items-center justify-center"
+                  >
+                    Enviar mensagem
+                  </Link>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </section>
@@ -400,28 +377,32 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
         {/* FAQ */}
         <section id="faq" className="section-padding bg-card/30 scroll-mt-24">
           <div className="container-narrow mx-auto">
-            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-10">
-              Perguntas <span className="text-gradient">frequentes</span>
-            </h2>
-            <div className="max-w-4xl mx-auto space-y-3">
+            <div className="text-center mb-12">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold">
+                Perguntas <span className="text-gradient">frequentes</span>
+              </h2>
+            </div>
+            <div className="max-w-3xl mx-auto space-y-3">
               {service.faq.map((item, index) => {
                 const isOpen = openFaq === index;
                 return (
-                  <div key={item.question} className="glass-card rounded-xl overflow-hidden">
+                  <div key={item.question} className={`glass-card rounded-xl overflow-hidden transition-colors ${isOpen ? "border-primary/30" : ""}`}>
                     <button
                       onClick={() => setOpenFaq(isOpen ? null : index)}
                       aria-expanded={isOpen}
                       className="w-full flex items-center justify-between gap-4 text-left px-6 py-5"
                     >
                       <span className="font-display text-base font-semibold">{item.question}</span>
-                      {isOpen ? (
-                        <Minus size={18} width={18} height={18} className="text-primary flex-shrink-0" aria-hidden="true" />
-                      ) : (
-                        <Plus size={18} width={18} height={18} className="text-primary flex-shrink-0" aria-hidden="true" />
-                      )}
+                      <ChevronDown
+                        size={18}
+                        width={18}
+                        height={18}
+                        className={`text-primary flex-shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                        aria-hidden="true"
+                      />
                     </button>
                     {isOpen && (
-                      <p className="px-6 pb-5 -mt-1 text-muted-foreground text-sm leading-relaxed">
+                      <p className="px-6 pb-5 -mt-1 text-muted-foreground text-sm leading-relaxed animate-fade-in">
                         {item.answer}
                       </p>
                     )}
@@ -432,44 +413,10 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
           </div>
         </section>
 
-        {/* CTA FINAL */}
-        <section id="contacto-servico" className="section-padding scroll-mt-24">
-          <div className="container-narrow mx-auto">
-            <div className="glass-card rounded-2xl p-8 md:p-14 text-center">
-              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
-                {service.ctaFinal.title}
-              </h2>
-              <p className="text-muted-foreground max-w-xl mx-auto mb-8">{service.ctaFinal.text}</p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a
-                  href={contactHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full sm:w-auto bg-gradient-to-r from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] text-primary-foreground px-8 py-3.5 rounded-lg font-semibold text-base hover:opacity-90 transition-opacity inline-flex items-center justify-center gap-2 group"
-                >
-                  {service.ctaFinal.button}
-                  <ArrowRight
-                    size={18}
-                    width={18}
-                    height={18}
-                    className="group-hover:translate-x-1 transition-transform"
-                  />
-                </a>
-                <Link
-                  to="/#contacto"
-                  className="w-full sm:w-auto border border-white/15 px-8 py-3.5 rounded-lg font-semibold text-base text-foreground hover:bg-white/[0.05] transition-colors inline-flex items-center justify-center"
-                >
-                  Enviar mensagem
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* OUTROS SERVIÇOS */}
-        <section className="section-padding bg-card/30">
+        <section className="section-padding">
           <div className="container-narrow mx-auto">
-            <h2 className="font-display text-xl sm:text-2xl font-semibold mb-8">Outros serviços</h2>
+            <h2 className="font-display text-2xl sm:text-3xl font-bold mb-8 text-center">Outros <span className="text-gradient">serviços</span></h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {others.map((item) => {
                 const OtherIcon = item.icon;
