@@ -15,7 +15,7 @@ const ICON_RULES: [RegExp, React.ElementType][] = [
 const pickIcon = (title: string, fallback: React.ElementType) =>
   ICON_RULES.find(([re]) => re.test(title))?.[1] ?? fallback;
 
-const CALENDAR_URL = "https://calendar.app.google/rMie36ftHYkKFzhD9";
+const CALENDAR_URL = "https://calendar.app.google/Lm89ExVvLMvTWSWa7";
 const PHONE_URL = "tel:+351910213246";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -23,6 +23,7 @@ import ServiceHeroVisual from "@/components/ServiceHeroVisual";
 
 import { useCanonical } from "@/hooks/use-canonical";
 import { services, type ServiceDefinition } from "@/data/services";
+import { serviceEnrichment } from "@/data/serviceEnrichment";
 
 const WHATSAPP_BASE = "https://wa.me/351910213246?text=";
 
@@ -158,6 +159,11 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const Icon = service.icon;
   const others = services.filter((item) => item.slug !== service.slug);
+  const enr = serviceEnrichment[service.slug];
+  const possibilityItems = [...service.possibilities.items, ...(enr?.extraPossibilities ?? [])];
+  const benefitItems = [...service.benefits, ...(enr?.extraBenefits ?? [])];
+  const audienceItems = [...service.audience, ...(enr?.extraAudience ?? [])];
+  const faqItems = [...service.faq, ...(enr?.extraFaq ?? [])];
   const contactHref = whatsappLink(service.title);
 
   return (
@@ -249,6 +255,9 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mt-3">
                 O <span className="text-gradient">desafio</span>
               </h2>
+              {enr?.challengeIntro && (
+                <p className="text-muted-foreground leading-relaxed mt-5">{enr.challengeIntro}</p>
+              )}
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
               {service.challenge.paragraphs.map((p) => (
@@ -296,6 +305,11 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
                 ))}
               </div>
             )}
+            {enr?.solutionExtra && (
+              <p className="mt-8 max-w-3xl mx-auto text-center text-muted-foreground leading-relaxed">
+                {enr.solutionExtra}
+              </p>
+            )}
           </div>
         </section>
 
@@ -307,7 +321,7 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto mb-10">{service.possibilities.note}</p>
             <ul className="flex flex-wrap justify-center gap-3">
-              {service.possibilities.items.map((item) => (
+              {possibilityItems.map((item) => (
                 <li key={item} className="glass-card rounded-lg px-4 py-2.5 text-sm text-foreground/90 flex items-center gap-2">
                   <Sparkles size={14} width={14} height={14} className="text-primary" aria-hidden="true" />
                   {item}
@@ -317,8 +331,36 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
           </div>
         </section>
 
+        {/* CARACTERÍSTICAS E VANTAGENS */}
+        {enr && enr.keyFeatures.length > 0 && (
+          <section id="caracteristicas" className="section-padding scroll-mt-24">
+            <div className="container-narrow mx-auto">
+              <div className="text-center max-w-3xl mx-auto mb-12">
+                <span className="text-sm font-semibold tracking-widest text-primary">DIFERENCIAÇÃO</span>
+                <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mt-3">
+                  Principais características e <span className="text-gradient">vantagens</span>
+                </h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+                {enr.keyFeatures.map((item) => {
+                  const FeatIcon = item.icon;
+                  return (
+                    <article key={item.title} className="glass-card rounded-xl p-6 hover:border-primary/30 transition-colors">
+                      <div className="w-11 h-11 rounded-xl bg-accent/10 flex items-center justify-center mb-5">
+                        <FeatIcon size={20} width={20} height={20} className="text-accent" aria-hidden="true" />
+                      </div>
+                      <h3 className="font-display text-base font-semibold mb-2">{item.title}</h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
+                    </article>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* VANTAGENS */}
-        <section className="section-padding">
+        <section className="section-padding bg-card/30">
           <div className="container-narrow mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <span className="text-sm font-semibold tracking-widest text-primary">VANTAGENS</span>
@@ -326,8 +368,8 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
                 Problemas <span className="text-gradient">resolvidos</span>
               </h2>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
-              {service.benefits.map((item) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+              {benefitItems.map((item) => (
                 <article key={item.title} className="glass-card rounded-xl p-6 flex gap-4">
                   <div className="w-11 h-11 rounded-xl bg-success/10 flex items-center justify-center flex-shrink-0">
                     <CheckCircle2 size={20} width={20} height={20} className="text-success" aria-hidden="true" />
@@ -343,7 +385,7 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
         </section>
 
         {/* PARA QUEM É */}
-        <section className="section-padding bg-card/30">
+        <section className="section-padding">
           <div className="container-narrow mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold">
@@ -351,7 +393,7 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
               </h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {service.audience.map((item) => (
+              {audienceItems.map((item) => (
                 <div key={item} className="glass-card rounded-xl p-5 flex items-start gap-3">
                   <Users size={18} width={18} height={18} className="text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                   <span className="text-sm text-foreground/90 leading-relaxed">{item}</span>
@@ -374,9 +416,14 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
                 <h2 className="font-display text-3xl sm:text-4xl font-bold mb-4">
                   {service.ctaFinal.title}
                 </h2>
-                <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
+                <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-4 leading-relaxed">
                   {service.ctaFinal.text}
                 </p>
+                {enr?.ctaText && (
+                  <p className="text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
+                    {enr.ctaText}
+                  </p>
+                )}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
                     href={CALENDAR_URL}
@@ -404,6 +451,9 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
                     Ligar Agora
                   </a>
                 </div>
+                <p className="text-sm text-muted-foreground mt-6">
+                  Prefere que lhe telefonemos? Fale connosco pelo WhatsApp e indicamos-lhe o melhor horário.
+                </p>
               </div>
             </div>
           </div>
@@ -418,7 +468,7 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
               </h2>
             </div>
             <div className="space-y-3">
-              {service.faq.map((item, index) => {
+              {faqItems.map((item, index) => {
                 const isOpen = openFaq === index;
                 return (
                   <div key={item.question} className={`glass-card rounded-xl overflow-hidden transition-colors ${isOpen ? "border-primary/30" : ""}`}>
