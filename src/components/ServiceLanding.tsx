@@ -1,4 +1,5 @@
 import { possibilityDetails } from "@/data/possibilityDetails";
+import { removedPossibilities, morePossibilities, moreBenefits, possibilityIcons } from "@/data/serviceExtras";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AlertTriangle, ArrowRight, BarChart3, CalendarClock, Cloud, Cog, Code2, Database, FileCheck2, GraduationCap, Layers, LifeBuoy, Lock, Palette, Plug, RefreshCw, Search, ShieldCheck, Target, Video, Wand2, Workflow, CheckCircle2, ChevronDown, MessageSquare, Phone, Sparkles, Users } from "lucide-react";
@@ -161,8 +162,17 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
   const Icon = service.icon;
   const others = services.filter((item) => item.slug !== service.slug);
   const enr = serviceEnrichment[service.slug];
-  const possibilityItems = [...service.possibilities.items, ...(enr?.extraPossibilities ?? [])];
-  const benefitItems = [...service.benefits, ...(enr?.extraBenefits ?? [])];
+  const removed = removedPossibilities[service.slug] ?? [];
+  const extraPoss = morePossibilities[service.slug] ?? [];
+  const possibilityItems = [
+    ...service.possibilities.items,
+    ...(enr?.extraPossibilities ?? []),
+    ...extraPoss.map((p) => p.title),
+  ].filter((item) => !removed.includes(item));
+  const possDesc = (item: string) =>
+    possibilityDetails[service.slug]?.[item] ?? extraPoss.find((p) => p.title === item)?.description;
+  const [possFirst, ...possRest] = service.possibilities.heading.split(" ");
+  const benefitItems = [...service.benefits, ...(enr?.extraBenefits ?? []), ...(moreBenefits[service.slug] ?? [])];
   const audienceItems = [...service.audience, ...(enr?.extraAudience ?? [])];
   const faqItems = [...service.faq, ...(enr?.extraFaq ?? [])];
   const contactHref = whatsappLink(service.title);
@@ -304,23 +314,24 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
         <section id="possibilidades" className="section-padding bg-card/30 scroll-mt-24">
           <div className="container-narrow mx-auto text-center">
             <h2 className="font-display text-3xl sm:text-4xl font-bold mb-4">
-              {service.possibilities.heading}
+              <span className="text-gradient">{possFirst}</span> {possRest.join(" ")}
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto mb-10">{service.possibilities.note}</p>
             <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 text-left">
-              {possibilityItems.map((item) => (
+              {possibilityItems.map((item) => {
+                const PossIcon = possibilityIcons[service.slug]?.[item] ?? Sparkles;
+                return (
                 <li key={item} className="glass-card rounded-xl p-6 hover:border-primary/30 transition-colors">
                   <div className="flex items-center gap-2 mb-2">
-                    <Sparkles size={16} width={16} height={16} className="text-primary flex-shrink-0" aria-hidden="true" />
+                    <PossIcon size={18} width={18} height={18} className="text-primary flex-shrink-0" aria-hidden="true" />
                     <h3 className="font-display text-base font-semibold">{item}</h3>
                   </div>
-                  {possibilityDetails[service.slug]?.[item] && (
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      {possibilityDetails[service.slug][item]}
-                    </p>
+                  {possDesc(item) && (
+                    <p className="text-muted-foreground text-sm leading-relaxed">{possDesc(item)}</p>
                   )}
                 </li>
-              ))}
+                );
+              })}
             </ul>
           </div>
         </section>
@@ -332,7 +343,7 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
               <div className="text-center max-w-3xl mx-auto mb-12">
                 <span className="text-sm font-semibold tracking-widest text-primary">DIFERENCIAÇÃO</span>
                 <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mt-3">
-                  Principais características e <span className="text-gradient">vantagens</span>
+                  Principais <span className="text-gradient">características</span> e vantagens
                 </h2>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
@@ -489,7 +500,7 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
         </section>
 
         {/* OUTROS SERVIÇOS */}
-        <section className="section-padding">
+        <section className="section-padding !pt-0">
           <div className="container-narrow mx-auto">
             <h2 className="font-display text-2xl sm:text-3xl font-bold mb-8 text-center">Outros <span className="text-gradient">serviços</span></h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
