@@ -1,99 +1,222 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Página Inicial -->
   <url>
     <loc>https://i9learning.pt/</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://i9learning.pt/#o-que-fazemos</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://i9learning.pt/#servicos</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
+
+  <!-- Serviços Especializados -->
   <url>
     <loc>https://i9learning.pt/servicos/plataformas-elearning</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
   </url>
   <url>
     <loc>https://i9learning.pt/servicos/cursos-conteudos-elearning</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
   </url>
   <url>
     <loc>https://i9learning.pt/servicos/integracoes-desenvolvimento</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://i9learning.pt/servicos/suporte-manutencao</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
   </url>
   <url>
     <loc>https://i9learning.pt/servicos/consultoria-estrategia</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://i9learning.pt/servicos/formacao-capacitacao</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+
+  <!-- Blog & Arquivo de Artigos -->
   <url>
-    <loc>https://i9learning.pt/#como-trabalhamos</loc>
-    <lastmod>2026-05-08</lastmod>
+    <loc>https://i9learning.pt/blog</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Todos os 25 Artigos Especializados do Blog -->
+  <url>
+    <loc>https://i9learning.pt/blog/como-ia-e-moodle-revolucionam-formacao-corporativa</loc>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://i9learning.pt/#solucoes</loc>
-    <lastmod>2026-05-08</lastmod>
+    <loc>https://i9learning.pt/blog/scorm-12-vs-xapi-analise-comparativa</loc>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://i9learning.pt/#impacto</loc>
-    <lastmod>2026-05-08</lastmod>
+    <loc>https://i9learning.pt/blog/microlearning-gamificacao-fatores-retencao</loc>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://i9learning.pt/#beneficios</loc>
-    <lastmod>2026-05-08</lastmod>
+    <loc>https://i9learning.pt/blog/plataformas-lms-moodle-vantagens-analise-mercado</loc>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://i9learning.pt/#contacto</loc>
-    <lastmod>2026-05-08</lastmod>
+    <loc>https://i9learning.pt/blog/modelo-addie-desenho-instrucional-analise-vantagens</loc>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
   </url>
+  <url>
+    <loc>https://i9learning.pt/blog/ferramentas-autoria-conteudos-scorm-analise-comparativa</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://i9learning.pt/blog/h5p-atividades-interativas-moodle-vantagens</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://i9learning.pt/blog/blended-learning-estrategia-corporativa-vantagens</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://i9learning.pt/blog/conformidade-dgert-iefp-lms-moodle</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://i9learning.pt/blog/acessibilidade-digital-elearning-normas-wcag</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://i9learning.pt/blog/integracao-moodle-erp-crm-sso</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://i9learning.pt/blog/retorno-investimento-roi-formacao-online-empresas</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://i9learning.pt/blog/instalacao-plataforma-moodle-seguranca-arquitetura</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://i9learning.pt/blog/criacao-cursos-scorm-padroes-vantagens-mercado</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://i9learning.pt/blog/microlearning-corporativo-vantagens-metricas</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://i9learning.pt/blog/suporte-moodle-manutencao-preventiva-vantagens</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://i9learning.pt/blog/tutores-virtuais-ia-atendimento-formandos-vantagens</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://i9learning.pt/blog/gamificacao-empresarial-badges-vantagens-engajamento</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://i9learning.pt/blog/videos-interativos-elearning-analise-vantagens</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://i9learning.pt/blog/auditorias-dgert-requisitos-plataformas-lms</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://i9learning.pt/blog/onboarding-digital-corporativo-analise-vantagens</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://i9learning.pt/blog/desenho-instrucional-storytelling-cenarios-decisao-vantagens</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://i9learning.pt/blog/aprendizagem-adaptativa-ia-modelos-vantagens</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://i9learning.pt/blog/migracao-plataformas-lms-desafios-vantagens</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://i9learning.pt/blog/academias-digitais-corporativas-vantagens-governacao</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Páginas Legais -->
   <url>
     <loc>https://i9learning.pt/politica-de-privacidade</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://i9learning.pt/termos-de-utilizacao</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.4</priority>
   </url>
 </urlset>

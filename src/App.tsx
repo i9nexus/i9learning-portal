@@ -3,7 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 const Analytics = () => null;
 import Index from "./pages/Index";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -14,6 +14,8 @@ import IntegracoesDesenvolvimento from "./pages/servicos/IntegracoesDesenvolvime
 import SuporteManutencao from "./pages/servicos/SuporteManutencao";
 import ConsultoriaEstrategia from "./pages/servicos/ConsultoriaEstrategia";
 import FormacaoCapacitacao from "./pages/servicos/FormacaoCapacitacao";
+import BlogPost from "./pages/blog/BlogPost";
+import BlogArchive from "./pages/BlogArchive";
 
 import NotFound from "./pages/NotFound";
 import ScrollToTopButton from "./components/ScrollToTop";
@@ -21,6 +23,29 @@ import WhatsAppButton from "./components/WhatsAppButton";
 
 const queryClient = new QueryClient();
 
+// Elegant top progress bar for smooth route transitions
+const PageLoadingIndicator = () => {
+  const { pathname } = useLocation();
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    const timer = setTimeout(() => setLoading(false), 240);
+    return () => clearTimeout(timer);
+  }, [pathname]);
+
+  if (!loading) return null;
+
+  return (
+    <div
+      role="progressbar"
+      aria-label="A carregar página"
+      className="fixed top-0 left-0 right-0 z-[100] h-[3px] bg-gradient-to-r from-[hsl(190,95%,50%)] via-[hsl(210,90%,55%)] to-[hsl(190,95%,50%)] animate-pulse shadow-md shadow-primary/30"
+    />
+  );
+};
+
+// Instant top positioning on route change (eliminates awkward scroll-up animation)
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
   useEffect(() => {
@@ -30,9 +55,9 @@ const ScrollToTop = () => {
         if (el) {
           el.scrollIntoView({ behavior: "smooth" });
         }
-      }, 100);
+      }, 80);
     } else {
-      window.scrollTo(0, 0);
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     }
   }, [pathname, hash]);
   return null;
@@ -45,6 +70,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <PageLoadingIndicator />
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
@@ -56,6 +82,8 @@ const App = () => (
           <Route path="/servicos/suporte-manutencao" element={<SuporteManutencao />} />
           <Route path="/servicos/consultoria-estrategia" element={<ConsultoriaEstrategia />} />
           <Route path="/servicos/formacao-capacitacao" element={<FormacaoCapacitacao />} />
+          <Route path="/blog" element={<BlogArchive />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <WhatsAppButton />

@@ -18,8 +18,13 @@ const SERVICE_MESSAGES: Record<string, string> = {
     "Olá! Gostaria de obter informações sobre Formação e Capacitação na i9 Learning.",
 };
 
-export const whatsappMessageForPath = (pathname: string) =>
-  SERVICE_MESSAGES[pathname.replace(/\/+$/, "")] ?? GENERAL_WHATSAPP_MESSAGE;
+export const whatsappMessageForPath = (pathname: string) => {
+  const normalized = pathname.replace(/\/+$/, "");
+  if (normalized.startsWith("/blog")) {
+    return "Olá! Li um artigo no blog da i9 Learning e gostaria de obter mais informações sobre as vossas soluções.";
+  }
+  return SERVICE_MESSAGES[normalized] ?? GENERAL_WHATSAPP_MESSAGE;
+};
 
 export const whatsappUrl = (message: string) =>
   `${WHATSAPP_BASE}${encodeURIComponent(message)}`;

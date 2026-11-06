@@ -9,13 +9,11 @@ import {
 } from "@/components/ui/sheet";
 import { services } from "@/data/services";
 
-const navLinks = [
-  { label: "Sobre", href: "/#o-que-fazemos" },
+const middleLinks = [
   { label: "Metodologia", href: "/#como-trabalhamos" },
   { label: "Setores", href: "/#solucoes" },
   { label: "Impacto", href: "/#impacto" },
   { label: "Benefícios", href: "/#beneficios" },
-  { label: "Contactos", href: "/#contacto" },
 ];
 
 const Navbar = () => {
@@ -30,7 +28,7 @@ const Navbar = () => {
   const handleLogoClick = useCallback((e: React.MouseEvent) => {
     if (location.pathname === "/") {
       e.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     }
   }, [location.pathname]);
 
@@ -39,6 +37,7 @@ const Navbar = () => {
       e.preventDefault();
       setServicesOpen(false);
       setMobileServicesOpen(false);
+      setSheetOpen(false);
       const scrollToServices = () => {
         const el = document.getElementById("servicos");
         if (el) {
@@ -58,17 +57,60 @@ const Navbar = () => {
           if (el) {
             window.setTimeout(scrollToServices, 180);
             window.clearInterval(timer);
-
           } else if (attempts > 25) {
             window.clearInterval(timer);
           }
         }, 80);
       }
-
     },
     [location.pathname, navigate]
   );
 
+  const goToBlogSection = useCallback(
+    (e: React.MouseEvent) => {
+      e.preventDefault();
+      setSheetOpen(false);
+      const scrollToBlog = () => {
+        const el = document.getElementById("blog");
+        if (el) {
+          const padTop = parseFloat(window.getComputedStyle(el).paddingTop) || 0;
+          const top = el.getBoundingClientRect().top + window.scrollY + padTop - 112;
+          window.scrollTo({ top, behavior: "smooth" });
+        }
+      };
+      if (location.pathname === "/") {
+        scrollToBlog();
+      } else {
+        navigate("/");
+        let attempts = 0;
+        const timer = window.setInterval(() => {
+          attempts += 1;
+          const el = document.getElementById("blog");
+          if (el) {
+            window.setTimeout(scrollToBlog, 180);
+            window.clearInterval(timer);
+          } else if (attempts > 25) {
+            window.clearInterval(timer);
+          }
+        }, 80);
+      }
+    },
+    [location.pathname, navigate]
+  );
+
+  const handleNavClick = useCallback(
+    (href: string) => (e: React.MouseEvent) => {
+      if (href.startsWith("/#") && location.pathname === "/") {
+        const id = href.replace("/#", "");
+        const el = document.getElementById(id);
+        if (el) {
+          e.preventDefault();
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    },
+    [location.pathname]
+  );
 
   useEffect(() => {
     const root = document.documentElement;
@@ -121,12 +163,14 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden lg:flex flex-1 items-center justify-center gap-5 xl:gap-8">
+        <div className="hidden lg:flex flex-1 items-center justify-center gap-4 xl:gap-7">
+          {/* Sobre */}
           <a
-            href={navLinks[0].href}
+            href="/#o-que-fazemos"
+            onClick={handleNavClick("/#o-que-fazemos")}
             className="nav-link-hover text-sm xl:text-base text-muted-foreground hover:text-foreground transition-colors duration-200 whitespace-nowrap"
           >
-            {navLinks[0].label}
+            Sobre
           </a>
 
           {/* Dropdown Serviços */}
@@ -179,21 +223,40 @@ const Navbar = () => {
                       <ArrowRight size={14} width={14} height={14} aria-hidden="true" className="group-hover/all:translate-x-0.5 transition-transform" />
                     </a>
                   </div>
-
                 </div>
               </div>
             )}
           </div>
 
-          {navLinks.slice(1).map((link) => (
+          {/* Links intermédios */}
+          {middleLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
+              onClick={handleNavClick(link.href)}
               className="nav-link-hover text-sm xl:text-base text-muted-foreground hover:text-foreground transition-colors duration-200 whitespace-nowrap"
             >
               {link.label}
             </a>
           ))}
+
+          {/* Blog (link direto com scroll down para a secção #blog) */}
+          <a
+            href="/#blog"
+            onClick={goToBlogSection}
+            className="nav-link-hover text-sm xl:text-base text-muted-foreground hover:text-foreground transition-colors duration-200 whitespace-nowrap"
+          >
+            Blog
+          </a>
+
+          {/* Contactos */}
+          <a
+            href="/#contacto"
+            onClick={handleNavClick("/#contacto")}
+            className="nav-link-hover text-sm xl:text-base text-muted-foreground hover:text-foreground transition-colors duration-200 whitespace-nowrap"
+          >
+            Contactos
+          </a>
         </div>
 
         {/* Spacer to balance logo width */}
@@ -236,10 +299,11 @@ const Navbar = () => {
               <nav className="flex flex-col gap-2 overflow-y-auto">
                 <SheetClose asChild>
                   <a
-                    href={navLinks[0].href}
+                    href="/#o-que-fazemos"
+                    onClick={handleNavClick("/#o-que-fazemos")}
                     className="text-left text-lg font-display font-medium text-muted-foreground hover:text-foreground hover:bg-white/[0.05] rounded-lg px-4 py-3 transition-all duration-200"
                   >
-                    {navLinks[0].label}
+                    Sobre
                   </a>
                 </SheetClose>
 
@@ -283,19 +347,42 @@ const Navbar = () => {
                       </a>
                     </SheetClose>
                   </div>
-
                 )}
 
-                {navLinks.slice(1).map((link) => (
+                {/* Links intermédios */}
+                {middleLinks.map((link) => (
                   <SheetClose asChild key={link.href}>
                     <a
                       href={link.href}
+                      onClick={handleNavClick(link.href)}
                       className="text-left text-lg font-display font-medium text-muted-foreground hover:text-foreground hover:bg-white/[0.05] rounded-lg px-4 py-3 transition-all duration-200"
                     >
                       {link.label}
                     </a>
                   </SheetClose>
                 ))}
+
+                {/* Blog (link direto com scroll down para a secção #blog) */}
+                <SheetClose asChild>
+                  <a
+                    href="/#blog"
+                    onClick={goToBlogSection}
+                    className="text-left text-lg font-display font-medium text-muted-foreground hover:text-foreground hover:bg-white/[0.05] rounded-lg px-4 py-3 transition-all duration-200"
+                  >
+                    Blog
+                  </a>
+                </SheetClose>
+
+                {/* Contactos */}
+                <SheetClose asChild>
+                  <a
+                    href="/#contacto"
+                    onClick={handleNavClick("/#contacto")}
+                    className="text-left text-lg font-display font-medium text-muted-foreground hover:text-foreground hover:bg-white/[0.05] rounded-lg px-4 py-3 transition-all duration-200"
+                  >
+                    Contactos
+                  </a>
+                </SheetClose>
               </nav>
 
               {/* Theme toggle + Footer */}

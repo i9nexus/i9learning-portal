@@ -21,6 +21,7 @@ const CALENDAR_URL = "https://calendar.app.google/Lm89ExVvLMvTWSWa7";
 const PHONE_URL = "tel:+351910213246";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BackToHomeButton from "@/components/BackToHomeButton";
 import ServiceHeroVisual from "@/components/ServiceHeroVisual";
 
 import { useCanonical } from "@/hooks/use-canonical";
@@ -159,17 +160,36 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
   const enr = serviceEnrichment[service.slug];
   const removed = removedPossibilities[service.slug] ?? [];
   const extraPoss = morePossibilities[service.slug] ?? [];
-  const possibilityItems = [
+  const rawPossibilities = [
     ...service.possibilities.items,
     ...(enr?.extraPossibilities ?? []),
     ...extraPoss.map((p) => p.title),
   ].filter((item) => !removed.includes(item));
+  const possibilityItems = Array.from(new Set(rawPossibilities));
+
   const possDesc = (item: string) =>
     possibilityDetails[service.slug]?.[item] ?? extraPoss.find((p) => p.title === item)?.description;
   const [possFirst, ...possRest] = service.possibilities.heading.split(" ");
-  const benefitItems = [...service.benefits, ...(enr?.extraBenefits ?? []), ...(moreBenefits[service.slug] ?? [])];
-  const audienceItems = [...service.audience, ...(enr?.extraAudience ?? [])];
-  const faqItems = [...service.faq, ...(enr?.extraFaq ?? [])];
+
+  const rawBenefits = [
+    ...service.benefits,
+    ...(enr?.extraBenefits ?? []),
+    ...(moreBenefits[service.slug] ?? []),
+  ];
+  // Deduplicate by title to guarantee distinct keys
+  const benefitItems = Array.from(
+    new Map(rawBenefits.map((item) => [item.title, item])).values()
+  );
+
+  const audienceItems = Array.from(
+    new Set([...service.audience, ...(enr?.extraAudience ?? [])])
+  );
+
+  const rawFaq = [...service.faq, ...(enr?.extraFaq ?? [])];
+  const faqItems = Array.from(
+    new Map(rawFaq.map((item) => [item.question, item])).values()
+  );
+
   const contactHref = whatsappUrlForPath(service.path);
 
   return (
@@ -178,7 +198,7 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
 
       <main className="pt-20">
         {/* HERO */}
-        <section className="relative overflow-hidden py-14 md:py-24 lg:py-28">
+        <section className="relative overflow-hidden pt-4 sm:pt-6 pb-12 md:pb-20 lg:pb-24">
           <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
             <div className="absolute top-0 left-1/4 w-[70vw] max-w-[620px] h-[70vw] max-h-[620px] bg-primary/5 rounded-full blur-[130px]" />
           </div>
@@ -192,6 +212,9 @@ const ServiceLanding = ({ service }: ServiceLandingProps) => {
             }}
           />
           <div className="relative z-10 container-narrow mx-auto px-4 md:px-8">
+            <div className="mb-6">
+              <BackToHomeButton />
+            </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               {/* Coluna de texto */}
               <div>

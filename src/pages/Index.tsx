@@ -10,6 +10,7 @@ const HowWeWork = lazy(() => import("@/components/HowWeWork"));
 const Nichos = lazy(() => import("@/components/Nichos"));
 const ImpactMetrics = lazy(() => import("@/components/ImpactMetrics"));
 const Benefits = lazy(() => import("@/components/Benefits"));
+const Blog = lazy(() => import("@/components/Blog"));
 const Contact = lazy(() => import("@/components/Contact"));
 const Footer = lazy(() => import("@/components/Footer"));
 
@@ -51,6 +52,9 @@ const Index = () => {
         </Suspense>
         <Suspense fallback={<SectionFallback />}>
           <Benefits />
+        </Suspense>
+        <Suspense fallback={<SectionFallback />}>
+          <Blog />
         </Suspense>
         <Suspense fallback={<SectionFallback />}>
           <Contact />

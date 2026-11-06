@@ -64,7 +64,7 @@ export const services: ServiceDefinition[] = [
     metaDescription:
       "Instalação, configuração e personalização de plataformas Moodle (LMS). Temas à medida, integrações, migrações, SCORM e suporte especializado em Portugal.",
     keywords:
-      "instalação Moodle, plataforma Moodle, configuração Moodle, personalização Moodle, tema Moodle, migração Moodle, Moodle Portugal, Moodle Workplace, plataforma LMS, LMS Moodle, SCORM, xAPI, LTI, SSO",
+      "instalação plataforma Moodle, instalação Moodle, suporte Moodle, configuração Moodle, personalização Moodle, tema Moodle, migração Moodle, Moodle Portugal, plataforma LMS, LMS Moodle corporativo, SCORM, xAPI, LTI, SSO",
 
     navLabel: "Plataformas",
     challenge: {
@@ -271,7 +271,7 @@ export const services: ServiceDefinition[] = [
     metaDescription:
       "Produção de cursos eLearning e conteúdos interativos em SCORM 1.2 e SCORM 2004, compatíveis com Moodle e qualquer LMS. Desenho instrucional, vídeo e gamificação.",
     keywords:
-      "conteúdos SCORM, cursos SCORM, SCORM 1.2, SCORM 2004, conteúdos interativos, cursos eLearning, desenho instrucional, conteúdos para Moodle, gamificação, microlearning, produção de cursos online",
+      "criação curso SCORM, criação microlearning, conteúdos SCORM, cursos SCORM, SCORM 1.2, SCORM 2004, conteúdos interativos, cursos eLearning, desenho instrucional, conteúdos para Moodle, gamificação, microlearning, produção de cursos online",
 
     navLabel: "Cursos",
     challenge: {

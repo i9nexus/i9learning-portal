@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BackToHomeButton from "@/components/BackToHomeButton";
 import { useEffect } from "react";
 import { useCanonical } from "@/hooks/use-canonical";
 
@@ -16,8 +17,11 @@ const TermsOfUse = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
-      <main className="pt-32 pb-20 px-4 md:px-8">
+      <main className="pt-24 pb-16 px-4 md:px-8">
         <article className="container-narrow mx-auto prose prose-invert max-w-3xl">
+          <div className="mb-6 not-prose">
+            <BackToHomeButton />
+          </div>
           <h1 className="font-display text-4xl md:text-5xl font-bold mb-8">
             Termos de <span className="text-primary">Utilização</span>
           </h1>

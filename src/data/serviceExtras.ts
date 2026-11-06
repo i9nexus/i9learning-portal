@@ -75,7 +75,7 @@ export const moreBenefits: Record<string, { title: string; description: string }
   "formacao-capacitacao": [
     { title: "Equipa dependente de apoio externo", description: "Gestores e formadores ganham autonomia para as tarefas diárias da plataforma." },
     { title: "Relatórios que ninguém sabe ler", description: "A equipa aprende a interpretar dados de progresso e a agir a partir deles." },
-    { title: "Formandos sem acompanhamento", description: "Práticas de tutoria online mantêm os formandos envolvidos e reduzem desistências." },
+    { title: "Desistências por falta de tutoria ativa", description: "Práticas de tutoria online mantêm os formandos envolvidos e reduzem desistências." },
   ],
 };
 
