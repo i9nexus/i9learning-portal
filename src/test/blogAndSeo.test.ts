@@ -50,6 +50,20 @@ describe("Blog Data & Content Compliance", () => {
     });
   });
 
+  it("ensures all articles use public web-optimized images", () => {
+    blogPosts.forEach((post) => {
+      expect(post.image).toMatch(/^\/assets\/images\/blog\/.*\.jpg$/);
+    });
+  });
+
+  it("ensures all 25 blog posts have expanded content with at least 3 sections each", () => {
+    blogPosts.forEach((post) => {
+      expect(post.content.sections.length).toBeGreaterThanOrEqual(3);
+      const totalBody = post.content.sections.reduce((acc, s) => acc + s.body.length, 0);
+      expect(totalBody).toBeGreaterThanOrEqual(5);
+    });
+  });
+
   it("ensures all 25 blog posts have solutionNote, non-empty titles, sections and takeaways", () => {
     blogPosts.forEach((post) => {
       expect(post.slug).toBeTruthy();

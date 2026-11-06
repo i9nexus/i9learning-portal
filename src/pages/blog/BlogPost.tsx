@@ -1,5 +1,5 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -63,6 +63,30 @@ const BlogPost = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, [slug]);
 
+  // Smart related articles: prioritize identical category, then content proximity
+  const relatedPosts = useMemo(() => {
+    if (!post) return [];
+    const others = blogPosts.filter((p) => p.slug !== post.slug);
+    const postWords = (post.title + " " + post.excerpt).toLowerCase().split(/\s+/).filter((w) => w.length > 3);
+
+    const scored = others.map((p) => {
+      let score = 0;
+      // Highest priority: same category
+      if (p.category === post.category) score += 12;
+
+      // Secondary priority: word overlap in title and category
+      const targetText = (p.title + " " + p.excerpt + " " + p.category).toLowerCase();
+      postWords.forEach((word) => {
+        if (targetText.includes(word)) score += 2;
+      });
+
+      return { post: p, score };
+    });
+
+    scored.sort((a, b) => b.score - a.score);
+    return scored.slice(0, 4).map((s) => s.post);
+  }, [post]);
+
   if (!post) {
     return (
       <div className="min-h-screen bg-background text-foreground flex flex-col justify-between">
@@ -105,8 +129,6 @@ const BlogPost = () => {
     `Olá! Li o artigo "${post.title}" no blog da i9 Learning e gostaria de falar convosco sobre soluções de eLearning para a minha empresa.`
   );
 
-  const relatedPosts = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 4);
-
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col justify-between overflow-x-hidden">
       <Navbar />
@@ -137,19 +159,19 @@ const BlogPost = () => {
           </div>
 
           {/* Post Header */}
-          <header className="mb-10">
-            <div className="inline-block mb-4">
+          <header className="mb-8">
+            <div className="inline-block mb-3">
               <span className="text-xs font-semibold px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary">
                 {post.category}
               </span>
             </div>
 
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-foreground">
+            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4 text-foreground">
               {post.title}
             </h1>
 
             {/* Metadata Bar */}
-            <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-xs sm:text-sm text-muted-foreground pb-6 border-b border-border/50">
+            <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-xs sm:text-sm text-muted-foreground pb-5 border-b border-border/50">
               <span className="flex items-center gap-1.5">
                 <User size={15} className="text-primary/70" />
                 {post.author}
@@ -167,12 +189,13 @@ const BlogPost = () => {
             </div>
           </header>
 
-          {/* Featured Image */}
-          <div className="relative aspect-video rounded-2xl overflow-hidden border border-white/10 mb-12 shadow-2xl bg-muted/20">
+          {/* Featured Banner Image: Compact height to show information immediately without excessive scrolling */}
+          <div className="relative w-full h-52 sm:h-64 md:h-72 rounded-2xl overflow-hidden border border-white/10 mb-8 sm:mb-10 shadow-xl bg-muted/20">
             <img
               src={post.image}
               alt={post.title}
               className="w-full h-full object-cover"
+              loading="eager"
               referrerPolicy="no-referrer"
               onError={(e) => {
                 const target = e.currentTarget;
@@ -182,6 +205,7 @@ const BlogPost = () => {
                 }
               }}
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent pointer-events-none" />
           </div>
 
           {/* Article Body Content */}

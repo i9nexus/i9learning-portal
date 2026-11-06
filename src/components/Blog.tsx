@@ -117,10 +117,6 @@ const Blog = () => {
                       className="transition-transform duration-200 group-hover/link:translate-x-1"
                     />
                   </Link>
-
-                  <span className="text-xs text-muted-foreground/60">
-                    {post.number}
-                  </span>
                 </div>
               </div>
             </article>
